@@ -2557,10 +2557,10 @@ three-fly-controls@^1.1.0:
   resolved "https://registry.yarnpkg.com/three-fly-controls/-/three-fly-controls-1.1.0.tgz#8ea796da94ac017f5ea44ec015b1db5e19a42bd0"
   integrity sha1-jqeW2pSsAX9epE7AFbHbXhmkK9A=
 
-three-globe@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/three-globe/-/three-globe-0.5.0.tgz#b08bc8e63a218819ac6b3b7d70425edb22b45406"
-  integrity sha512-4remV+1WZuY0miHmyovso1ZbVZ3HL4js8O6esIbYN5HKtg2VyR7m3wRuD+z6+TtlRCE2moI4oQ6Rn9T85OVsHA==
+three-globe@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/three-globe/-/three-globe-0.6.0.tgz#e0ce9d0808c8b8537900ec1f1d770a453ce19e52"
+  integrity sha512-JF5GOXVfbN8epREG2EjmdWR57Uf29LVygeHV8HxHUTV185usOuqhCZuWB7uud1tDoedkvJ+eN7Wwliks8p8JnQ==
   dependencies:
     accessor-fn "^1.2.2"
     kapsule "^1.10.0"

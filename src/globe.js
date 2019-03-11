@@ -25,6 +25,7 @@ const linkedGlobeProps = Object.assign(...[
   'pointHeight',
   'pointRadius',
   'pointResolution',
+  'pointsMerge',
   'customLayerData',
   'customThreeObject'
 ].map(p => ({ [p]: bindGlobe.linkProp(p)})));
