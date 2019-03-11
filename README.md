@@ -3,7 +3,7 @@
 [![NPM](https://nodei.co/npm/globe.gl.png?compact=true)](https://nodei.co/npm/globe.gl/)
 
 <p align="center">
-     <a href="//vasturiano.github.io/globe.gl/example/world-population/"><img width="80%" src="https://vasturiano.github.io/globe.gl/example/world-population/sshot.png"></a>
+     <a href="//vasturiano.github.io/globe.gl/example/world-population/"><img width="100%" src="https://vasturiano.github.io/globe.gl/example/world-population/sshot.png"></a>
 </p>
 
 A web component to represent data visualization layers on a 3-dimensional globe in spherical projection.
