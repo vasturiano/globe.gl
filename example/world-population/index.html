@@ -19,14 +19,18 @@
       pop: +d.value
     })))
     .then(data => {
-      Globe()
+      const globe = Globe()
         .globeImageUrl('//unpkg.com/three-globe/example/world.jpg')
         .pointsData(data)
         .pointHeight(d => d.pop)
         .pointRadius(0.12)
         .pointColor(d => chroma.hsl((0.6 - d.pop * 0.5) * 360, 1.0, 0.5).hex())
         .pointsMerge(true) // rendering performance
-      (document.getElementById('globeViz'))
+      (document.getElementById('globeViz'));
+
+      // Add auto-rotation
+      globe.controls().autoRotate = true;
+      globe.controls().autoRotateSpeed = 0.3;
     });
 
 </script>
