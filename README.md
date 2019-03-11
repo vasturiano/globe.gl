@@ -64,10 +64,10 @@ Globe({ configOptions })(<domElement>)
 | <b>pointHeight</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Point object accessor function, attribute or a numeric constant for the cylinder's altitude in terms of globe radius units (`0` = 0 altitude (flat circle), `1` = globe radius). | `0.1` |
 | <b>pointRadius</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Point object accessor function, attribute or a numeric constant for the cylinder's radius, in angular degrees. | `0.25` |
 | <b>pointResolution</b>([<i>num</i>]) | Getter/setter for the radial geometric resolution of each cylinder, expressed in how many slice segments to divide the circumference. Higher values yield smoother cylinders. | 12 |
-| <b>pointsMerge</b>([<i>boolean</i>]) | Getter/setter for whether to merge all the point meshes into a single ThreeJS object, for improved rendering performance. Visually both options are equivalent, setting this option only affects the internal organization of the ThreeJS objects. | `false` |
-| <b>onPointClick</b>(<i>fn</i>) | Callback function for point (left-button) clicks. The point object is included as single argument `onPointClick(point)`. | - |
-| <b>onPointRightClick</b>(<i>fn</i>) | Callback function for point right-clicks. The point object is included as single argument `onPointRightClick(point)`. | - |
-| <b>onPointHover</b>(<i>fn</i>) | Callback function for point mouse over events. The point object (or `null` if there's no point under the mouse line of sight) is included as the first argument, and the previous point object (or null) as second argument: `onPointHover(point, prevPoint)`. | - |
+| <b>pointsMerge</b>([<i>boolean</i>]) | Getter/setter for whether to merge all the point meshes into a single ThreeJS object, for improved rendering performance. Visually both options are equivalent, setting this option only affects the internal organization of the ThreeJS objects. Note that enabling this option will disable all point specific interactions, such as `click`, `rightClick` and `hover`.  | `false` |
+| <b>onPointClick</b>(<i>fn</i>) | Callback function for point (left-button) clicks. The point object is included as single argument `onPointClick(point)`. Only works if `pointsMerge` is disabled. | - |
+| <b>onPointRightClick</b>(<i>fn</i>) | Callback function for point right-clicks. The point object is included as single argument `onPointRightClick(point)`. Only works if `pointsMerge` is disabled. | - |
+| <b>onPointHover</b>(<i>fn</i>) | Callback function for point mouse over events. The point object (or `null` if there's no point under the mouse line of sight) is included as the first argument, and the previous point object (or null) as second argument: `onPointHover(point, prevPoint)`. Only works if `pointsMerge` is disabled. | - |
 
 
 ### Custom Layer
