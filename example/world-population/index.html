@@ -13,21 +13,21 @@
 
 <script>
   fetch('./population2000.csv').then(res => res.text())
-  .then(csv => d3.csvParse(csv, d => ({
-    lat: +d.lat,
-    lng: +d.lng,
-    pop: +d.value
-  })))
-  .then(data => {
-    Globe()
-      .globeImageUrl('//unpkg.com/three-globe/example/world.jpg')
-      .pointsData(data)
-      .pointHeight(d => d.pop)
-      .pointRadius(0.12)
-      .pointColor(d => chroma.hsl((0.6 - d.pop * 0.5) * 360, 1.0, 0.5).hex())
-      .pointsMerge(true) // rendering performance
-    (document.getElementById('globeViz'))
-  });
+    .then(csv => d3.csvParse(csv, d => ({
+      lat: +d.lat,
+      lng: +d.lng,
+      pop: +d.value
+    })))
+    .then(data => {
+      Globe()
+        .globeImageUrl('//unpkg.com/three-globe/example/world.jpg')
+        .pointsData(data)
+        .pointHeight(d => d.pop)
+        .pointRadius(0.12)
+        .pointColor(d => chroma.hsl((0.6 - d.pop * 0.5) * 360, 1.0, 0.5).hex())
+        .pointsMerge(true) // rendering performance
+      (document.getElementById('globeViz'))
+    });
 
 </script>
 </body>
