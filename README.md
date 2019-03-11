@@ -43,7 +43,7 @@ Globe({ configOptions })(<domElement>)
 ```
 | Config options | Description | Default |
 | --- | --- | :--: |
-| <b>rendererConfig</b>: <i>object</i> | Configuration parameters to pass to the [ThreeJS WebGLRenderer](https://threejs.org/docs/#api/en/renderers/WebGLRenderer) constructor. | `{ alpha: true }` |
+| <b>rendererConfig</b>: <i>object</i> | Configuration parameters to pass to the [ThreeJS WebGLRenderer](https://threejs.org/docs/#api/en/renderers/WebGLRenderer) constructor. | `{ antialias: true, alpha: true }` |
 
 ### Container layout
 | Method | Description | Default |

@@ -2557,10 +2557,10 @@ three-fly-controls@^1.1.0:
   resolved "https://registry.yarnpkg.com/three-fly-controls/-/three-fly-controls-1.1.0.tgz#8ea796da94ac017f5ea44ec015b1db5e19a42bd0"
   integrity sha1-jqeW2pSsAX9epE7AFbHbXhmkK9A=
 
-three-globe@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/three-globe/-/three-globe-1.0.4.tgz#ddace72d949ebc551bb837c20a21580b32fd8332"
-  integrity sha512-Tkag7nwlzgeNHtsa//2viuPVx/ITIsNEzMKmPBWl93Bb0LKEUTQLiZKXdtJRFOLCgWieH0xLxA0dwZtMyP8Gjw==
+three-globe@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.npmjs.org/three-globe/-/three-globe-1.0.5.tgz#89214e0231861cf0a06a78f199f7b56bbf396736"
+  integrity sha512-H95PzDP9c3Aec2pvEotauUbGndUFqMM7pIAUjPk1/3D1I3EMXNVkrPumu1+17dGPw2vQNI8SReez7ydVcojEtQ==
   dependencies:
     accessor-fn "^1.2.2"
     kapsule "^1.10.0"
@@ -2571,10 +2571,10 @@ three-orbit-controls@^82.1.0:
   resolved "https://registry.yarnpkg.com/three-orbit-controls/-/three-orbit-controls-82.1.0.tgz#11a7f33d0a20ecec98f098b37780f6537374fab4"
   integrity sha1-EafzPQog7OyY8Jizd4D2U3N0+rQ=
 
-three-render-objects@^1.4.4:
-  version "1.4.4"
-  resolved "https://registry.yarnpkg.com/three-render-objects/-/three-render-objects-1.4.4.tgz#c1d8a1fdc9bd46fb6234a1112c985c09f7eb34a9"
-  integrity sha512-Z5JeU2u2op1QvHpAe8CscI52DoEwztmC2A2zENgeKY0p5ACed6JMgks75HO1Xt/Fm1VsDfFnbEjEaWpquwNTOQ==
+three-render-objects@^1.4.5:
+  version "1.4.5"
+  resolved "https://registry.npmjs.org/three-render-objects/-/three-render-objects-1.4.5.tgz#f45445c46ceae569cf02bb485378631202a8733f"
+  integrity sha512-dHsLG1MDofFvFfSdvAqnl9qn7qhWhymEcbK/f4DvzlvrBvJdO3YdOhHj35xfmK7KMlcLsDc7k5B4+154msKYyQ==
   dependencies:
     "@tweenjs/tween.js" "^17.3.0"
     accessor-fn "^1.2.2"

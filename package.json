@@ -42,8 +42,8 @@
     "accessor-fn": "^1.2.2",
     "kapsule": "^1.10.0",
     "three": "^0.102.1",
-    "three-globe": "^1.0.4",
-    "three-render-objects": "^1.4.4"
+    "three-globe": "^1.0.5",
+    "three-render-objects": "^1.4.5"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
