@@ -1,0 +1,60 @@
+{
+  "name": "globe.gl",
+  "version": "0.1.0",
+  "description": "UI component for Globe Data Visualization using ThreeJS/WebGL",
+  "unpkg": "dist/globe.gl.min.js",
+  "main": "dist/globe.gl.common.js",
+  "module": "dist/globe.gl.module.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vasturiano/globe.gl.git"
+  },
+  "keywords": [
+    "webgl",
+    "three",
+    "globe",
+    "geo",
+    "spherical",
+    "projection",
+    "orthographic"
+  ],
+  "author": {
+    "name": "Vasco Asturiano",
+    "url": "https://bl.ocks.org/vasturiano"
+  },
+  "bugs": {
+    "url": "https://github.com/vasturiano/globe.gl/issues"
+  },
+  "homepage": "https://github.com/vasturiano/globe.gl",
+  "scripts": {
+    "build": "rm -rf dist && mkdir dist && rollup -c",
+    "dev": "rollup -c -w",
+    "minify": "terser dist/globe.gl.js -o dist/globe.gl.min.js -c -m --comments '/Version/'",
+    "build-module": "rollup -c rollup.config.module.js",
+    "prepare": "npm run build && npm run minify && npm run build-module"
+  },
+  "files": [
+    "src/**/*",
+    "dist/**/*",
+    "example/**/*"
+  ],
+  "dependencies": {
+    "accessor-fn": "^1.2.2",
+    "kapsule": "^1.10.0",
+    "three": "^0.102.1",
+    "three-globe": "^0.4.2",
+    "three-render-objects": "^1.4.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/plugin-proposal-class-properties": "^7.3.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "rollup": "^1.6.0",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-commonjs": "^9.2.1",
+    "rollup-plugin-node-resolve": "^4.0.1",
+    "rollup-watch": "^4.3.1",
+    "terser": "^3.17.0"
+  }
+}
