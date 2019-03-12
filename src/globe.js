@@ -48,7 +48,8 @@ const bindRenderObjs = linkKapsule('renderObjs', ThreeRenderObjects);
 const linkedRenderObjsProps = Object.assign(...[
   'width',
   'height',
-  'backgroundColor'
+  'backgroundColor',
+  'enablePointerInteraction'
 ].map(p => ({ [p]: bindRenderObjs.linkProp(p)})));
 const linkedRenderObjsMethods = Object.assign(...[
   'cameraPosition'

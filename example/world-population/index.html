@@ -26,7 +26,8 @@
         .pointRadius(0.12)
         .pointColor(d => chroma.hsl((0.6 - d.pop * 0.5) * 360, 1.0, 0.5).hex())
         .pointsMerge(true) // rendering performance
-      (document.getElementById('globeViz'));
+        .enablePointerInteraction(false)
+        (document.getElementById('globeViz'));
 
       // Add auto-rotation
       globe.controls().autoRotate = true;
