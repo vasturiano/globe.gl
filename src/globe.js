@@ -33,7 +33,7 @@ const linkedGlobeProps = Object.assign(...[
   'linkEndLng',
   'linkColor',
   'linkHeight',
-  'linkDiameter',
+  'linkStroke',
   'linkCircularResolution',
   'linksMerge',
   'customLayerData',
