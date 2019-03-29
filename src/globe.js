@@ -127,7 +127,7 @@ export default Kapsule({
 
     // set globe distance
     const camera = state.renderObjs.camera();
-    camera.position.z = -GLOBE_RADIUS * 3.5;
+    camera.position.z = GLOBE_RADIUS * 3.5;
 
     // calibrate orbit controls
     const controls = state.renderObjs.controls();
