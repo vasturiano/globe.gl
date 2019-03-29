@@ -18,6 +18,9 @@ import linkKapsule from './kapsule-link.js';
 const bindGlobe = linkKapsule('globe', ThreeGlobe);
 const linkedGlobeProps = Object.assign(...[
   'globeImageUrl',
+  'bumpImageUrl',
+  'showAtmosphere',
+  'showGraticules',
   'pointsData',
   'pointLat',
   'pointLng',
@@ -34,6 +37,7 @@ const linkedGlobeProps = Object.assign(...[
   'arcEndLng',
   'arcColor',
   'arcAltitude',
+  'arcAltitudeAutoScale',
   'arcStroke',
   'arcCircularResolution',
   'arcsTransitionDuration',
