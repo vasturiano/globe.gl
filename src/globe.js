@@ -43,7 +43,8 @@ const linkedGlobeProps = Object.assign(...[
   'arcCircularResolution',
   'arcsTransitionDuration',
   'customLayerData',
-  'customThreeObject'
+  'customThreeObject',
+  'customThreeObjectUpdate'
 ].map(p => ({ [p]: bindGlobe.linkProp(p)})));
 const linkedGlobeMethods = Object.assign(...[
   'getCoords'
