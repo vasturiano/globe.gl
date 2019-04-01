@@ -39,6 +39,7 @@ const linkedGlobeProps = Object.assign(...[
   'arcAltitude',
   'arcAltitudeAutoScale',
   'arcStroke',
+  'arcCurveResolution',
   'arcCircularResolution',
   'arcsTransitionDuration',
   'customLayerData',
@@ -69,6 +70,10 @@ export default Kapsule({
     onPointClick: { default: () => {}, triggerUpdate: false },
     onPointRightClick: { default: () => {}, triggerUpdate: false },
     onPointHover: { default: () => {}, triggerUpdate: false },
+    arcLabel: { default: 'name', triggerUpdate: false },
+    onArcClick: { default: () => {}, triggerUpdate: false },
+    onArcRightClick: { default: () => {}, triggerUpdate: false },
+    onArcHover: { default: () => {}, triggerUpdate: false },
     customLayerLabel: { default: 'name', triggerUpdate: false },
     onCustomLayerClick: { default: () => {}, triggerUpdate: false },
     onCustomLayerRightClick: { default: () => {}, triggerUpdate: false },
@@ -103,14 +108,15 @@ export default Kapsule({
     _destructor: function() {
       this.pauseAnimation();
       this.pointsData([]);
+      this.arcsData([]);
       this.customLayerData([]);
     },
     ...linkedGlobeMethods,
     ...linkedRenderObjsMethods
   },
 
-  stateInit: ({ rendererConfig }) => ({
-    globe: new ThreeGlobe(),
+  stateInit: ({ rendererConfig, animateIn }) => ({
+    globe: new ThreeGlobe({ animateIn }),
     renderObjs: ThreeRenderObjects({ controlType: 'orbit', rendererConfig })
       .showNavInfo(false)
   }),
@@ -171,6 +177,7 @@ export default Kapsule({
       .tooltipContent(obj => {
         const objAccessors = {
           point: state.pointLabel,
+          arc: state.arcLabel,
           custom: state.customLayerLabel
         };
 
@@ -183,6 +190,7 @@ export default Kapsule({
         // Update tooltip and trigger onHover events
         const hoverObjFns = {
           point: state.onPointHover,
+          arc: state.onArcHover,
           custom: state.onCustomLayerHover
         };
 
@@ -212,6 +220,7 @@ export default Kapsule({
         // Handle click events on objects
         const objFns = {
           point: state.onPointClick,
+          arc: state.onArcClick,
           custom: state.onCustomLayerClick
         };
 
@@ -224,6 +233,7 @@ export default Kapsule({
         // Handle right-click events
         const objFns = {
           point: state.onPointRightClick,
+          arc: state.onArcRightClick,
           custom: state.onCustomLayerRightClick
         };
 
