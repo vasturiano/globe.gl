@@ -10,19 +10,19 @@
 
   <script>
     // Gen random data
-    const N = 300;
-    const gData = [...Array(N).keys()].map(() => ({
-      lat: (Math.random() - 0.5) * 180,
-      lng: (Math.random() - 0.5) * 360,
-      size: Math.random() / 3,
+    const N = 20;
+    const arcsData = [...Array(N).keys()].map(() => ({
+      startLat: (Math.random() - 0.5) * 180,
+      startLng: (Math.random() - 0.5) * 360,
+      endLat: (Math.random() - 0.5) * 180,
+      endLng: (Math.random() - 0.5) * 360,
       color: ['red', 'white', 'blue', 'green'][Math.round(Math.random() * 3)]
     }));
 
     Globe()
       .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
-      .pointsData(gData)
-      .pointAltitude('size')
-      .pointColor('color')
+      .arcsData(arcsData)
+      .arcColor('color')
     (document.getElementById('globeViz'))
 
   </script>
