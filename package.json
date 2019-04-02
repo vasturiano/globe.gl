@@ -39,10 +39,11 @@
     "example/**/*"
   ],
   "dependencies": {
+    "@tweenjs/tween.js": "^17.3.0",
     "accessor-fn": "^1.2.2",
     "kapsule": "^1.10.0",
     "three": "^0.103.0",
-    "three-globe": "^1.4.0",
+    "three-globe": "^1.4.2",
     "three-render-objects": "^1.4.5"
   },
   "devDependencies": {
@@ -50,7 +51,7 @@
     "@babel/plugin-proposal-class-properties": "^7.4.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
-    "rollup": "^1.7.4",
+    "rollup": "^1.8.0",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-commonjs": "^9.2.2",
     "rollup-plugin-node-resolve": "^4.0.1",

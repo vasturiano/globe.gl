@@ -2400,10 +2400,10 @@ rollup-watch@^4.3.1:
     require-relative "0.8.7"
     rollup-pluginutils "^2.0.1"
 
-rollup@^1.7.4:
-  version "1.7.4"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-1.7.4.tgz#dd9d1d4935d3db38f16e1caaef635d8d1b0831c4"
-  integrity sha512-nc86fETLHdozhRWlW/uNVIQ7ODuA1vU2/L8znAxP9TNMx1NA6GTth3llqoxxCle2kkyui+OfGzbKaQxD60NJjA==
+rollup@^1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-1.8.0.tgz#e3ce8b708ad4325166717f74f244f691595d35e2"
+  integrity sha512-dKxL6ihUZ9YrVySKf/LBz5joW2sqwWkiuki34279Ppr2cL+O6Za6Ujovk+rtTX0AFCIsH1rs6y8LYKdZZ/7C5A==
   dependencies:
     "@types/estree" "0.0.39"
     "@types/node" "^11.11.6"
@@ -2649,10 +2649,10 @@ three-fly-controls@^1.1.0:
   resolved "https://registry.yarnpkg.com/three-fly-controls/-/three-fly-controls-1.1.0.tgz#8ea796da94ac017f5ea44ec015b1db5e19a42bd0"
   integrity sha1-jqeW2pSsAX9epE7AFbHbXhmkK9A=
 
-three-globe@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.npmjs.org/three-globe/-/three-globe-1.4.0.tgz#12b14c1d0ea1b2a1fee04293616bdaca9959df3b"
-  integrity sha512-rLX95AwU1KBVUeP6tZxfQSx7tSdK/6pO4PWzPmY5PNKJqS2cyPUZYz1qgBJUBfO8rVd4xYuzeNTtXq+tVkg/PA==
+three-globe@^1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/three-globe/-/three-globe-1.4.2.tgz#f997a88a91d8d102fee6f4205f11304d280c1294"
+  integrity sha512-H+lcEF6pNzchmd82ycSAkAMMwvcjNRcgz5m4uFHu0ByaSpKS3q8xVZ+eb81NbhFV+us/IVDHsi/YHQXcqQNT0Q==
   dependencies:
     "@tweenjs/tween.js" "^17.3.0"
     accessor-fn "^1.2.2"

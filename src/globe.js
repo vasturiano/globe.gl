@@ -9,6 +9,7 @@ import ThreeRenderObjects from 'three-render-objects';
 
 import accessorFn from 'accessor-fn';
 import Kapsule from 'kapsule';
+import TWEEN from '@tweenjs/tween.js';
 
 import linkKapsule from './kapsule-link.js';
 
@@ -47,7 +48,8 @@ const linkedGlobeProps = Object.assign(...[
   'customThreeObjectUpdate'
 ].map(p => ({ [p]: bindGlobe.linkProp(p)})));
 const linkedGlobeMethods = Object.assign(...[
-  'getCoords'
+  'getCoords',
+  'toGeoCoords'
 ].map(p => ({ [p]: bindGlobe.linkMethod(p)})));
 
 // Expose config from renderObjs
@@ -58,9 +60,6 @@ const linkedRenderObjsProps = Object.assign(...[
   'backgroundColor',
   'enablePointerInteraction'
 ].map(p => ({ [p]: bindRenderObjs.linkProp(p)})));
-const linkedRenderObjsMethods = Object.assign(...[
-  'cameraPosition'
-].map(p => ({ [p]: bindRenderObjs.linkMethod(p)})));
 
 //
 
@@ -102,6 +101,43 @@ export default Kapsule({
       state.renderObjs.tick();
       state.animationFrameRequestId = requestAnimationFrame(this._animationCycle);
     },
+    pointOfView: function(state, geoCoords = {}, transitionDuration) {
+      const curGeoCoords = getGeoCoords();
+
+      // Getter
+      if (geoCoords.lat === undefined && geoCoords.lng === undefined && geoCoords.altitude === undefined) {
+        return curGeoCoords;
+      } else { // Setter
+        const finalGeoCoords = Object.assign({}, curGeoCoords, geoCoords);
+
+        if (!transitionDuration) { // no animation
+          setCameraPos(finalGeoCoords);
+        } else {
+          // Avoid rotating more than 180deg longitude
+          while ((curGeoCoords.lng - finalGeoCoords.lng) > 180) curGeoCoords.lng -= 360;
+          while ((curGeoCoords.lng - finalGeoCoords.lng) < -180) curGeoCoords.lng += 360;
+
+          console.log(curGeoCoords.lng - finalGeoCoords.lng);
+
+          new TWEEN.Tween(curGeoCoords)
+            .to(finalGeoCoords, transitionDuration)
+            .easing(TWEEN.Easing.Cubic.InOut)
+            .onUpdate(setCameraPos)
+            .start();
+        }
+        return this;
+      }
+
+      //
+
+      function getGeoCoords() {
+        return state.globe.toGeoCoords(state.renderObjs.cameraPosition());
+      }
+
+      function setCameraPos({ lat, lng, altitude }) {
+        state.renderObjs.cameraPosition(state.globe.getCoords(lat, lng, altitude));
+      }
+    },
     scene: state => state.renderObjs.scene(), // Expose scene
     camera: state => state.renderObjs.camera(), // Expose camera
     renderer: state => state.renderObjs.renderer(), // Expose renderer
@@ -112,8 +148,7 @@ export default Kapsule({
       this.arcsData([]);
       this.customLayerData([]);
     },
-    ...linkedGlobeMethods,
-    ...linkedRenderObjsMethods
+    ...linkedGlobeMethods
   },
 
   stateInit: ({ rendererConfig, animateIn }) => ({
@@ -137,14 +172,13 @@ export default Kapsule({
     state.container.appendChild(roDomNode);
     state.renderObjs(roDomNode);
 
-    // set globe distance
-    const camera = state.renderObjs.camera();
-    camera.position.z = GLOBE_RADIUS * 3.5;
+    // set initial distance
+    this.pointOfView({ altitude: 2.5 });
 
     // calibrate orbit controls
     const controls = state.renderObjs.controls();
     controls.minDistance = GLOBE_RADIUS * 1.01; // just above the surface
-    controls.maxDistance = GLOBE_RADIUS * 8;
+    controls.maxDistance = GLOBE_RADIUS * 100;
     controls.enablePan = false;
     controls.enableDamping = true;
     controls.dampingFactor = 0.1;
