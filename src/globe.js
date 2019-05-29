@@ -47,6 +47,22 @@ const linkedGlobeProps = Object.assign(...[
   'arcDashInitialGap',
   'arcDashAnimateTime',
   'arcsTransitionDuration',
+  'polygonsData',
+  'polygonGeoJsonGeometry',
+  'polygonCapColor',
+  'polygonSideColor',
+  'polygonAltitude',
+  'polygonsTransitionDuration',
+  'hexBinPointsData',
+  'hexBinPointLat',
+  'hexBinPointLng',
+  'hexBinPointWeight',
+  'hexRadius',
+  'hexMargin',
+  'hexColor',
+  'hexAltitude',
+  'hexBinMerge',
+  'hexTransitionDuration',
   'customLayerData',
   'customThreeObject',
   'customThreeObjectUpdate'
@@ -78,6 +94,14 @@ export default Kapsule({
     onArcClick: { default: () => {}, triggerUpdate: false },
     onArcRightClick: { default: () => {}, triggerUpdate: false },
     onArcHover: { default: () => {}, triggerUpdate: false },
+    polygonLabel: { default: 'name', triggerUpdate: false },
+    onPolygonClick: { default: () => {}, triggerUpdate: false },
+    onPolygonRightClick: { default: () => {}, triggerUpdate: false },
+    onPolygonHover: { default: () => {}, triggerUpdate: false },
+    hexLabel: { triggerUpdate: false },
+    onHexClick: { default: () => {}, triggerUpdate: false },
+    onHexRightClick: { default: () => {}, triggerUpdate: false },
+    onHexHover: { default: () => {}, triggerUpdate: false },
     customLayerLabel: { default: 'name', triggerUpdate: false },
     onCustomLayerClick: { default: () => {}, triggerUpdate: false },
     onCustomLayerRightClick: { default: () => {}, triggerUpdate: false },
@@ -150,6 +174,8 @@ export default Kapsule({
       this.pauseAnimation();
       this.pointsData([]);
       this.arcsData([]);
+      this.polygonsData([]);
+      this.hexBinPointsData([]);
       this.customLayerData([]);
     },
     ...linkedGlobeMethods
@@ -217,6 +243,8 @@ export default Kapsule({
         const objAccessors = {
           point: state.pointLabel,
           arc: state.arcLabel,
+          polygon: state.polygonLabel,
+          hexBinPoints: state.hexLabel,
           custom: state.customLayerLabel
         };
 
@@ -230,6 +258,8 @@ export default Kapsule({
         const hoverObjFns = {
           point: state.onPointHover,
           arc: state.onArcHover,
+          polygon: state.onPolygonHover,
+          hexBinPoints: state.onHexHover,
           custom: state.onCustomLayerHover
         };
 
@@ -260,6 +290,8 @@ export default Kapsule({
         const objFns = {
           point: state.onPointClick,
           arc: state.onArcClick,
+          polygon: state.onPolygonClick,
+          hexBinPoints: state.onHexClick,
           custom: state.onCustomLayerClick
         };
 
@@ -273,6 +305,8 @@ export default Kapsule({
         const objFns = {
           point: state.onPointRightClick,
           arc: state.onArcRightClick,
+          polygon: state.onPolygonRightClick,
+          hexBinPoints: state.onHexRightClick,
           custom: state.onCustomLayerRightClick
         };
 
