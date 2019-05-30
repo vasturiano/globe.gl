@@ -33,17 +33,13 @@
     "build-module": "rollup -c rollup.config.module.js",
     "prepare": "npm run build && npm run minify && npm run build-module"
   },
-  "files": [
-    "src/**/*",
-    "dist/**/*",
-    "example/**/*"
-  ],
+  "files": [ "dist/**/*" ],
   "dependencies": {
     "@tweenjs/tween.js": "^17.4.0",
     "accessor-fn": "^1.2.2",
     "kapsule": "^1.10.0",
     "three": "^0.104.0",
-    "three-globe": "^1.7.3",
+    "three-globe": "^1.7.7",
     "three-render-objects": "^1.4.5"
   },
   "devDependencies": {

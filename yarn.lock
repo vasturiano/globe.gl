@@ -1736,10 +1736,10 @@ three-fly-controls@^1.1.0:
   resolved "https://registry.yarnpkg.com/three-fly-controls/-/three-fly-controls-1.1.0.tgz#8ea796da94ac017f5ea44ec015b1db5e19a42bd0"
   integrity sha1-jqeW2pSsAX9epE7AFbHbXhmkK9A=
 
-three-globe@^1.7.3:
-  version "1.7.3"
-  resolved "https://registry.yarnpkg.com/three-globe/-/three-globe-1.7.3.tgz#6e269ffc8fa2521236c8d1eb0aa89d3f2c457691"
-  integrity sha512-BcWjcQAABGwrKpdtW3y30HbCG8D+EpA65zwSdM0yrlDW+kzQ+8dOnRs3R0avEdw2MGHAOerxajWh5YxB0G+ixg==
+three-globe@^1.7.7:
+  version "1.7.7"
+  resolved "https://registry.yarnpkg.com/three-globe/-/three-globe-1.7.7.tgz#c3e77ee79759e1ded0d84101ef61976ce8a07d77"
+  integrity sha512-BwkQE2g25CXBPTZH4sCmGp4M40krLbHjgAsHP97tH87nAm2RFR9mUHcSUGDy5Lf3TccfqCDlcowP887tNpCGtQ==
   dependencies:
     "@tweenjs/tween.js" "^17.4.0"
     accessor-fn "^1.2.2"
