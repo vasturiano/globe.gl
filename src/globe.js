@@ -225,6 +225,14 @@ export default Kapsule({
       return obj;
     };
 
+    const dataAccessors = {
+      point: d => d,
+      arc: d => d,
+      polygon: d => d.data,
+      hexBinPoints: d => d,
+      custom: d => d
+    };
+
     state.renderObjs
       .objects([ // Populate scene
         new three.AmbientLight(0xbbbbbb),
@@ -236,7 +244,7 @@ export default Kapsule({
         const bObj = getGlobeObj(b);
 
         // de-prioritize background / non-globe objects
-        const isBackground = o => !o || o.__globeObjType === 'globe' || o.__globeObjType === 'atmosphere';
+        const isBackground = o => !o; // || o.__globeObjType === 'globe' || o.__globeObjType === 'atmosphere';
         return isBackground(aObj) - isBackground(bObj);
       })
       .tooltipContent(obj => {
@@ -249,8 +257,9 @@ export default Kapsule({
         };
 
         const globeObj = getGlobeObj(obj);
-        return globeObj &&  objAccessors.hasOwnProperty(globeObj.__globeObjType)
-          ? accessorFn(objAccessors[globeObj.__globeObjType])(globeObj.__data) || ''
+        const objType = globeObj.__globeObjType;
+        return globeObj && objAccessors.hasOwnProperty(objType) && dataAccessors.hasOwnProperty(objType)
+          ? accessorFn(objAccessors[objType])(dataAccessors[objType](globeObj.__data)) || ''
           : '';
       })
       .onHover(obj => {
@@ -266,13 +275,14 @@ export default Kapsule({
         let hoverObj = getGlobeObj(obj);
 
         // ignore non-recognised obj types
+        //hoverObj && console.log(hoverObj.__globeObjType);
         hoverObj && !hoverObjFns.hasOwnProperty(hoverObj.__globeObjType) && (hoverObj = null);
 
         if (hoverObj !== state.hoverObj) {
           const prevObjType = state.hoverObj ? state.hoverObj.__globeObjType : null;
-          const prevObjData = state.hoverObj ? state.hoverObj.__data : null;
+          const prevObjData = state.hoverObj ? dataAccessors[prevObjType](state.hoverObj.__data) : null;
           const objType = hoverObj ? hoverObj.__globeObjType : null;
-          const objData = hoverObj ? hoverObj.__data : null;
+          const objData = hoverObj ? dataAccessors[objType](hoverObj.__data) : null;
           if (prevObjType && prevObjType !== objType) {
             // Hover out
             hoverObjFns[prevObjType](null, prevObjData);
@@ -296,8 +306,9 @@ export default Kapsule({
         };
 
         const globeObj = getGlobeObj(obj);
-        if (globeObj && objFns.hasOwnProperty(globeObj.__globeObjType)) {
-          objFns[globeObj.__globeObjType](globeObj.__data);
+        const objType = globeObj.__globeObjType;
+        if (globeObj && objFns.hasOwnProperty(objType) && dataAccessors.hasOwnProperty(objType)) {
+          objFns[objType](dataAccessors[objType](globeObj.__data));
         }
       })
       .onRightClick(obj => {
@@ -311,8 +322,9 @@ export default Kapsule({
         };
 
         const globeObj = getGlobeObj(obj);
-        if (globeObj && objFns.hasOwnProperty(globeObj.__globeObjType)) {
-          objFns[globeObj.__globeObjType](globeObj.__data);
+        const objType = globeObj.__globeObjType;
+        if (globeObj && objFns.hasOwnProperty(objType) && dataAccessors.hasOwnProperty(objType)) {
+          objFns[objType](dataAccessors[objType](globeObj.__data));
         }
       });
 
