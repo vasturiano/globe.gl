@@ -248,7 +248,7 @@ export default Kapsule({
       point: d => d,
       arc: d => d,
       polygon: d => d.data,
-      hexBinPoints: d => d,
+      hexbin: d => d,
       label: d => d,
       custom: d => d
     };
@@ -272,13 +272,14 @@ export default Kapsule({
           point: state.pointLabel,
           arc: state.arcLabel,
           polygon: state.polygonLabel,
-          hexBinPoints: state.hexLabel,
+          hexbin: state.hexLabel,
           label: state.labelLabel,
           custom: state.customLayerLabel
         };
 
         const globeObj = getGlobeObj(obj);
         const objType = globeObj.__globeObjType;
+
         return globeObj && objAccessors.hasOwnProperty(objType) && dataAccessors.hasOwnProperty(objType)
           ? accessorFn(objAccessors[objType])(dataAccessors[objType](globeObj.__data)) || ''
           : '';
@@ -289,7 +290,7 @@ export default Kapsule({
           point: state.onPointHover,
           arc: state.onArcHover,
           polygon: state.onPolygonHover,
-          hexBinPoints: state.onHexHover,
+          hexbin: state.onHexHover,
           label: state.onLabelHover,
           custom: state.onCustomLayerHover
         };
@@ -297,7 +298,6 @@ export default Kapsule({
         let hoverObj = getGlobeObj(obj);
 
         // ignore non-recognised obj types
-        //hoverObj && console.log(hoverObj.__globeObjType);
         hoverObj && !hoverObjFns.hasOwnProperty(hoverObj.__globeObjType) && (hoverObj = null);
 
         if (hoverObj !== state.hoverObj) {
@@ -323,7 +323,7 @@ export default Kapsule({
           point: state.onPointClick,
           arc: state.onArcClick,
           polygon: state.onPolygonClick,
-          hexBinPoints: state.onHexClick,
+          hexbin: state.onHexClick,
           label: state.onLabelClick,
           custom: state.onCustomLayerClick
         };
@@ -340,7 +340,7 @@ export default Kapsule({
           point: state.onPointRightClick,
           arc: state.onArcRightClick,
           polygon: state.onPolygonRightClick,
-          hexBinPoints: state.onHexRightClick,
+          hexbin: state.onHexRightClick,
           label: state.onLabelRightClick,
           custom: state.onCustomLayerRightClick
         };
