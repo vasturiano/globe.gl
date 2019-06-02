@@ -1,8 +1,6 @@
 <head>
   <style> body { margin: 0; } </style>
 
-  <script src="//unpkg.com/d3"></script>
-
   <script src="//unpkg.com/globe.gl"></script>
   <!--<script src="../../dist/globe.gl.js"></script>-->
 </head>
@@ -11,17 +9,8 @@
 <div id="globeViz"></div>
 
 <script>
-  const colorScale = d3.scaleSequentialSqrt(d3.interpolateYlOrRd);
-
-  // GDP per capita (avoiding countries with small pop)
-  const getVal = feat => feat.properties.GDP_MD_EST / Math.max(1e5, feat.properties.POP_EST);
-
-  fetch('../datasets/ne_110m_populated_places_simple.geojson').then(res => res.json()).then(places =>
-  {
-//    const maxVal = Math.max(...countries.features.map(getVal));
-//    colorScale.domain([0, maxVal]);
-
-    const world = Globe()
+  fetch('../datasets/ne_110m_populated_places_simple.geojson').then(res => res.json()).then(places => {
+    Globe()
       .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
       .labelsData(places.features)
       .labelLat(d => d.properties.latitude)
