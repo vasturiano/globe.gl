@@ -63,6 +63,20 @@ const linkedGlobeProps = Object.assign(...[
   'hexAltitude',
   'hexBinMerge',
   'hexTransitionDuration',
+  'labelsData',
+  'labelLat',
+  'labelLng',
+  'labelAltitude',
+  'labelRotation',
+  'labelText',
+  'labelSize',
+  'labelTypeFace',
+  'labelColor',
+  'labelResolution',
+  'labelIncludeDot',
+  'labelDotRadius',
+  'labelDotOrientation',
+  'labelsTransitionDuration',
   'customLayerData',
   'customThreeObject',
   'customThreeObjectUpdate'
@@ -102,6 +116,10 @@ export default Kapsule({
     onHexClick: { default: () => {}, triggerUpdate: false },
     onHexRightClick: { default: () => {}, triggerUpdate: false },
     onHexHover: { default: () => {}, triggerUpdate: false },
+    labelLabel: { triggerUpdate: false },
+    onLabelClick: { default: () => {}, triggerUpdate: false },
+    onLabelRightClick: { default: () => {}, triggerUpdate: false },
+    onLabelHover: { default: () => {}, triggerUpdate: false },
     customLayerLabel: { default: 'name', triggerUpdate: false },
     onCustomLayerClick: { default: () => {}, triggerUpdate: false },
     onCustomLayerRightClick: { default: () => {}, triggerUpdate: false },
@@ -176,6 +194,7 @@ export default Kapsule({
       this.arcsData([]);
       this.polygonsData([]);
       this.hexBinPointsData([]);
+      this.labelsData([]);
       this.customLayerData([]);
     },
     ...linkedGlobeMethods
@@ -230,6 +249,7 @@ export default Kapsule({
       arc: d => d,
       polygon: d => d.data,
       hexBinPoints: d => d,
+      label: d => d,
       custom: d => d
     };
 
@@ -253,6 +273,7 @@ export default Kapsule({
           arc: state.arcLabel,
           polygon: state.polygonLabel,
           hexBinPoints: state.hexLabel,
+          label: state.labelLabel,
           custom: state.customLayerLabel
         };
 
@@ -269,6 +290,7 @@ export default Kapsule({
           arc: state.onArcHover,
           polygon: state.onPolygonHover,
           hexBinPoints: state.onHexHover,
+          label: state.onLabelHover,
           custom: state.onCustomLayerHover
         };
 
@@ -302,6 +324,7 @@ export default Kapsule({
           arc: state.onArcClick,
           polygon: state.onPolygonClick,
           hexBinPoints: state.onHexClick,
+          label: state.onLabelClick,
           custom: state.onCustomLayerClick
         };
 
@@ -318,6 +341,7 @@ export default Kapsule({
           arc: state.onArcRightClick,
           polygon: state.onPolygonRightClick,
           hexBinPoints: state.onHexRightClick,
+          label: state.onLabelRightClick,
           custom: state.onCustomLayerRightClick
         };
 
