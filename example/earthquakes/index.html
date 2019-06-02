@@ -1,0 +1,42 @@
+<head>
+  <style> body { margin: 0; } </style>
+
+  <script src="//unpkg.com/d3"></script>
+  <script src="//unpkg.com/polished/dist/polished.js"></script>
+
+  <script src="//unpkg.com/globe.gl"></script>
+  <!--<script src="../../dist/globe.gl.js"></script>-->
+</head>
+
+<body>
+  <div id="globeViz"></div>
+
+  <script>
+    const weightColor = d3.scaleLinear()
+      .domain([0, 30])
+      .range(['lightblue', 'darkred']);
+
+    const getAlt = d => d.elevation * 5e-5;
+
+    const getTooltip = d => `
+      <b>${d.points.length}</b> earthquakes in the past month:<ul><li>
+        ${d.points.map(d => d.properties.title).join('</li><li>')}
+      </li></ul>
+    `;
+
+    const myGlobe = Globe()
+      .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
+      .hexBinPointLat(d => d.geometry.coordinates[1])
+      .hexBinPointLng(d => d.geometry.coordinates[0])
+      .hexBinPointWeight(d => d.properties.mag)
+      .hexColor(d => weightColor(d.sumWeight))
+      .hexRadius(1/3)
+      .hexLabel(getTooltip)
+      (document.getElementById('globeViz'));
+
+    fetch('//earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_month.geojson').then(res => res.json()).then(equakes => {
+      myGlobe.hexBinPointsData(equakes.features);
+    });
+
+  </script>
+</body>
