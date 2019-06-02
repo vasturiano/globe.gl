@@ -1,0 +1,37 @@
+<head>
+  <style> body { margin: 0; } </style>
+
+  <script src="//unpkg.com/d3"></script>
+
+  <script src="//unpkg.com/globe.gl"></script>
+  <!--<script src="../../dist/globe.gl.js"></script>-->
+</head>
+
+<body>
+  <div id="globeViz"></div>
+
+  <script>
+    const catColor = d3.scaleOrdinal(d3.schemeCategory10);
+
+    const myGlobe = Globe()
+      .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
+      .pointLat('lat')
+      .pointLng('lon')
+      .pointAltitude(d => d.elevation * 5e-5)
+      .pointRadius(0.2)
+      .pointColor(d => catColor(d.type))
+      .pointLabel(d => `
+        <div style="text-align: center">
+          <div><b>${d.name}</b>, ${d.country}</div>
+          <div>(${d.type})</div>
+          <div>Elevation: <em>${d.elevation}</em>m</div>
+        </div>
+        `)
+      (document.getElementById('globeViz'));
+
+    fetch('../datasets/world_volcanoes.json').then(res => res.json()).then(volcanoes => {
+      myGlobe.pointsData(volcanoes);
+    });
+
+  </script>
+</body>
