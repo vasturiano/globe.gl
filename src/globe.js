@@ -147,7 +147,7 @@ export default Kapsule({
       state.renderObjs.tick();
       state.animationFrameRequestId = requestAnimationFrame(this._animationCycle);
     },
-    pointOfView: function(state, geoCoords = {}, transitionDuration) {
+    pointOfView: function(state, geoCoords = {}, transitionDuration = 0) {
       const curGeoCoords = getGeoCoords();
 
       // Getter
