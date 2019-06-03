@@ -1,39 +1,36 @@
 <head>
   <style> body { margin: 0; } </style>
 
+  <script src="//unpkg.com/d3"></script>
   <script src="//unpkg.com/d3-dsv"></script>
-  <script src="//unpkg.com/chroma-js"></script>
+
   <script src="//unpkg.com/globe.gl"></script>
   <!--<script src="../../dist/globe.gl.js"></script>-->
-
 </head>
 
 <body>
-<div id="globeViz"></div>
+  <div id="globeViz"></div>
 
-<script>
-  fetch('./population2000.csv').then(res => res.text())
-    .then(csv => d3.csvParse(csv, d => ({
-      lat: +d.lat,
-      lng: +d.lng,
-      pop: +d.value
-    })))
-    .then(data => {
-      const globe = Globe()
-        .globeImageUrl('//unpkg.com/three-globe/example/img/earth-dark.jpg')
-        .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
-        .pointsData(data)
-        .pointAltitude(d => d.pop)
-        .pointRadius(0.12)
-        .pointColor(d => chroma.hsl((0.6 - d.pop * 0.5) * 360, 1.0, 0.5).hex())
-        .pointsMerge(true) // rendering performance
-        .enablePointerInteraction(false)
-        (document.getElementById('globeViz'));
+  <script>
+    const weightColor = d3.scaleSequentialSqrt(d3.interpolateYlOrRd)
+      .domain([0, 1e7]);
 
-      // Add auto-rotation
-      globe.controls().autoRotate = true;
-      globe.controls().autoRotateSpeed = 0.3;
-    });
+    const world = Globe()
+      (document.getElementById('globeViz'))
+      .globeImageUrl('//unpkg.com/three-globe/example/img/earth-dark.jpg')
+      .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
+      .hexBinPointWeight('pop')
+      .hexAltitude(d => d.sumWeight * 6e-8)
+      .hexRadius(0.2)
+      .hexColor(d => weightColor(d.sumWeight))
+      .enablePointerInteraction(false); // performance improvement
 
-</script>
+    fetch('../datasets/world_population.csv').then(res => res.text())
+      .then(csv => d3.csvParse(csv, ({ lat, lng, pop }) => ({ lat: +lat, lng: +lng, pop: +pop })))
+      .then(data => world.hexBinPointsData(data));
+
+    // Add auto-rotation
+    world.controls().autoRotate = true;
+    world.controls().autoRotateSpeed = 0.3;
+  </script>
 </body>
