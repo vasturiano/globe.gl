@@ -163,8 +163,6 @@ export default Kapsule({
           while ((curGeoCoords.lng - finalGeoCoords.lng) > 180) curGeoCoords.lng -= 360;
           while ((curGeoCoords.lng - finalGeoCoords.lng) < -180) curGeoCoords.lng += 360;
 
-          console.log(curGeoCoords.lng - finalGeoCoords.lng);
-
           new TWEEN.Tween(curGeoCoords)
             .to(finalGeoCoords, transitionDuration)
             .easing(TWEEN.Easing.Cubic.InOut)
