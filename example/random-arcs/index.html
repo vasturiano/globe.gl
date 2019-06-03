@@ -23,6 +23,9 @@
       .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
       .arcsData(arcsData)
       .arcColor('color')
+      .arcDashLength(() => Math.random())
+      .arcDashGap(() => Math.random())
+      .arcDashAnimateTime(() => Math.random() * 4000 + 500)
     (document.getElementById('globeViz'))
 
   </script>
