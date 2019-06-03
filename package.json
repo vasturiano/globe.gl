@@ -40,7 +40,7 @@
     "kapsule": "^1.10.0",
     "three": "^0.105.1",
     "three-globe": "^1.8.5",
-    "three-render-objects": "^1.4.5"
+    "three-render-objects": "^1.5.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
