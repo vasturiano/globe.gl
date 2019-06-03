@@ -267,6 +267,7 @@ export default Kapsule({
         const isBackground = o => !o; // || o.__globeObjType === 'globe' || o.__globeObjType === 'atmosphere';
         return isBackground(aObj) - isBackground(bObj);
       })
+      .lineHoverPrecision(0.2)
       .tooltipContent(obj => {
         const objAccessors = {
           point: state.pointLabel,
