@@ -14,7 +14,7 @@
 <script>
 
   const COUNTRY = 'United States';
-  const OPACITY = 0.06;
+  const OPACITY = 0.1;
 
   const myGlobe = Globe()
     (document.getElementById('globeViz'))
@@ -27,6 +27,10 @@
     .arcStartLng(d => +d.srcAirport.lng)
     .arcEndLat(d => +d.dstAirport.lat)
     .arcEndLng(d => +d.dstAirport.lng)
+    .arcDashLength(0.25)
+    .arcDashGap(1)
+    .arcDashInitialGap(() => Math.random())
+    .arcDashAnimateTime(4000)
     .arcColor(d => [`rgba(0, 255, 0, ${OPACITY})`, `rgba(255, 0, 0, ${OPACITY})`])
     .arcsTransitionDuration(0)
 
