@@ -15,15 +15,15 @@ This library is a convenience wrapper around the [three-globe](https://github.co
 Check out the examples:
 * [Basic](https://vasturiano.github.io/globe.gl/example/basic/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/basic/index.html))
 * [Arc Links](https://vasturiano.github.io/globe.gl/example/random-arcs/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/random-arcs/index.html))
-* [Highlight links](https://vasturiano.github.io/globe.gl/example/airline-routes/highlight-links.html) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/airline-routes/highlight-links.html)
+* [Highlight links](https://vasturiano.github.io/globe.gl/example/airline-routes/highlight-links.html) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/airline-routes/highlight-links.html))
 * [Choropleth](https://vasturiano.github.io/globe.gl/example/choropleth-countries/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/choropleth-countries/index.html))
 * [Elevated Polygons](https://vasturiano.github.io/globe.gl/example/countries-population/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/countries-population/index.html))
 * [Map Labels](https://vasturiano.github.io/globe.gl/example/world-cities/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/world-cities/index.html))
-* [Custom Layer](https://vasturiano.github.io/globe.gl/example/custom/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/custom/index.html))
+* [Custom Layer](https://vasturiano.github.io/globe.gl/example/custom-layer/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/custom-layer/index.html))
 * [World Population](https://vasturiano.github.io/globe.gl/example/world-population/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/world-population/index.html))
 * [Recent Earthquakes](https://vasturiano.github.io/globe.gl/example/earthquakes/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/earthquakes/index.html))
 * [World Volcanoes](https://vasturiano.github.io/globe.gl/example/volcanoes/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/volcanoes/index.html))
-* [US outbound international airline routes](https://vasturiano.github.io/globe.gl/example/airline-routes/us-international-outbound.html) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/airline-routes/us-international-outbound.html)
+* [US outbound international airline routes](https://vasturiano.github.io/globe.gl/example/airline-routes/us-international-outbound.html) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/airline-routes/us-international-outbound.html))
 
 ## Quick start
 
@@ -199,7 +199,7 @@ Globe({ configOptions })(<domElement>)
 ### Custom Layer
 
 <p align="center">
-   <a href="//vasturiano.github.io/globe.gl/example/custom/"><img width="70%" src="https://vasturiano.github.io/globe.gl/example/custom/preview.png"></a>
+   <a href="//vasturiano.github.io/globe.gl/example/custom-layer/"><img width="70%" src="https://vasturiano.github.io/globe.gl/example/custom-layer/preview.png"></a>
 </p>
 
 | Method | Description | Default |
