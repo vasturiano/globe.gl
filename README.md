@@ -25,6 +25,8 @@ Check out the examples:
 * [World Volcanoes](https://vasturiano.github.io/globe.gl/example/volcanoes/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/volcanoes/index.html))
 * [US outbound international airline routes](https://vasturiano.github.io/globe.gl/example/airline-routes/us-international-outbound.html) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/airline-routes/us-international-outbound.html))
 
+See also the [React bindings](https://github.com/vasturiano/react-globe.gl).
+
 ## Quick start
 
 ```
