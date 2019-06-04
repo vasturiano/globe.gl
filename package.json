@@ -1,6 +1,6 @@
 {
   "name": "globe.gl",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "description": "UI component for Globe Data Visualization using ThreeJS/WebGL",
   "unpkg": "dist/globe.gl.min.js",
   "main": "dist/globe.gl.common.js",
@@ -33,7 +33,9 @@
     "build-module": "rollup -c rollup.config.module.js",
     "prepare": "npm run build && npm run minify && npm run build-module"
   },
-  "files": [ "dist/**/*" ],
+  "files": [
+    "dist/**/*"
+  ],
   "dependencies": {
     "@tweenjs/tween.js": "^17.4.0",
     "accessor-fn": "^1.2.2",
