@@ -38,8 +38,8 @@
     "@tweenjs/tween.js": "^17.4.0",
     "accessor-fn": "^1.2.2",
     "kapsule": "^1.10.0",
-    "three": "^0.105.1",
-    "three-globe": "^1.8.5",
+    "three": "^0.105.2",
+    "three-globe": "^1.8.8",
     "three-render-objects": "^1.5.1"
   },
   "devDependencies": {

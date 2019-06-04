@@ -645,7 +645,7 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@tweenjs/tween.js@^17.3.0", "@tweenjs/tween.js@^17.4.0":
+"@tweenjs/tween.js@^17.4.0":
   version "17.4.0"
   resolved "https://registry.yarnpkg.com/@tweenjs/tween.js/-/tween.js-17.4.0.tgz#2e9ab3f2111906b30dfe1ef3259a9781dd211d35"
   integrity sha512-J3fzl1F6wvh8KXVVcIuHN12xi1ZDcPA/0Vix+ZcJYwZWVHUwfIqfvzYXXEw7ybeev6477KCTt9fKydU+ajUqcg==
@@ -1430,7 +1430,7 @@ path-parse@^1.0.6:
   resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.6.tgz#d62dbb5679405d72c4737ec58600e9ddcf06d24c"
   integrity sha512-GSmOT2EbHrINBf9SR7CDELwlJ8AENk3Qn7OikK4nFYAu3Ote2+JYNVvkpAEQm3/TLNEJFD/xZJjzyxg3KBWOzw==
 
-polished@^3.0.3:
+polished@^3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/polished/-/polished-3.4.0.tgz#29b2a028ee0408df5dded55a2a25e913bc6749a9"
   integrity sha512-GiuavmunMIKMOEoSPkXoqBYM2ZcI4YIwCaiwmTOQ55Zq4HG2kD0YZt3WlLZ2l3U9XhJ1LM/fgjCFHHffiZP0YQ==
@@ -1748,10 +1748,10 @@ three-fly-controls@^1.1.0:
   resolved "https://registry.yarnpkg.com/three-fly-controls/-/three-fly-controls-1.1.0.tgz#8ea796da94ac017f5ea44ec015b1db5e19a42bd0"
   integrity sha1-jqeW2pSsAX9epE7AFbHbXhmkK9A=
 
-three-globe@^1.8.5:
-  version "1.8.5"
-  resolved "https://registry.yarnpkg.com/three-globe/-/three-globe-1.8.5.tgz#7861991c6ce5eeb5fc549b3b674459eefa11efc7"
-  integrity sha512-YJhxVQ01sGwkO9u/2lKS4ZhqSM5O1y3Pgi3r1KkkH5lnSRJ8SrakWZulW/Ub274TiQeQjSMdPBsQ3ZztLh4s/A==
+three-globe@^1.8.8:
+  version "1.8.8"
+  resolved "https://registry.yarnpkg.com/three-globe/-/three-globe-1.8.8.tgz#c4d254fa3a4ba72d121939e869f03b3b1b145e24"
+  integrity sha512-ld9HVdxp3KKtqoKsFiVXGj6Wi9WfmHd056437D5zdJnr7r4Im5BBC3XVHD+7rupm9XMaYkTYxj8SWJ5RlTTDGA==
   dependencies:
     "@tweenjs/tween.js" "^17.4.0"
     accessor-fn "^1.2.2"
@@ -1771,28 +1771,28 @@ three-orbit-controls@^82.1.0:
   resolved "https://registry.yarnpkg.com/three-orbit-controls/-/three-orbit-controls-82.1.0.tgz#11a7f33d0a20ecec98f098b37780f6537374fab4"
   integrity sha1-EafzPQog7OyY8Jizd4D2U3N0+rQ=
 
-three-render-objects@^1.4.5:
-  version "1.4.5"
-  resolved "https://registry.yarnpkg.com/three-render-objects/-/three-render-objects-1.4.5.tgz#f45445c46ceae569cf02bb485378631202a8733f"
-  integrity sha512-dHsLG1MDofFvFfSdvAqnl9qn7qhWhymEcbK/f4DvzlvrBvJdO3YdOhHj35xfmK7KMlcLsDc7k5B4+154msKYyQ==
+three-render-objects@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/three-render-objects/-/three-render-objects-1.5.1.tgz#d8fcb3ceb1475dfeccbb75e2533c04e32f5edd9f"
+  integrity sha512-/3ubyjK3B7CdBIV5jHTvjbkR53qngZsZGzQmzLEHA6vC53SZBrQUf4c951oV83YAzS7lfz7F8zZjG1Tj3T/MLg==
   dependencies:
-    "@tweenjs/tween.js" "^17.3.0"
+    "@tweenjs/tween.js" "^17.4.0"
     accessor-fn "^1.2.2"
     kapsule "^1.10.0"
-    polished "^3.0.3"
+    polished "^3.4.0"
     three-fly-controls "^1.1.0"
     three-orbit-controls "^82.1.0"
-    three-trackballcontrols "^0.0.7"
+    three-trackballcontrols "^0.0.8"
 
-three-trackballcontrols@^0.0.7:
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/three-trackballcontrols/-/three-trackballcontrols-0.0.7.tgz#42cae1f6856d5f889eaae3a0e2fca9d214793e91"
-  integrity sha512-vWs5XkBnhFb5TkqiEHcvZf50FcOVlXTYL4OT4ydeFr0r7j5H6HYf6ODYnYr7todUECxNf/rbh8zSQKFb0NW83w==
+three-trackballcontrols@^0.0.8:
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/three-trackballcontrols/-/three-trackballcontrols-0.0.8.tgz#4af85312d211387e451023f9bef576094993a118"
+  integrity sha512-9my4rB/ILaJw8E6khOcC6d8F8kEe6BvRtCer9bFJGZOh9txy4BqzwPrG7d8YCKK9MfcyTUoLsB5LKIsbtsZRTg==
 
-three@^0.105.1:
-  version "0.105.1"
-  resolved "https://registry.yarnpkg.com/three/-/three-0.105.1.tgz#323fc31e19b25eec408a84f8401ea6dbe42a32bb"
-  integrity sha512-Oa6dfF3qsgS/mmeNB+nKgcQBq71Ucxv8TdmVS+lNjLzG/GAIgvrTDTKmtvxXd7tXDv7RXmEprcmzO3JiT0UDsA==
+three@^0.105.2:
+  version "0.105.2"
+  resolved "https://registry.yarnpkg.com/three/-/three-0.105.2.tgz#d135f1549bdcf5a9acd904ba3dbf9198a0268984"
+  integrity sha512-L3Al37k4g3hVbgFFS251UVtIc25chhyN0/RvXzR0C+uIBToV6EKDG+MZzEXm9L2miGUVMK27W46/VkP6WUZXMg==
 
 tinycolor2@^1.4.1:
   version "1.4.1"
