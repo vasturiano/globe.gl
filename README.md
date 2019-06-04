@@ -3,7 +3,10 @@
 [![NPM](https://nodei.co/npm/globe.gl.png?compact=true)](https://nodei.co/npm/globe.gl/)
 
 <p align="center">
-     <a href="//vasturiano.github.io/globe.gl/example/world-population/"><img width="100%" src="https://vasturiano.github.io/globe.gl/example/world-population/sshot.png"></a>
+   <a href="//vasturiano.github.io/globe.gl/example/world-population/"><img width="48%" src="https://vasturiano.github.io/globe.gl/example/world-population/preview.png"></a>
+   <a href="//vasturiano.github.io/globe.gl/example/airline-routes/us-international-outbound.html"><img width="48%" src="https://vasturiano.github.io/globe.gl/example/airline-routes/preview.png"></a>
+   <a href="//vasturiano.github.io/globe.gl/example/countries-population/"><img width="48%" src="https://vasturiano.github.io/globe.gl/example/countries-population/preview.png"></a>
+   <a href="//vasturiano.github.io/globe.gl/example/volcanoes/"><img width="48%" src="https://vasturiano.github.io/globe.gl/example/volcanoes/preview.png"></a>
 </p>
 
 A web component to represent data visualization layers on a 3-dimensional globe in a spherical projection.
@@ -11,8 +14,16 @@ This library is a convenience wrapper around the [three-globe](https://github.co
 
 Check out the examples:
 * [Basic](https://vasturiano.github.io/globe.gl/example/basic/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/basic/index.html))
+* [Arc Links](https://vasturiano.github.io/globe.gl/example/random-arcs/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/random-arcs/index.html))
+* [Highlight links](https://vasturiano.github.io/globe.gl/example/airline-routes/highlight-links.html) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/airline-routes/highlight-links.html)
+* [Choropleth](https://vasturiano.github.io/globe.gl/example/choropleth-countries/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/choropleth-countries/index.html))
+* [Elevated Polygons](https://vasturiano.github.io/globe.gl/example/countries-population/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/countries-population/index.html))
+* [Map Labels](https://vasturiano.github.io/globe.gl/example/world-cities/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/world-cities/index.html))
+* [Custom Layer](https://vasturiano.github.io/globe.gl/example/custom/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/custom/index.html))
 * [World Population](https://vasturiano.github.io/globe.gl/example/world-population/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/world-population/index.html))
-* [Arc Links](https://vasturiano.github.io/globe.gl/example/arcs/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/arcs/index.html))
+* [Recent Earthquakes](https://vasturiano.github.io/globe.gl/example/earthquakes/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/earthquakes/index.html))
+* [World Volcanoes](https://vasturiano.github.io/globe.gl/example/volcanoes/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/volcanoes/index.html))
+* [US outbound international airline routes](https://vasturiano.github.io/globe.gl/example/airline-routes/us-international-outbound.html) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/airline-routes/us-international-outbound.html)
 
 ## Quick start
 
@@ -38,15 +49,18 @@ myGlobe(<myDOMElement>)
 ## API reference
 
 ### Initialisation
+
 ```
 Globe({ configOptions })(<domElement>)
 ```
+
 | Config options | Description | Default |
 | --- | --- | :--: |
 | <b>rendererConfig</b>: <i>object</i> | Configuration parameters to pass to the [ThreeJS WebGLRenderer](https://threejs.org/docs/#api/en/renderers/WebGLRenderer) constructor. | `{ antialias: true, alpha: true }` |
 | <b>animateIn</b>: <i>boolean</i> | Whether to animate the globe initialization, by scaling and rotating the globe into its inital position. | `true` |
 
 ### Container layout
+
 | Method | Description | Default |
 | --- | --- | :--: |
 | <b>width</b>([<i>px</i>]) | Getter/setter for the canvas width. | *&lt;window width&gt;* |
@@ -54,6 +68,7 @@ Globe({ configOptions })(<domElement>)
 | <b>backgroundColor</b>([<i>str</i>]) | Getter/setter for the background color. | `#000011` |
 
 ### Globe Layer
+
 | Method | Description | Default |
 | --- | --- | :--: |
 | <b>globeImageUrl</b>([<i>url</i>]) | Getter/setter for the URL of the image used in the material that wraps the globe. If no image is provided, the globe is represented as a black sphere. | `null` |
@@ -62,6 +77,11 @@ Globe({ configOptions })(<domElement>)
 | <b>showGraticules</b>([<i>boolean</i>]) | Getter/setter for whether to show a graticule grid demarking latitude and longitude lines at every 10 degrees. | `false` |
 
 ### Points Layer
+
+<p align="center">
+   <a href="//vasturiano.github.io/globe.gl/example/basic/"><img width="70%" src="https://vasturiano.github.io/globe.gl/example/basic/preview.png"></a>
+</p>
+
 | Method | Description | Default |
 | --- | --- | :--: |
 | <b>pointsData</b>([<i>array</i>]) | Getter/setter for the list of points to represent in the points map layer. Each point is displayed as a cylindrical 3D object rising perpendicularly from the surface of the globe. | `[]` |
@@ -79,6 +99,11 @@ Globe({ configOptions })(<domElement>)
 | <b>onPointHover</b>(<i>fn</i>) | Callback function for point mouse over events. The point object (or `null` if there's no point under the mouse line of sight) is included as the first argument, and the previous point object (or `null`) as second argument: `onPointHover(point, prevPoint)`. Only works if `pointsMerge` is disabled. | - |
 
 ### Arcs Layer
+
+<p align="center">
+   <a href="//vasturiano.github.io/globe.gl/example/random-arcs/"><img width="70%" src="https://vasturiano.github.io/globe.gl/example/random-arcs/preview.png"></a>
+</p>
+
 | Method | Description | Default |
 | --- | --- | :--: |
 | <b>arcsData</b>([<i>array</i>]) | Getter/setter for the list of links to represent in the arcs map layer. Each link is displayed as an arc line that rises from the surface of the globe, connecting the start and end coordinates. | `[]` |
@@ -103,6 +128,11 @@ Globe({ configOptions })(<domElement>)
 | <b>onArcHover</b>(<i>fn</i>) | Callback function for arc mouse over events. The arc object (or `null` if there's no arc under the mouse line of sight) is included as the first argument, and the previous arc object (or `null`) as second argument: `onArcHover(arc, prevArc)`. | - |
 
 ### Polygons Layer
+
+<p align="center">
+   <a href="//vasturiano.github.io/globe.gl/example/choropleth-countries/"><img width="70%" src="https://vasturiano.github.io/globe.gl/example/choropleth-countries/preview.png"></a>
+</p>
+
 | Method | Description | Default |
 | --- | --- | :--: |
 | <b>polygonsData</b>([<i>array</i>]) | Getter/setter for the list of polygon shapes to represent in the polygons map layer. Each polygon is displayed as a shaped cone that extrudes from the surface of the globe. | `[]` |
@@ -117,6 +147,11 @@ Globe({ configOptions })(<domElement>)
 | <b>onPolygonHover</b>(<i>fn</i>) | Callback function for polygon mouse over events. The polygon object (or `null` if there's no polygon under the mouse line of sight) is included as the first argument, and the previous polygon object (or `null`) as second argument: `onPolygonHover(polygon, prevPolygon)`. | - |
 
 ### Hex Bin Layer
+
+<p align="center">
+   <a href="//vasturiano.github.io/globe.gl/example/earthquakes/"><img width="70%" src="https://vasturiano.github.io/globe.gl/example/earthquakes/preview.png"></a>
+</p>
+
 | Method | Description | Default |
 | --- | --- | :--: |
 | <b>hexBinPointsData</b>([<i>array</i>]) | Getter/setter for the list of points to aggregate using the hex bin map layer. Each point is added to an hexagonal prism 3D object that represents all the points within a tesselated portion of the space. | `[]` |
@@ -135,6 +170,11 @@ Globe({ configOptions })(<domElement>)
 | <b>onHexHover</b>(<i>fn</i>) | Callback function for hexagon mouse over events. The hex object (or `null` if there's no hex under the mouse line of sight) is included as the first argument, and the previous hex object (or `null`) as second argument: `onHexHover(hex, prevHex)`. Each hex object includes all points binned, and has the syntax: `{ points, sumWeight, center: { lat, lng } }`. Only works if `hexBinMerge` is disabled. | - |
 
 ### Labels Layer
+
+<p align="center">
+   <a href="//vasturiano.github.io/globe.gl/example/world-cities/"><img width="70%" src="https://vasturiano.github.io/globe.gl/example/world-cities/preview.png"></a>
+</p>
+
 | Method | Description | Default |
 | --- | --- | :--: |
 | <b>labelsData</b>([<i>array</i>]) | Getter/setter for the list of label objects to represent in the labels map layer. | `[]` |
@@ -157,6 +197,11 @@ Globe({ configOptions })(<domElement>)
 | <b>onLabelHover</b>(<i>fn</i>) | Callback function for label mouse over events. The label object (or `null` if there's no label under the mouse line of sight) is included as the first argument, and the previous label object (or `null`) as second argument: `onlabelHover(label, prevlabel)`. | - |
 
 ### Custom Layer
+
+<p align="center">
+   <a href="//vasturiano.github.io/globe.gl/example/custom/"><img width="70%" src="https://vasturiano.github.io/globe.gl/example/custom/preview.png"></a>
+</p>
+
 | Method | Description | Default |
 | --- | --- | :--: |
 | <b>customLayerData</b>([<i>array</i>]) | Getter/setter for the list of items to represent in the custom map layer. Each item is rendered according to the `customThreeObject` method. | `[]` |
@@ -168,6 +213,7 @@ Globe({ configOptions })(<domElement>)
 | <b>onCustomLayerHover</b>(<i>fn</i>) | Callback function for custom object mouse over events. The custom object (or `null` if there's no object under the mouse line of sight) is included as the first argument, and the previous custom object (or `null`) as second argument: `onCustomLayerHover(obj, prevObj)`. | - |
 
 ### Render control
+
 | Method | Description | Default |
 | --- | --- | :--: |
 | <b>pointOfView</b>({ <i>lat</i>, <i>lng</i>, <i>altitude</i> }, [<i>ms</i>]) | Getter/setter for the camera position, in terms of geographical `lat`, `lng`, `altitude` coordinates. Each of the coordinates is optional, allowing for motion in just some direction. The 2nd optional argument defines the duration of the transition (in ms) to animate the camera motion. A value of 0 (default) moves the camera immediately to the final position. | By default the camera will aim at the cross between the equator and the prime meridian (`0,0` coordinates), at an altitude of `2.5` globe radii. |
@@ -180,6 +226,7 @@ Globe({ configOptions })(<domElement>)
 | <b>controls</b>() | Access the internal ThreeJS [orbit controls object](https://threejs.org/docs/#examples/controls/OrbitControls). ||
 
 ### Utility
+
 | Method | Description |
 | --- | --- |
 | <b>getCoords</b>(<i>lat</i>, <i>lng</i> [,<i>altitude</i>]) | Utility method to translate spherical coordinates. Given a pair of latitude/longitude coordinates and optionally altitude (in terms of globe radius units), returns the equivalent `{x, y, z}` cartesian spatial coordinates. ||
