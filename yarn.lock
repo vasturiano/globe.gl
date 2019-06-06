@@ -1580,10 +1580,10 @@ rollup-pluginutils@^2.8.0:
   dependencies:
     estree-walker "^0.6.1"
 
-rollup@^1.13.1:
-  version "1.13.1"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-1.13.1.tgz#86a474c29df0f303ed31e4c8be5d81c1038beae8"
-  integrity sha512-TWBmVU5WS4wOy5Ij2qxrJYRUn/keECvStcXDpJSwgr95JZ6VFf1PDewiAk4VPf5vxr7drRJlxh9kYpxHveYOOg==
+rollup@^1.14.2:
+  version "1.14.2"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-1.14.2.tgz#e97c496a6a6d6554c9750d0a028dc1848df04b42"
+  integrity sha512-rFFIbi8UqFdZMRwYj+wVGQFTPBu++CDfbdlM10OZIpxrsRIgafos3cbGhXWxXo5jyRBB98u+0lEkdsvdE0IiyQ==
   dependencies:
     "@types/estree" "0.0.39"
     "@types/node" "^12.0.3"
@@ -1748,10 +1748,10 @@ three-fly-controls@^1.1.0:
   resolved "https://registry.yarnpkg.com/three-fly-controls/-/three-fly-controls-1.1.0.tgz#8ea796da94ac017f5ea44ec015b1db5e19a42bd0"
   integrity sha1-jqeW2pSsAX9epE7AFbHbXhmkK9A=
 
-three-globe@^1.8.8:
-  version "1.8.8"
-  resolved "https://registry.yarnpkg.com/three-globe/-/three-globe-1.8.8.tgz#c4d254fa3a4ba72d121939e869f03b3b1b145e24"
-  integrity sha512-ld9HVdxp3KKtqoKsFiVXGj6Wi9WfmHd056437D5zdJnr7r4Im5BBC3XVHD+7rupm9XMaYkTYxj8SWJ5RlTTDGA==
+three-globe@^1.8.9:
+  version "1.8.9"
+  resolved "https://registry.yarnpkg.com/three-globe/-/three-globe-1.8.9.tgz#16c32fe27b165b5e871bb88eb37efa07a2dab291"
+  integrity sha512-YLUudjwLfAHTq/f7yGtsZ4c+zu9txsrYqTkXWj9Ku+gBGkYXT/sPIG81H5djVd0/ye6TDocHbd8H9i9EH6Oa+w==
   dependencies:
     "@tweenjs/tween.js" "^17.4.0"
     accessor-fn "^1.2.2"
@@ -1771,10 +1771,10 @@ three-orbit-controls@^82.1.0:
   resolved "https://registry.yarnpkg.com/three-orbit-controls/-/three-orbit-controls-82.1.0.tgz#11a7f33d0a20ecec98f098b37780f6537374fab4"
   integrity sha1-EafzPQog7OyY8Jizd4D2U3N0+rQ=
 
-three-render-objects@^1.5.1:
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/three-render-objects/-/three-render-objects-1.5.1.tgz#d8fcb3ceb1475dfeccbb75e2533c04e32f5edd9f"
-  integrity sha512-/3ubyjK3B7CdBIV5jHTvjbkR53qngZsZGzQmzLEHA6vC53SZBrQUf4c951oV83YAzS7lfz7F8zZjG1Tj3T/MLg==
+three-render-objects@^1.5.2:
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/three-render-objects/-/three-render-objects-1.5.2.tgz#113207869f8a9570690665c77218de401d0b9d6b"
+  integrity sha512-9nD1+SvpG3zfR5U374PAyiFjHF0JrtE65EcIext28/q9g3jhomAxYfXXTA+wSw+8wmM2WjbeTShECOWmKWiohQ==
   dependencies:
     "@tweenjs/tween.js" "^17.4.0"
     accessor-fn "^1.2.2"
