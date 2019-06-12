@@ -1,5 +1,5 @@
-# Globe.GL
-===========================
+Globe.GL
+========
 
 [![NPM package][npm-img]][npm-url]
 [![Build Size][build-size-img]][build-size-url]
