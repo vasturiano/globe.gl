@@ -1,9 +1,9 @@
 <head>
   <style> body { margin: 0; } </style>
 
-  <script src="//unpkg.com/d3"></script>
+  <script src="//cdn.jsdelivr.net/npm/d3"></script>
 
-  <script src="//unpkg.com/globe.gl"></script>
+  <script src="//cdn.jsdelivr.net/npm/globe.gl"></script>
   <!--<script src="../../dist/globe.gl.js"></script>-->
 </head>
 
@@ -16,7 +16,7 @@
       .range(['lightblue', 'darkred']);
 
     const myGlobe = Globe()
-      .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
+      .globeImageUrl('//cdn.jsdelivr.net/npm/three-globe/example/img/earth-night.jpg')
       .hexBinPointLat(d => d.geometry.coordinates[1])
       .hexBinPointLng(d => d.geometry.coordinates[0])
       .hexBinPointWeight(d => d.properties.mag)

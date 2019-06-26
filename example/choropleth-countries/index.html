@@ -1,9 +1,9 @@
 <head>
   <style> body { margin: 0; } </style>
 
-  <script src="//unpkg.com/d3"></script>
+  <script src="//cdn.jsdelivr.net/npm/d3"></script>
 
-  <script src="//unpkg.com/globe.gl"></script>
+  <script src="//cdn.jsdelivr.net/npm/globe.gl"></script>
   <!--<script src="../../dist/globe.gl.js"></script>-->
 </head>
 
@@ -22,7 +22,7 @@
       colorScale.domain([0, maxVal]);
 
       const world = Globe()
-        .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
+        .globeImageUrl('//cdn.jsdelivr.net/npm/three-globe/example/img/earth-night.jpg')
         .polygonsData(countries.features)
         .polygonAltitude(0.06)
         .polygonCapColor(feat => colorScale(getVal(feat)))
