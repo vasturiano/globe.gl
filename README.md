@@ -4,6 +4,7 @@ Globe.GL
 [![NPM package][npm-img]][npm-url]
 [![Build Size][build-size-img]][build-size-url]
 [![Dependencies][dependencies-img]][dependencies-url]
+[![](https://data.jsdelivr.com/v1/package/npm/proportions-chart/badge?style=rounded)](https://www.jsdelivr.com/package/npm/proportions-chart)
 
 <p align="center">
    <a href="//vasturiano.github.io/globe.gl/example/world-population/"><img width="48%" src="https://vasturiano.github.io/globe.gl/example/world-population/preview.png"></a>
