@@ -4,7 +4,7 @@ Globe.GL
 [![NPM package][npm-img]][npm-url]
 [![Build Size][build-size-img]][build-size-url]
 [![Dependencies][dependencies-img]][dependencies-url]
-[![](https://data.jsdelivr.com/v1/package/npm/proportions-chart/badge?style=rounded)](https://www.jsdelivr.com/package/npm/proportions-chart)
+[![jsdelivr][jsdelivr-img]][jsdelivr-url]
 
 <p align="center">
    <a href="//vasturiano.github.io/globe.gl/example/world-population/"><img width="48%" src="https://vasturiano.github.io/globe.gl/example/world-population/preview.png"></a>
@@ -248,3 +248,5 @@ Globe({ configOptions })(<domElement>)
 [build-size-url]: https://bundlephobia.com/result?p=globe.gl
 [dependencies-img]: https://img.shields.io/david/vasturiano/globe.gl.svg
 [dependencies-url]: https://david-dm.org/vasturiano/globe.gl
+[jsdelivr-img]: https://data.jsdelivr.com/v1/package/npm/globe.gl/badge?style=rounded
+[jsdelivr-url]: https://www.jsdelivr.com/package/npm/globe.gl
