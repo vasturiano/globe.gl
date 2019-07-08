@@ -12,16 +12,18 @@
 
   <script>
     const weightColor = d3.scaleLinear()
-      .domain([0, 30])
-      .range(['lightblue', 'darkred']);
+      .domain([0, 60])
+      .range(['lightblue', 'darkred'])
+      .clamp(true);
 
     const myGlobe = Globe()
       .globeImageUrl('//cdn.jsdelivr.net/npm/three-globe/example/img/earth-night.jpg')
       .hexBinPointLat(d => d.geometry.coordinates[1])
       .hexBinPointLng(d => d.geometry.coordinates[0])
       .hexBinPointWeight(d => d.properties.mag)
+      .hexAltitude(({ sumWeight }) => sumWeight * 0.0025)
       .hexColor(d => weightColor(d.sumWeight))
-      .hexRadius(1/3)
+      .hexRadius(1/4)
       .hexLabel(d => `
         <b>${d.points.length}</b> earthquakes in the past month:<ul><li>
           ${d.points.map(d => d.properties.title).join('</li><li>')}
