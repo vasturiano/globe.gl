@@ -26,7 +26,7 @@
       .hexRadius(1/4)
       .hexLabel(d => `
         <b>${d.points.length}</b> earthquakes in the past month:<ul><li>
-          ${d.points.map(d => d.properties.title).join('</li><li>')}
+          ${d.points.slice().sort((a, b) => b.properties.mag - a.properties.mag).map(d => d.properties.title).join('</li><li>')}
         </li></ul>
       `)
       (document.getElementById('globeViz'));
