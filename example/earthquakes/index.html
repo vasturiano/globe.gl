@@ -22,8 +22,8 @@
       .hexBinPointLng(d => d.geometry.coordinates[0])
       .hexBinPointWeight(d => d.properties.mag)
       .hexAltitude(({ sumWeight }) => sumWeight * 0.0025)
-      .hexColor(d => weightColor(d.sumWeight))
-      .hexRadius(1/4)
+      .hexTopColor(d => weightColor(d.sumWeight))
+      .hexSideColor(d => weightColor(d.sumWeight))
       .hexLabel(d => `
         <b>${d.points.length}</b> earthquakes in the past month:<ul><li>
           ${d.points.slice().sort((a, b) => b.properties.mag - a.properties.mag).map(d => d.properties.title).join('</li><li>')}

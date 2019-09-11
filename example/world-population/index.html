@@ -21,8 +21,10 @@
       .bumpImageUrl('//cdn.jsdelivr.net/npm/three-globe/example/img/earth-topology.png')
       .hexBinPointWeight('pop')
       .hexAltitude(d => d.sumWeight * 6e-8)
-      .hexRadius(0.2)
-      .hexColor(d => weightColor(d.sumWeight))
+      .hexBinResolution(4)
+      .hexTopColor(d => weightColor(d.sumWeight))
+      .hexSideColor(d => weightColor(d.sumWeight))
+      .hexBinMerge(true)
       .enablePointerInteraction(false); // performance improvement
 
     fetch('../datasets/world_population.csv').then(res => res.text())
@@ -31,6 +33,6 @@
 
     // Add auto-rotation
     world.controls().autoRotate = true;
-    world.controls().autoRotateSpeed = 0.3;
+    world.controls().autoRotateSpeed = 0.1;
   </script>
 </body>
