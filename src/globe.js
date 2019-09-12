@@ -51,6 +51,7 @@ const linkedGlobeProps = Object.assign(...[
   'polygonGeoJsonGeometry',
   'polygonCapColor',
   'polygonSideColor',
+  'polygonStrokeColor',
   'polygonAltitude',
   'polygonsTransitionDuration',
   'hexBinPointsData',
