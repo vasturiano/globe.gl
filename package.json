@@ -41,20 +41,20 @@
   "dependencies": {
     "@tweenjs/tween.js": "^18.3.1",
     "accessor-fn": "^1.2.2",
-    "kapsule": "^1.10.1",
+    "kapsule": "^1.12.1",
     "three": "^0.108.0",
-    "three-globe": "^2.1.1",
-    "three-render-objects": "^1.5.4"
+    "three-globe": "^2.1.2",
+    "three-render-objects": "^1.6.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.6.0",
+    "@babel/core": "^7.6.2",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
-    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
-    "@babel/preset-env": "^7.6.0",
-    "rollup": "^1.21.2",
+    "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "rollup": "^1.21.4",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "terser": "^4.3.1"
+    "terser": "^4.3.2"
   }
 }
