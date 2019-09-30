@@ -319,6 +319,8 @@ export default Kapsule({
         }
       })
       .onClick(obj => {
+        if (!obj) return; // ignore background clicks
+
         // Handle click events on objects
         const objFns = {
           point: state.onPointClick,
@@ -336,6 +338,8 @@ export default Kapsule({
         }
       })
       .onRightClick(obj => {
+        if (!obj) return; // ignore background clicks
+
         // Handle right-click events
         const objFns = {
           point: state.onPointRightClick,
