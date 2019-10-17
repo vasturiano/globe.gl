@@ -102,6 +102,7 @@ const linkedRenderObjsProps = Object.assign(...[
 export default Kapsule({
 
   props: {
+    onZoom: { triggerUpdate: false },
     pointLabel: { default: 'name', triggerUpdate: false },
     onPointClick: { default: () => {}, triggerUpdate: false },
     onPointRightClick: { default: () => {}, triggerUpdate: false },
@@ -233,6 +234,7 @@ export default Kapsule({
     controls.dampingFactor = 0.1;
     controls.rotateSpeed = 0.1;
     controls.zoomSpeed = 0.3;
+    controls.addEventListener('change', () => state.onZoom && state.onZoom(this.pointOfView()));
 
     // config renderObjs
     const getGlobeObj = object => {
