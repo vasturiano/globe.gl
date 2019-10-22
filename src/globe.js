@@ -1,8 +1,8 @@
-import { AmbientLight, DirectionalLight } from 'three';
+import { AmbientLight, DirectionalLight, Vector2 } from 'three';
 
 const three = window.THREE
   ? window.THREE // Prefer consumption from global THREE, if exists
-  : { AmbientLight, DirectionalLight };
+  : { AmbientLight, DirectionalLight, Vector2 };
 
 import ThreeGlobe from 'three-globe';
 import ThreeRenderObjects from 'three-render-objects';
@@ -54,6 +54,19 @@ const linkedGlobeProps = Object.assign(...[
   'polygonStrokeColor',
   'polygonAltitude',
   'polygonsTransitionDuration',
+  'pathsData',
+  'pathPoints',
+  'pathPointLat',
+  'pathPointLng',
+  'pathPointAlt',
+  'pathResolution',
+  'pathColor',
+  'pathStroke',
+  'pathDashLength',
+  'pathDashGap',
+  'pathDashInitialGap',
+  'pathDashAnimateTime',
+  'pathTransitionDuration',
   'hexBinPointsData',
   'hexBinPointLat',
   'hexBinPointLng',
@@ -115,6 +128,10 @@ export default Kapsule({
     onPolygonClick: { default: () => {}, triggerUpdate: false },
     onPolygonRightClick: { default: () => {}, triggerUpdate: false },
     onPolygonHover: { default: () => {}, triggerUpdate: false },
+    pathLabel: { default: 'name', triggerUpdate: false },
+    onPathClick: { default: () => {}, triggerUpdate: false },
+    onPathRightClick: { default: () => {}, triggerUpdate: false },
+    onPathHover: { default: () => {}, triggerUpdate: false },
     hexLabel: { triggerUpdate: false },
     onHexClick: { default: () => {}, triggerUpdate: false },
     onHexRightClick: { default: () => {}, triggerUpdate: false },
@@ -194,6 +211,7 @@ export default Kapsule({
       this.pointsData([]);
       this.arcsData([]);
       this.polygonsData([]);
+      this.pathsData([]);
       this.hexBinPointsData([]);
       this.labelsData([]);
       this.customLayerData([]);
@@ -221,6 +239,9 @@ export default Kapsule({
     const roDomNode = document.createElement('div');
     state.container.appendChild(roDomNode);
     state.renderObjs(roDomNode);
+
+    // inject renderer size on three-globe
+    state.globe.rendererSize(state.renderObjs.renderer().getSize(new three.Vector2()));
 
     // set initial distance
     this.pointOfView({ altitude: 2.5 });
@@ -250,6 +271,7 @@ export default Kapsule({
       point: d => d,
       arc: d => d,
       polygon: d => d.data,
+      path: d => d,
       hexbin: d => d,
       label: d => d,
       custom: d => d
@@ -275,6 +297,7 @@ export default Kapsule({
           point: state.pointLabel,
           arc: state.arcLabel,
           polygon: state.polygonLabel,
+          path: state.pathLabel,
           hexbin: state.hexLabel,
           label: state.labelLabel,
           custom: state.customLayerLabel
@@ -293,6 +316,7 @@ export default Kapsule({
           point: state.onPointHover,
           arc: state.onArcHover,
           polygon: state.onPolygonHover,
+          path: state.onPathHover,
           hexbin: state.onHexHover,
           label: state.onLabelHover,
           custom: state.onCustomLayerHover
@@ -328,6 +352,7 @@ export default Kapsule({
           point: state.onPointClick,
           arc: state.onArcClick,
           polygon: state.onPolygonClick,
+          path: state.onPathClick,
           hexbin: state.onHexClick,
           label: state.onLabelClick,
           custom: state.onCustomLayerClick
@@ -347,6 +372,7 @@ export default Kapsule({
           point: state.onPointRightClick,
           arc: state.onArcRightClick,
           polygon: state.onPolygonRightClick,
+          path: state.onPathRightClick,
           hexbin: state.onHexRightClick,
           label: state.onLabelRightClick,
           custom: state.onCustomLayerRightClick
