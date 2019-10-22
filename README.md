@@ -158,7 +158,7 @@ Globe({ configOptions })(<domElement>)
 ### Paths Layer
 
 <p align="center">
-   <a href="//vasturiano.github.io/globe.gl/example/random-paths/"><img width="70%" src="https://vasturiano.github.io/globe.gl/example/random-paths/preview.png"></a>
+   <a href="//vasturiano.github.io/globe.gl/example/submarine-cables/"><img width="70%" src="https://vasturiano.github.io/globe.gl/example/submarine-cables/preview.png"></a>
 </p>
 
 | Method | Description | Default |
