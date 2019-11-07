@@ -39,19 +39,19 @@
     "dist/**/*"
   ],
   "dependencies": {
-    "@tweenjs/tween.js": "^18.3.1",
+    "@tweenjs/tween.js": "^18.4.2",
     "accessor-fn": "^1.2.2",
     "kapsule": "^1.12.1",
-    "three": "^0.109.0",
-    "three-globe": "^2.2.2",
-    "three-render-objects": "^1.7.0"
+    "three": "^0.110.0",
+    "three-globe": "^2.3.2",
+    "three-render-objects": "^1.8.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.6.4",
-    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/core": "^7.7.2",
+    "@babel/plugin-proposal-class-properties": "^7.7.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
-    "@babel/preset-env": "^7.6.3",
-    "rollup": "^1.25.1",
+    "@babel/preset-env": "^7.7.1",
+    "rollup": "^1.26.3",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",

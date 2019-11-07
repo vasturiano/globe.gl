@@ -24,6 +24,7 @@ Check out the examples:
 * [Elevated Polygons](https://vasturiano.github.io/globe.gl/example/countries-population/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/countries-population/index.html))
 * [Path Lines](https://vasturiano.github.io/globe.gl/example/random-paths/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/random-paths/index.html))
 * [Map Labels](https://vasturiano.github.io/globe.gl/example/world-cities/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/world-cities/index.html))
+* [Hexed Country Polygons](https://vasturiano.github.io/globe.gl/example/hexed-polygons/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/hexed-polygons/index.html))
 * [Custom Layer](https://vasturiano.github.io/globe.gl/example/custom-layer/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/custom-layer/index.html))
 * [World Population](https://vasturiano.github.io/globe.gl/example/world-population/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/world-population/index.html))
 * [Recent Earthquakes](https://vasturiano.github.io/globe.gl/example/earthquakes/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/earthquakes/index.html))
@@ -164,6 +165,7 @@ Globe({ configOptions })(<domElement>)
 | Method | Description | Default |
 | --- | --- | :--: |
 | <b>pathsData</b>([<i>array</i>]) | Getter/setter for the list of lines to represent in the paths map layer. Each path is displayed as a line that connects all the coordinate pairs in the path array. | `[]` |
+| <b>pathLabel</b>([<i>str</i> or <i>fn</i>]) | Path object accessor function or attribute for label (shown as tooltip). Supports plain text or HTML content. | `name` |
 | <b>pathPoints</b>([<i>array</i>, <i>str</i> or <i>fn</i>]) | Path object accessor function, attribute or an array for the set of points that define the path line. By default, each path point is assumed to be a 2-position array (`[<lat>, <lon>]`). This default behavior can be modified using the `pathPointLat` and `pathPointLng` methods. | `pnts => pnts` |
 | <b>pathPointLat</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Path point object accessor function, attribute or a numeric constant for the latitude coordinate. | `arr => arr[0]` |
 | <b>pathPointLng</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Path point object accessor function, attribute or a numeric constant for the longitude coordinate. | `arr => arr[1]` |
@@ -176,6 +178,9 @@ Globe({ configOptions })(<domElement>)
 | <b>pathDashInitialGap</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Path object accessor function, attribute or a numeric constant for the length of the initial gap before the first dash segment, in terms of relative line length. Not supported in Fat Lines with set width. | 0 |
 | <b>pathDashAnimateTime</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Path object accessor function, attribute or a numeric constant for the time duration (in `ms`) to animate the motion of dash positions from the start to the end point for a full line length. A value of `0` disables the animation. Not supported in Fat Lines with set width. | 0 |
 | <b>pathTransitionDuration</b>([<i>num</i>]) | Getter/setter for duration (ms) of the transition to animate path changes. A value of `0` will move the paths immediately to their final position. New paths are animated from start to end. | 1000 |
+| <b>onPathClick</b>(<i>fn</i>) | Callback function for path (left-button) clicks. The path object is included as single argument: `onPathClick(arc)`. | - |
+| <b>onPathRightClick</b>(<i>fn</i>) | Callback function for path right-clicks. The path object is included as single argument: `onPathRightClick(arc)`. | - |
+| <b>onPathHover</b>(<i>fn</i>) | Callback function for path mouse over events. The path object (or `null` if there's no path under the mouse line of sight) is included as the first argument, and the previous path object (or `null`) as second argument: `onPathHover(path, prevPath)`. | - |
 
 ### Hex Bin Layer
 
@@ -199,6 +204,26 @@ Globe({ configOptions })(<domElement>)
 | <b>onHexClick</b>(<i>fn</i>) | Callback function for hexagon (left-button) clicks. The hex object including all points binned is included as single argument: `onHexClick({ points, sumWeight, center: { lat, lng } })`. Only works if `hexBinMerge` is disabled. | - |
 | <b>onHexRightClick</b>(<i>fn</i>) | Callback function for hexagon right-clicks. The hex object including all points binned is included as single argument: `onHexRightClick({ points, sumWeight, center: { lat, lng } })`. Only works if `hexBinMerge` is disabled. | - |
 | <b>onHexHover</b>(<i>fn</i>) | Callback function for hexagon mouse over events. The hex object (or `null` if there's no hex under the mouse line of sight) is included as the first argument, and the previous hex object (or `null`) as second argument: `onHexHover(hex, prevHex)`. Each hex object includes all points binned, and has the syntax: `{ points, sumWeight, center: { lat, lng } }`. Only works if `hexBinMerge` is disabled. | - |
+
+### Hexed Polygons Layer
+
+<p align="center">
+   <a href="//vasturiano.github.io/globe.gl/example/hexed-polygons/"><img width="70%" src="https://vasturiano.github.io/globe.gl/example/hexed-polygons/preview.png"></a>
+</p>
+
+| Method | Description | Default |
+| --- | --- | :--: |
+| <b>hexPolygonsData</b>([<i>array</i>]) | Getter/setter for the list of polygon shapes to represent in the hexed polygons map layer. Each polygon is displayed as a tesselated group of hexagons that approximate the polygons shape according to the resolution specified in `hexPolygonResolution`. | `[]` |
+| <b>hexPolygonLabel</b>([<i>str</i> or <i>fn</i>]) | Hexed polygon object accessor function or attribute for label (shown as tooltip). Supports plain text or HTML content. | `name` |
+| <b>hexPolygonGeoJsonGeometry</b>([<i>str</i> or <i>fn</i>]) | Hexed polygon object accessor function or attribute for the GeoJson geometry specification of the polygon's shape. The returned value should have a minimum of two fields: `type` and `coordinates`. Only GeoJson geometries of type `Polygon` or `MultiPolygon` are supported, other types will be skipped. | `geometry` |
+| <b>hexPolygonColor</b>([<i>str</i> or <i>fn</i>]) | Hexed polygon object accessor function or attribute for the color of each hexagon in the polygon. | `() => '#ffffaa'` |
+| <b>hexPolygonAltitude</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Hexed polygon object accessor function, attribute or a numeric constant for the polygon's hexagons altitude in terms of globe radius units (`0` = 0 altitude, `1` = globe radius). | 0.001 |
+| <b>hexPolygonResolution</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Hexed polygon object accessor function, attribute or a numeric constant for the geographic binning resolution as defined by [H3](https://uber.github.io/h3/#/documentation/core-library/resolution-table). Determines the area of the hexagons that tesselate the globe's surface. Accepts values between `0` and `15`. Level 0 partitions the earth in 122 (mostly) hexagonal cells. Each subsequent level sub-divides the previous in roughly 7 hexagons. | 3 |
+| <b>hexPolygonMargin</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Hexed polygon object accessor function, attribute or a numeric constant for the radial margin of each hexagon. Margins above `0` will create gaps between adjacent hexagons within a polygon. The margin is specified in terms of fraction of the hexagon's surface diameter. Values below `0` or above `1` are disadvised. | 0.2 |
+| <b>hexPolygonsTransitionDuration</b>([<i>num</i>]) | Getter/setter for duration (ms) of the transition to animate hexed polygons altitude and margin changes. A value of `0` will move the hexagons immediately to their final state. New hexed polygons are animated by sizing each hexagon from `0` radius. | 0 |
+| <b>onHexPolygonClick</b>(<i>fn</i>) | Callback function for hexed polygon (left-button) clicks. The polygon object is included as single argument: `onHexPolygonClick(polygon)`. | - |
+| <b>onHexPolygonRightClick</b>(<i>fn</i>) | Callback function for hexed polygon right-clicks. The polygon object is included as single argument: `onHexPolygonRightClick(polygon)`. | - |
+| <b>onHexPolygonHover</b>(<i>fn</i>) | Callback function for hexed polygon mouse over events. The polygon object (or `null` if there's no polygon under the mouse line of sight) is included as the first argument, and the previous polygon object (or `null`) as second argument: `onHexPolygonHover(polygon, prevPolygon)`. | - |
 
 ### Labels Layer
 
