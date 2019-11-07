@@ -16,7 +16,7 @@
       const world = Globe()
         .globeImageUrl('//cdn.jsdelivr.net/npm/three-globe/example/img/earth-dark.jpg')
         .hexPolygonsData(countries.features)
-        .hexPolygonResolution(() => 3)
+        .hexPolygonResolution(3)
         .hexPolygonMargin(0.3)
         .hexPolygonColor(() => `#${Math.round(Math.random() * Math.pow(2, 24)).toString(16).padStart(6, '0')}`)
         .hexPolygonLabel(({ properties: d }) => `
