@@ -1238,10 +1238,10 @@ three-geojson-geometry@^1.0.3:
   dependencies:
     earcut "^2.2.1"
 
-three-globe@^2.3.2:
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/three-globe/-/three-globe-2.3.2.tgz#f9da76883a43c6cf6de0247f7c0241e54e4a5ed3"
-  integrity sha512-h5h/K6orjml4PR+MzeZ10fmFVIaZAsLS24AcF7kIsu/MWMjeZO0CPE/2nFvNGSCPLZYM1V8XIXBdVVD1bLMCZg==
+three-globe@^2.3.3:
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/three-globe/-/three-globe-2.3.3.tgz#ef997048c81991feefe4b3a5482972d7356994d6"
+  integrity sha512-64mQpHvkSDLfLsJX0kpt6anYtcfac13I6UHZUT4oV7Z+tpChJb3aQ8+Pa9QF6Qg1xdD8M43/8XLWyAlO7K+Y5g==
   dependencies:
     "@tweenjs/tween.js" "^18.4.2"
     accessor-fn "^1.2.2"
