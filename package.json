@@ -43,15 +43,15 @@
     "accessor-fn": "^1.2.2",
     "kapsule": "^1.12.1",
     "three": "^0.110.0",
-    "three-globe": "^2.3.6",
-    "three-render-objects": "^1.8.0"
+    "three-globe": "^2.4.0",
+    "three-render-objects": "^1.9.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.7.2",
-    "@babel/plugin-proposal-class-properties": "^7.7.0",
-    "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
-    "@babel/preset-env": "^7.7.1",
-    "rollup": "^1.26.5",
+    "@babel/core": "^7.7.4",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "rollup": "^1.27.5",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
