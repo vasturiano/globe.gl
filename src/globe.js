@@ -267,7 +267,14 @@ export default Kapsule({
     controls.dampingFactor = 0.1;
     controls.rotateSpeed = 0.1;
     controls.zoomSpeed = 0.3;
-    controls.addEventListener('change', () => state.onZoom && state.onZoom(this.pointOfView()));
+    controls.addEventListener('change', () => {
+      // adjust controls speed based on altitude
+      const pov = this.pointOfView();
+      controls.rotateSpeed = pov.altitude * 0.06; // Math.pow(pov.altitude + 1, 2) * 0.008;
+      controls.zoomSpeed = (pov.altitude + 1) * 0.1; // Math.sqrt(pov.altitude) * 0.2;
+
+      state.onZoom && state.onZoom(pov);
+    });
 
     // config renderObjs
     const getGlobeObj = object => {
