@@ -231,8 +231,8 @@ export default Kapsule({
     ...linkedGlobeMethods
   },
 
-  stateInit: ({ rendererConfig, animateIn }) => ({
-    globe: new ThreeGlobe({ animateIn }),
+  stateInit: ({ rendererConfig, ...globeInitConfig }) => ({
+    globe: new ThreeGlobe(globeInitConfig),
     renderObjs: ThreeRenderObjects({ controlType: 'orbit', rendererConfig })
       .showNavInfo(false)
   }),
