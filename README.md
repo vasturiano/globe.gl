@@ -32,7 +32,9 @@ Check out the examples:
 * [US outbound international airline routes](https://vasturiano.github.io/globe.gl/example/airline-routes/us-international-outbound.html) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/airline-routes/us-international-outbound.html))
 * [Submarine Cables](https://vasturiano.github.io/globe.gl/example/submarine-cables/index.html) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/submarine-cables/index.html))
 
-See also the [React bindings](https://github.com/vasturiano/react-globe.gl).
+See also the [AR version](https://github.com/vasturiano/globe-ar).
+
+And check out the [React bindings](https://github.com/vasturiano/react-globe.gl).
 
 ## Quick start
 
