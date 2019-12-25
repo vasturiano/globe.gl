@@ -120,6 +120,8 @@ const linkedRenderObjsProps = Object.assign(...[
 
 //
 
+const GLOBE_RADIUS = 100;
+
 export default Kapsule({
 
   props: {
@@ -235,6 +237,7 @@ export default Kapsule({
   stateInit: ({ rendererConfig, waitForGlobeReady = true, ...globeInitConfig }) => ({
     globe: new ThreeGlobe({ waitForGlobeReady, ...globeInitConfig }),
     renderObjs: ThreeRenderObjects({ controlType: 'orbit', rendererConfig, waitForLoadComplete: waitForGlobeReady })
+      .skyRadius(GLOBE_RADIUS * 100)
       .showNavInfo(false)
   }),
 
@@ -245,8 +248,6 @@ export default Kapsule({
     // Add relative container
     domNode.appendChild(state.container = document.createElement('div'));
     state.container.style.position = 'relative';
-
-    const GLOBE_RADIUS = 100;
 
     // Add renderObjs
     const roDomNode = document.createElement('div');
