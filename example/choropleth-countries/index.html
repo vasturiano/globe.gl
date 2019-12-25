@@ -23,6 +23,7 @@
 
       const world = Globe()
         .globeImageUrl('//cdn.jsdelivr.net/npm/three-globe/example/img/earth-night.jpg')
+        .backgroundImageUrl('//cdn.jsdelivr.net/npm/three-globe/example/img/night-sky.png')
         .polygonsData(countries.features)
         .polygonAltitude(0.06)
         .polygonCapColor(feat => colorScale(getVal(feat)))
