@@ -114,6 +114,7 @@ const linkedRenderObjsProps = Object.assign(...[
   'width',
   'height',
   'backgroundColor',
+  'backgroundImageUrl',
   'enablePointerInteraction'
 ].map(p => ({ [p]: bindRenderObjs.linkProp(p)})));
 
@@ -231,9 +232,9 @@ export default Kapsule({
     ...linkedGlobeMethods
   },
 
-  stateInit: ({ rendererConfig, ...globeInitConfig }) => ({
-    globe: new ThreeGlobe(globeInitConfig),
-    renderObjs: ThreeRenderObjects({ controlType: 'orbit', rendererConfig })
+  stateInit: ({ rendererConfig, waitForGlobeReady = true, ...globeInitConfig }) => ({
+    globe: new ThreeGlobe({ waitForGlobeReady, ...globeInitConfig }),
+    renderObjs: ThreeRenderObjects({ controlType: 'orbit', rendererConfig, waitForLoadComplete: waitForGlobeReady })
       .showNavInfo(false)
   }),
 

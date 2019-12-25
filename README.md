@@ -68,7 +68,7 @@ Globe({ configOptions })(<domElement>)
 | Config options | Description | Default |
 | --- | --- | :--: |
 | <b>rendererConfig</b>: <i>object</i> | Configuration parameters to pass to the [ThreeJS WebGLRenderer](https://threejs.org/docs/#api/en/renderers/WebGLRenderer) constructor. | `{ antialias: true, alpha: true }` |
-| <b>waitForGlobeReady</b>: <i>boolean</i> | Whether to wait until the globe wrapping image has been fully loaded before rendering the globe or any of the data layers. | `true` |
+| <b>waitForGlobeReady</b>: <i>boolean</i> | Whether to wait until the globe wrapping or background image has been fully loaded before rendering the globe or any of the data layers. | `true` |
 | <b>animateIn</b>: <i>boolean</i> | Whether to animate the globe initialization, by scaling and rotating the globe into its inital position. | `true` |
 
 ### Container layout
@@ -78,6 +78,7 @@ Globe({ configOptions })(<domElement>)
 | <b>width</b>([<i>px</i>]) | Getter/setter for the canvas width. | *&lt;window width&gt;* |
 | <b>height</b>([<i>px</i>]) | Getter/setter for the canvas height. | *&lt;window height&gt;* |
 | <b>backgroundColor</b>([<i>str</i>]) | Getter/setter for the background color. | `#000011` |
+| <b>backgroundImageUrl</b>([<i>url</i>]) | Getter/setter for the URL of the image to be used as background to the globe. If no image is provided, the background color is shown instead. | `null` |
 
 ### Globe Layer
 
