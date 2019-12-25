@@ -237,7 +237,7 @@ export default Kapsule({
   stateInit: ({ rendererConfig, waitForGlobeReady = true, ...globeInitConfig }) => ({
     globe: new ThreeGlobe({ waitForGlobeReady, ...globeInitConfig }),
     renderObjs: ThreeRenderObjects({ controlType: 'orbit', rendererConfig, waitForLoadComplete: waitForGlobeReady })
-      .skyRadius(GLOBE_RADIUS * 100)
+      .skyRadius(GLOBE_RADIUS * 500)
       .showNavInfo(false)
   }),
 
@@ -263,7 +263,7 @@ export default Kapsule({
     // calibrate orbit controls
     const controls = state.renderObjs.controls();
     controls.minDistance = GLOBE_RADIUS * 1.01; // just above the surface
-    controls.maxDistance = GLOBE_RADIUS * 100;
+    setTimeout(() => controls.maxDistance = GLOBE_RADIUS * 100); // apply async  after renderObjs sets maxDistance
     controls.enablePan = false;
     controls.enableDamping = true;
     controls.dampingFactor = 0.1;
