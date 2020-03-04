@@ -6,6 +6,7 @@
   "jsdelivr": "dist/globe.gl.min.js",
   "main": "dist/globe.gl.common.js",
   "module": "dist/globe.gl.module.js",
+  "types": "src/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vasturiano/globe.gl.git"
@@ -36,25 +37,27 @@
     "prepare": "npm run build && npm run minify && npm run build-module"
   },
   "files": [
-    "dist/**/*"
+    "dist/**/*",
+    "example/**/*",
+    "src/**/*"
   ],
   "dependencies": {
     "@tweenjs/tween.js": "^18.5.0",
     "accessor-fn": "^1.2.2",
     "kapsule": "^1.12.1",
-    "three": "^0.112.0",
-    "three-globe": "^2.5.4",
-    "three-render-objects": "^1.12.1"
+    "three": "^0.114.0",
+    "three-globe": "^2.6.0",
+    "three-render-objects": "^1.12.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.7.7",
-    "@babel/plugin-proposal-class-properties": "^7.7.4",
-    "@babel/plugin-proposal-object-rest-spread": "^7.7.7",
-    "@babel/preset-env": "^7.7.7",
-    "rollup": "^1.27.14",
+    "@babel/core": "^7.8.6",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
+    "@babel/preset-env": "^7.8.6",
+    "rollup": "^1.32.0",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "terser": "^4.4.3"
+    "terser": "^4.6.6"
   }
 }
