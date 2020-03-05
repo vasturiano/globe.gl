@@ -1,7 +1,7 @@
-import { WebGLRendererParameters, Scene, Camera } from 'three';
+import { Scene, Camera, WebGLRenderer, WebGLRendererParameters } from 'three';
 import { ThreeGlobeGeneric, ConfigOptions as ThreeGlobeConfigOptions } from 'three-globe';
 
-interface ConfigOptions extends ThreeGlobeConfigOptions {
+export interface ConfigOptions extends ThreeGlobeConfigOptions {
   rendererConfig?: WebGLRendererParameters
 }
 
@@ -45,8 +45,8 @@ export interface GlobeGenericInstance<ChainableInstance> extends ThreeGlobeGener
   polygonLabel(textAccessor: ObjAccessor<string>): ChainableInstance;
   pathLabel(): ObjAccessor<string>;
   pathLabel(textAccessor: ObjAccessor<string>): ChainableInstance;
-  hexLabel(): ObjAccessor<string>;
-  hexLabel(textAccessor: ObjAccessor<string>): ChainableInstance;
+  hexLabel(): Accessor<HexBin, string>;
+  hexLabel(textAccessor: Accessor<HexBin, string>): ChainableInstance;
   labelLabel(): ObjAccessor<string>;
   labelLabel(textAccessor: ObjAccessor<string>): ChainableInstance;
   customLayerLabel(): ObjAccessor<string>;
@@ -88,10 +88,11 @@ export interface GlobeGenericInstance<ChainableInstance> extends ThreeGlobeGener
   onZoom(callback: (pov: GeoCoords) => void): ChainableInstance;
   scene(): Scene;
   camera(): Camera;
+  renderer(): WebGLRenderer;
   controls(): object;
 }
 
-type GlobeInstance = GlobeGenericInstance<GlobeInstance>;
+export type GlobeInstance = GlobeGenericInstance<GlobeInstance>;
 
 declare function Globe(configOptions?: ConfigOptions): GlobeInstance;
 

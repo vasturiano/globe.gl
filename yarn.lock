@@ -942,9 +942,9 @@ earcut@^2.2.1, earcut@^2.2.2:
   integrity sha512-eZoZPPJcUHnfRZ0PjLvx2qBordSiO8ofC3vt+qACLM95u+4DovnbYNpQtJh0DNsWj8RnxrQytD4WA8gj5cRIaQ==
 
 electron-to-chromium@^1.3.363:
-  version "1.3.367"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.367.tgz#48abffcaa6591051b612ae70ddc657763ede2662"
-  integrity sha512-GCHQreWs4zhKA48FNXCjvpV4kTnKoLu2PSAfKX394g34NPvTs2pPh1+jzWitNwhmOYI8zIqt36ulRVRZUgqlfA==
+  version "1.3.368"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.368.tgz#d7597e04339f7ca70762031ec473d38eb2df6acb"
+  integrity sha512-fqzDipW3p+uDkHUHFPrdW3wINRKcJsbnJwBD7hgaQEQwcuLSvNLw6SeUp5gKDpTbmTl7zri7IZfhsdTUTnygJg==
 
 escape-string-regexp@^1.0.5:
   version "1.0.5"
@@ -1320,10 +1320,10 @@ three-geojson-geometry@^1.0.5:
   dependencies:
     earcut "^2.2.1"
 
-three-globe@^2.6.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/three-globe/-/three-globe-2.6.0.tgz#b9cc7e422346907c7f9291d26307c44a76236f3b"
-  integrity sha512-G+QOmd+LNi9jJcbqwuENfLsWO/Z3ZBX6T95pbSlAvQ68wCAxUJQ5GTOcEyo2M9OI3LI6CTtjKzsi3NOUWvb0pA==
+three-globe@^2.6.2:
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/three-globe/-/three-globe-2.6.2.tgz#89f193a2626931ab3f45cc739482081679a3b9eb"
+  integrity sha512-UBBpiRt0zmy/DhoLbXl275Skvz6vxE9N7DCaAGvkWOMfXQLKj9MpTKz0vFNKznbGsiNMC0rzzpPbplZTMN1ZYQ==
   dependencies:
     "@tweenjs/tween.js" "^18.5.0"
     accessor-fn "^1.2.2"
