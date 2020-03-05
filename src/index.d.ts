@@ -5,8 +5,7 @@ export interface ConfigOptions extends ThreeGlobeConfigOptions {
   rendererConfig?: WebGLRendererParameters
 }
 
-type AccessorBasic<In, Out> = string | ((obj: In) => Out);
-type Accessor<In, Out> = Out | AccessorBasic<In, Out>;
+type Accessor<In, Out> = Out | string | ((obj: In) => Out);
 type ObjAccessor<T> = Accessor<object, T>;
 
 interface HexBin {
