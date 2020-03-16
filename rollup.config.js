@@ -16,6 +16,7 @@ export default [
     input: 'src/index.js',
     output: [
       {
+        ...umdConf,
         file: `dist/${name}.js`,
         sourcemap: true
       },
