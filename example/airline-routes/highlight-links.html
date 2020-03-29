@@ -1,10 +1,10 @@
 <head>
   <style> body { margin: 0; } </style>
 
-  <script src="//cdn.jsdelivr.net/npm/d3-dsv"></script>
-  <script src="//cdn.jsdelivr.net/npm/index-array-by"></script>
+  <script src="//unpkg.com/d3-dsv"></script>
+  <script src="//unpkg.com/index-array-by"></script>
 
-  <script src="//cdn.jsdelivr.net/npm/globe.gl"></script>
+  <script src="//unpkg.com/globe.gl"></script>
   <!--<script src="../../dist/globe.gl.js"></script>-->
 </head>
 
@@ -19,7 +19,7 @@
 
   const myGlobe = Globe()
     (document.getElementById('globeViz'))
-    .globeImageUrl('//cdn.jsdelivr.net/npm/three-globe/example/img/earth-night.jpg')
+    .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
 
     .arcLabel(d => `${d.airline}: ${d.srcIata} &#8594; ${d.dstIata}`)
     .arcStartLat(d => d.srcAirport.lat)

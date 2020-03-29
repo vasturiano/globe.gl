@@ -1,10 +1,10 @@
 <head>
   <style> body { margin: 0; } </style>
 
-  <script src="//cdn.jsdelivr.net/npm/d3"></script>
-  <script src="//cdn.jsdelivr.net/npm/d3-dsv"></script>
+  <script src="//unpkg.com/d3"></script>
+  <script src="//unpkg.com/d3-dsv"></script>
 
-  <script src="//cdn.jsdelivr.net/npm/globe.gl"></script>
+  <script src="//unpkg.com/globe.gl"></script>
   <!--<script src="../../dist/globe.gl.js"></script>-->
 </head>
 
@@ -17,9 +17,9 @@
 
     const world = Globe()
       (document.getElementById('globeViz'))
-      .globeImageUrl('//cdn.jsdelivr.net/npm/three-globe/example/img/earth-night.jpg')
-      .bumpImageUrl('//cdn.jsdelivr.net/npm/three-globe/example/img/earth-topology.png')
-      .backgroundImageUrl('//cdn.jsdelivr.net/npm/three-globe/example/img/night-sky.png')
+      .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
+      .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
+      .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
       .hexBinPointWeight('pop')
       .hexAltitude(d => d.sumWeight * 6e-8)
       .hexBinResolution(4)

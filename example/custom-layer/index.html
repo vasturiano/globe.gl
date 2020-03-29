@@ -1,9 +1,9 @@
 <head>
   <style> body { margin: 0; } </style>
 
-  <script src="//cdn.jsdelivr.net/npm/three"></script>
+  <script src="//unpkg.com/three"></script>
 
-  <script src="//cdn.jsdelivr.net/npm/globe.gl"></script>
+  <script src="//unpkg.com/globe.gl"></script>
   <!--<script src="../../dist/globe.gl.js"></script>-->
 </head>
 
@@ -23,8 +23,8 @@
 
     const world = Globe()
       (document.getElementById('globeViz'))
-      .globeImageUrl('//cdn.jsdelivr.net/npm/three-globe/example/img/earth-blue-marble.jpg')
-      .bumpImageUrl('//cdn.jsdelivr.net/npm/three-globe/example/img/earth-topology.png')
+      .globeImageUrl('//unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
+      .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
       .pointOfView({ altitude: 3.5 })
       .customLayerData(gData)
       .customThreeObject(d => new THREE.Mesh(

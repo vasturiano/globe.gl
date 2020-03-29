@@ -1,8 +1,8 @@
 <head>
   <style> body { margin: 0; } </style>
 
-  <script src="//cdn.jsdelivr.net/npm/globe.gl"></script>
-  <!--<script src="../../dist/globe.gl.js"></script>-->
+  <script src="//unpkg.com/globe.gl"></script>
+<!--  <script src="../../dist/globe.gl.js"></script>-->
 </head>
 
 <body>
@@ -19,7 +19,7 @@
     }));
 
     Globe()
-      .globeImageUrl('//cdn.jsdelivr.net/npm/three-globe/example/img/earth-night.jpg')
+      .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
       .pointsData(gData)
       .pointAltitude('size')
       .pointColor('color')
