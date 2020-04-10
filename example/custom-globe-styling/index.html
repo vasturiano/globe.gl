@@ -15,7 +15,8 @@
     const world = Globe()
       .globeImageUrl('//unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
       .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
-    (document.getElementById('globeViz'));
+      .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
+      (document.getElementById('globeViz'));
 
     // custom globe material
     const globeMaterial = world.globeMaterial();
