@@ -25,6 +25,7 @@ Check out the examples:
 * [Path Lines](https://vasturiano.github.io/globe.gl/example/random-paths/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/random-paths/index.html))
 * [Map Labels](https://vasturiano.github.io/globe.gl/example/world-cities/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/world-cities/index.html))
 * [Hexed Country Polygons](https://vasturiano.github.io/globe.gl/example/hexed-polygons/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/hexed-polygons/index.html))
+* [Custom Globe Styling](https://vasturiano.github.io/globe.gl/example/custom-globe-styling/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/custom-globe-styling/index.html))
 * [Custom Layer](https://vasturiano.github.io/globe.gl/example/custom-layer/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/custom-layer/index.html))
 * [World Population](https://vasturiano.github.io/globe.gl/example/world-population/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/world-population/index.html))
 * [Recent Earthquakes](https://vasturiano.github.io/globe.gl/example/earthquakes/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/earthquakes/index.html))
@@ -88,6 +89,7 @@ Globe({ configOptions })(<domElement>)
 | <b>bumpImageUrl</b>([<i>url</i>]) | Getter/setter for the URL of the image used to create a [bump map](https://threejs.org/docs/#api/en/materials/MeshStandardMaterial.bumpMap) in the material, to represent the globe's terrain. | `null` |
 | <b>showAtmosphere</b>([<i>boolean</i>]) | Getter/setter for whether to show a bright halo surrounding the globe, representing the atmosphere. | `true` |
 | <b>showGraticules</b>([<i>boolean</i>]) | Getter/setter for whether to show a graticule grid demarking latitude and longitude lines at every 10 degrees. | `false` |
+| <b>globeMaterial</b>() | Access the internal ThreeJS [MeshPhongMaterial](https://threejs.org/docs/#api/en/materials/MeshPhongMaterial) used to wrap the globe. Can be used for more advanced styling of the globe, by extending the material with various properties, like in [this example](https://github.com/vasturiano/globe.gl/blob/master/example/custom-material/index.html). | - |
 
 ### Points Layer
 
