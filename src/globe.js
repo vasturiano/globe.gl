@@ -118,6 +118,9 @@ const linkedRenderObjsProps = Object.assign(...[
   'backgroundImageUrl',
   'enablePointerInteraction'
 ].map(p => ({ [p]: bindRenderObjs.linkProp(p)})));
+const linkedRenderObjsMethods = Object.assign(...[
+  'postProcessingComposer'
+].map(p => ({ [p]: bindRenderObjs.linkMethod(p)})));
 
 //
 
@@ -232,7 +235,8 @@ export default Kapsule({
       this.labelsData([]);
       this.customLayerData([]);
     },
-    ...linkedGlobeMethods
+    ...linkedGlobeMethods,
+    ...linkedRenderObjsMethods
   },
 
   stateInit: ({ rendererConfig, waitForGlobeReady = true, ...globeInitConfig }) => ({

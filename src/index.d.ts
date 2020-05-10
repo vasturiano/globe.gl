@@ -1,4 +1,5 @@
 import { Scene, Camera, WebGLRenderer, WebGLRendererParameters } from 'three';
+import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
 import { ThreeGlobeGeneric, ConfigOptions as ThreeGlobeConfigOptions } from 'three-globe';
 
 export interface ConfigOptions extends ThreeGlobeConfigOptions {
@@ -88,6 +89,7 @@ export interface GlobeGenericInstance<ChainableInstance> extends ThreeGlobeGener
   scene(): Scene;
   camera(): Camera;
   renderer(): WebGLRenderer;
+  postProcessingComposer(): EffectComposer;
   controls(): object;
 }
 
