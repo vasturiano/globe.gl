@@ -91,6 +91,9 @@ export interface GlobeGenericInstance<ChainableInstance> extends ThreeGlobeGener
   renderer(): WebGLRenderer;
   postProcessingComposer(): EffectComposer;
   controls(): object;
+
+  // Utility
+  getScreenCoords(lat: number, lng: number, altitude?: number): { x: number, y: number };
 }
 
 export type GlobeInstance = GlobeGenericInstance<GlobeInstance>;

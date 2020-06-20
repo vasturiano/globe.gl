@@ -220,6 +220,10 @@ export default Kapsule({
         state.renderObjs.cameraPosition(state.globe.getCoords(lat, lng, altitude));
       }
     },
+    getScreenCoords: (state, ...geoCoords) => {
+      const cartesianCoords = state.globe.getCoords(...geoCoords);
+      return state.renderObjs.getScreenCoords(cartesianCoords.x, cartesianCoords.y, cartesianCoords.z);
+    },
     scene: state => state.renderObjs.scene(), // Expose scene
     camera: state => state.renderObjs.camera(), // Expose camera
     renderer: state => state.renderObjs.renderer(), // Expose renderer
