@@ -1559,10 +1559,10 @@ three-geojson-geometry@^1.1.0:
   dependencies:
     earcut "^2.2.2"
 
-three-globe@^2.8.1:
-  version "2.8.1"
-  resolved "https://registry.yarnpkg.com/three-globe/-/three-globe-2.8.1.tgz#44750d67cce719cbb56d48c5c6fe2d7f4f6f2f77"
-  integrity sha512-UDfy86Kn+H5lMQKG1cxEGkTc9uEEUCoCakZDGnbLBbSyLHDUx7LLcvjRdEvniQu3cOzj7/66fk0SWS83PxBSnw==
+three-globe@^2.8.2:
+  version "2.8.2"
+  resolved "https://registry.yarnpkg.com/three-globe/-/three-globe-2.8.2.tgz#383f526b96d198202719088d85fcc170bb05dc99"
+  integrity sha512-5YjxJjT5/5GVPh84SJHmhO4AnfBm464Me4wFB66vU1k6vMj0tEDlCt1hJW/0UHXvAUGaMbTnq9Of5EGSLpYGlQ==
   dependencies:
     "@tweenjs/tween.js" "^18.6.0"
     accessor-fn "^1.3.0"
