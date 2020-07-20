@@ -822,6 +822,26 @@
     estree-walker "^1.0.1"
     picomatch "^2.2.2"
 
+"@turf/boolean-point-in-polygon@^6.0.1":
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/@turf/boolean-point-in-polygon/-/boolean-point-in-polygon-6.0.1.tgz#5836677afd77d2ee391af0056a0c29b660edfa32"
+  integrity sha512-FKLOZ124vkJhjzNSDcqpwp2NvfnsbYoUOt5iAE7uskt4svix5hcjIEgX9sELFTJpbLGsD1mUbKdfns8tZxcMNg==
+  dependencies:
+    "@turf/helpers" "6.x"
+    "@turf/invariant" "6.x"
+
+"@turf/helpers@6.x":
+  version "6.1.4"
+  resolved "https://registry.yarnpkg.com/@turf/helpers/-/helpers-6.1.4.tgz#d6fd7ebe6782dd9c87dca5559bda5c48ae4c3836"
+  integrity sha512-vJvrdOZy1ngC7r3MDA7zIGSoIgyrkWcGnNIEaqn/APmw+bVLF2gAW7HIsdTxd12s5wQMqEpqIQrmrbRRZ0xC7g==
+
+"@turf/invariant@6.x":
+  version "6.1.2"
+  resolved "https://registry.yarnpkg.com/@turf/invariant/-/invariant-6.1.2.tgz#6013ed6219f9ac2edada9b31e1dfa5918eb0a2f7"
+  integrity sha512-WU08Ph8j0J2jVGlQCKChXoCtI50BB3yEH21V++V0T4cR1T27HKCxkehV2sYMwTierfMBgjwSwDIsxnR4/2mWXg==
+  dependencies:
+    "@turf/helpers" "6.x"
+
 "@tweenjs/tween.js@^18.6.0":
   version "18.6.0"
   resolved "https://registry.yarnpkg.com/@tweenjs/tween.js/-/tween.js-18.6.0.tgz#9160ca987e75ab751d0c48d5100339bd9cd0c301"
@@ -1516,11 +1536,12 @@ terser@^4.7.0:
     source-map "~0.6.1"
     source-map-support "~0.5.12"
 
-three-conic-polygon-geometry@^1.3.3:
-  version "1.3.3"
-  resolved "https://registry.yarnpkg.com/three-conic-polygon-geometry/-/three-conic-polygon-geometry-1.3.3.tgz#bf60ead53e9a0185c45bebb7f11eb8b0f7d30131"
-  integrity sha512-2YKkoia4x5AwBq2uSJ5fM2XDWxvJvWbpY456MeX5zB+nd8xlbxrMjMR3a+WKYzYo6pguZibJm4UjGCXsFWCWww==
+three-conic-polygon-geometry@^1.3.4:
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/three-conic-polygon-geometry/-/three-conic-polygon-geometry-1.3.4.tgz#e87286ce049273e8d7f381482a48ff2623227946"
+  integrity sha512-I2FjHdfcBjn2dYu+s9GJv0L5VWxZk7bYtUDXLxgMuAgHWJbZMTiWCPdLvf1hYWL79MX6MkW+EIwErc77Mpt4FA==
   dependencies:
+    "@turf/boolean-point-in-polygon" "^6.0.1"
     d3-array "^2.4.0"
     d3-geo "^1.12.1"
     delaunator "^4.0.1"
@@ -1538,10 +1559,10 @@ three-geojson-geometry@^1.1.0:
   dependencies:
     earcut "^2.2.2"
 
-three-globe@^2.8.0:
-  version "2.8.0"
-  resolved "https://registry.yarnpkg.com/three-globe/-/three-globe-2.8.0.tgz#c3d33dac43f96d7d4e0ba96a8cf203f75051c923"
-  integrity sha512-cIqS3Ew+Q2T/L9kMFyARxK0ihtOrfhW0K8mb6PrBbEHFSfNkYyCF+CUhGDhYXPvCvPSfV//nE5D4HlgHt/q6jg==
+three-globe@^2.8.1:
+  version "2.8.1"
+  resolved "https://registry.yarnpkg.com/three-globe/-/three-globe-2.8.1.tgz#44750d67cce719cbb56d48c5c6fe2d7f4f6f2f77"
+  integrity sha512-UDfy86Kn+H5lMQKG1cxEGkTc9uEEUCoCakZDGnbLBbSyLHDUx7LLcvjRdEvniQu3cOzj7/66fk0SWS83PxBSnw==
   dependencies:
     "@tweenjs/tween.js" "^18.6.0"
     accessor-fn "^1.3.0"
@@ -1554,7 +1575,7 @@ three-globe@^2.8.0:
     h3-js "^3.6.4"
     index-array-by "^1.3.0"
     kapsule "^1.13.3"
-    three-conic-polygon-geometry "^1.3.3"
+    three-conic-polygon-geometry "^1.3.4"
     three-fatline "^0.3.0"
     three-geojson-geometry "^1.1.0"
     three-glow-mesh "^0.1.1"
