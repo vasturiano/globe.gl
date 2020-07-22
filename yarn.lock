@@ -1081,9 +1081,9 @@ earcut@^2.2.2:
   integrity sha512-eZoZPPJcUHnfRZ0PjLvx2qBordSiO8ofC3vt+qACLM95u+4DovnbYNpQtJh0DNsWj8RnxrQytD4WA8gj5cRIaQ==
 
 electron-to-chromium@^1.3.488:
-  version "1.3.502"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.502.tgz#6a55e993ef60a01fbdc2152ef5e47ee00c885c98"
-  integrity sha512-TIeXOaHAvfP7FemGUtAJxStmOc1YFGWFNqdey/4Nk41L9b1nMmDVDGNMIWhZJvOfJxix6Cv5FGEnBK+yvw3UTg==
+  version "1.3.504"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.504.tgz#54d6288202f8453053c006eb862e2e3b7bc867a5"
+  integrity sha512-yOXnuPaaLAIZUVuXHYDCo3EeaiEfbFgYWCPH1tBMp+jznCq/zQYKnf6HmkKBmLJ0VES81avl18JZO1lx/XAHOw==
 
 escalade@^3.0.1:
   version "3.0.2"
@@ -1370,9 +1370,9 @@ regenerate@^1.4.0:
   integrity sha512-j2+C8+NtXQgEKWk49MMP5P/u2GhnahTtVkRIHr5R5lVRlbKvmQ+oS+A5aLKWp2ma5VkT8sh6v+v4hbH0YHR66A==
 
 regenerator-runtime@^0.13.4:
-  version "0.13.6"
-  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.6.tgz#d236043c46ffab2968c1ef651803d8acdea8ed65"
-  integrity sha512-GmwlGiazQEbOwQWDdbbaP10i15pGtScYWLbMZuu+RKRz0cZ+g8IUONazBnaZqe7j1670IV1HgE4/8iy7CQPf4Q==
+  version "0.13.7"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.7.tgz#cac2dacc8a1ea675feaabaeb8ae833898ae46f55"
+  integrity sha512-a54FxoJDIr27pgf7IgeQGxmqUNYrcV338lf/6gH456HZ/PhX+5BcwHXG9ajESmwe6WRO0tAzRUrRmNONWgkrew==
 
 regenerator-transform@^0.14.2:
   version "0.14.5"
@@ -1559,10 +1559,10 @@ three-geojson-geometry@^1.1.0:
   dependencies:
     earcut "^2.2.2"
 
-three-globe@^2.8.4:
-  version "2.8.4"
-  resolved "https://registry.yarnpkg.com/three-globe/-/three-globe-2.8.4.tgz#26e7375a9dd970ac6483cb8c579db4ed59dff4c7"
-  integrity sha512-XyS/7obwCSKqhb8jFEePdbKO/2py2p0XWm2ehJokyYZ7OBq0TfN7dOn9MY4poUL8CApXLcztHeLEl/VXT0L68Q==
+three-globe@^2.8.5:
+  version "2.8.5"
+  resolved "https://registry.yarnpkg.com/three-globe/-/three-globe-2.8.5.tgz#49f23a33d53d03020ae0e194499e9e8304b1ba83"
+  integrity sha512-9FJ/NERHsAw5bpDZSVW9GeHvTU6nEwxOrhlScetYnDoy01EI7Xd1d/yPfeHvqzypBbbPo7kQcwfdgxbwvDj03g==
   dependencies:
     "@tweenjs/tween.js" "^18.6.0"
     accessor-fn "^1.3.0"
