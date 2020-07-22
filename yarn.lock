@@ -922,9 +922,9 @@ builtin-modules@^3.1.0:
   integrity sha512-k0KL0aWZuBt2lrxrcASWDfwOLMnodeQjodT/1SxEQAXsHANgo6ZC/VEaSEHCXt7aSTZ4/4H5LKa+tBXmW7Vtvw==
 
 caniuse-lite@^1.0.30001093:
-  version "1.0.30001104"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001104.tgz#4e3d5b3b1dd3c3529f10cb7f519c62ba3e579f5d"
-  integrity sha512-pkpCg7dmI/a7WcqM2yfdOiT4Xx5tzyoHAXWsX5/HxZ3TemwDZs0QXdqbE0UPLPVy/7BeK7693YfzfRYfu1YVpg==
+  version "1.0.30001105"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001105.tgz#d2cb0b31e5cf2f3ce845033b61c5c01566549abf"
+  integrity sha512-JupOe6+dGMr7E20siZHIZQwYqrllxotAhiaej96y6x00b/48rPt42o+SzOSCPbrpsDWvRja40Hwrj0g0q6LZJg==
 
 chalk@^2.0.0:
   version "2.4.2"
@@ -997,7 +997,7 @@ d3-format@1:
   resolved "https://registry.yarnpkg.com/d3-format/-/d3-format-1.4.4.tgz#356925f28d0fd7c7983bfad593726fce46844030"
   integrity sha512-TWks25e7t8/cqctxCmxpUuzZN11QxIA7YrMbram94zMQ0PXjE4LVIMe/f6a4+xxL8HQ3OsAFULOINQi1pE62Aw==
 
-d3-geo@^1.12.0, d3-geo@^1.12.1:
+d3-geo@^1.12.1:
   version "1.12.1"
   resolved "https://registry.yarnpkg.com/d3-geo/-/d3-geo-1.12.1.tgz#7fc2ab7414b72e59fbcbd603e80d9adc029b035f"
   integrity sha512-XG4d1c/UJSEX9NfU02KwBL6BYPj8YKHxgBEw5om2ZnTRSbIcego6dhHwcxuSR3clxh0EpE38os1DVPOmnYtTPg==
@@ -1451,10 +1451,10 @@ rollup-pluginutils@^2.8.1:
   dependencies:
     estree-walker "^0.6.1"
 
-rollup@^2.22.1:
-  version "2.22.1"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.22.1.tgz#8700522aa5feb12c6bd51810df8a276699d136b1"
-  integrity sha512-K9AUQUCJkVqC+A7uUDacfhmpEeAjc2uOmSpvGI5xaYsm8pXgy4ZWEM8wHPfKj11xvCwFZppkRDo8a0RESJXCnw==
+rollup@^2.22.2:
+  version "2.22.2"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.22.2.tgz#94d51fc8c30a2e545d1ff6358cc4fa14131332ee"
+  integrity sha512-2a4Mch4f0W2lEvkPuxtz0GfrtfgLj9bdd/oC9L3LozGOCnmLqO7ivMfKbCJoRgqWIU2UqAcbxRFSwmIKx+uStA==
   optionalDependencies:
     fsevents "~2.1.2"
 
@@ -1536,10 +1536,10 @@ terser@^4.7.0:
     source-map "~0.6.1"
     source-map-support "~0.5.12"
 
-three-conic-polygon-geometry@^1.3.4:
-  version "1.3.4"
-  resolved "https://registry.yarnpkg.com/three-conic-polygon-geometry/-/three-conic-polygon-geometry-1.3.4.tgz#e87286ce049273e8d7f381482a48ff2623227946"
-  integrity sha512-I2FjHdfcBjn2dYu+s9GJv0L5VWxZk7bYtUDXLxgMuAgHWJbZMTiWCPdLvf1hYWL79MX6MkW+EIwErc77Mpt4FA==
+three-conic-polygon-geometry@^1.3.7:
+  version "1.3.7"
+  resolved "https://registry.yarnpkg.com/three-conic-polygon-geometry/-/three-conic-polygon-geometry-1.3.7.tgz#e6739633016cfd35cf7b91dd58d492a495d72665"
+  integrity sha512-ChHkYfKTRy/0t06L5SlAVJAl9fX0q7vRKnRIRHBWF1flFLnobjODKhww9yyV+SRR1KegH+DX8M6uSvPovBXLtQ==
   dependencies:
     "@turf/boolean-point-in-polygon" "^6.0.1"
     d3-array "^2.4.0"
@@ -1559,14 +1559,14 @@ three-geojson-geometry@^1.1.0:
   dependencies:
     earcut "^2.2.2"
 
-three-globe@^2.8.3:
-  version "2.8.3"
-  resolved "https://registry.yarnpkg.com/three-globe/-/three-globe-2.8.3.tgz#6ced02b5ef91dc8e337b4a8b2ffc3ed749163d6b"
-  integrity sha512-Z53SyOLitXfDL2sM2yvEvUV5Tuu7T/3Z5JZvmHG9wzvypWfdyB9Eb4zCRrTV46CBiCClezhmkjHnCYAIcXUGuQ==
+three-globe@^2.8.4:
+  version "2.8.4"
+  resolved "https://registry.yarnpkg.com/three-globe/-/three-globe-2.8.4.tgz#26e7375a9dd970ac6483cb8c579db4ed59dff4c7"
+  integrity sha512-XyS/7obwCSKqhb8jFEePdbKO/2py2p0XWm2ehJokyYZ7OBq0TfN7dOn9MY4poUL8CApXLcztHeLEl/VXT0L68Q==
   dependencies:
     "@tweenjs/tween.js" "^18.6.0"
     accessor-fn "^1.3.0"
-    d3-geo "^1.12.0"
+    d3-geo "^1.12.1"
     d3-interpolate "^1.4.0"
     d3-scale "^3.2.1"
     data-joint "^1.2.3"
@@ -1575,7 +1575,7 @@ three-globe@^2.8.3:
     h3-js "^3.6.4"
     index-array-by "^1.3.0"
     kapsule "^1.13.3"
-    three-conic-polygon-geometry "^1.3.4"
+    three-conic-polygon-geometry "^1.3.7"
     three-fatline "^0.3.0"
     three-geojson-geometry "^1.1.0"
     three-glow-mesh "^0.1.1"
