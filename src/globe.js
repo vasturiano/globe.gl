@@ -133,6 +133,8 @@ export default Kapsule({
 
   props: {
     onZoom: { triggerUpdate: false },
+    onGlobeClick: { default: () => {}, triggerUpdate: false },
+    onGlobeRightClick: { default: () => {}, triggerUpdate: false },
     pointLabel: { default: 'name', triggerUpdate: false },
     onPointClick: { default: () => {}, triggerUpdate: false },
     onPointRightClick: { default: () => {}, triggerUpdate: false },
@@ -380,11 +382,12 @@ export default Kapsule({
           state.hoverObj = hoverObj;
         }
       })
-      .onClick(obj => {
+      .onClick((obj, ev) => {
         if (!obj) return; // ignore background clicks
 
         // Handle click events on objects
         const objFns = {
+          globe: state.onGlobeClick,
           point: state.onPointClick,
           arc: state.onArcClick,
           polygon: state.onPolygonClick,
@@ -397,15 +400,18 @@ export default Kapsule({
 
         const globeObj = getGlobeObj(obj);
         const objType = globeObj.__globeObjType;
-        if (globeObj && objFns.hasOwnProperty(objType) && dataAccessors.hasOwnProperty(objType)) {
-          objFns[objType](dataAccessors[objType](globeObj.__data));
+        if (globeObj && objFns.hasOwnProperty(objType)) {
+          const args = [ev];
+          dataAccessors.hasOwnProperty(objType) && args.unshift(dataAccessors[objType](globeObj.__data));
+          objFns[objType](...args);
         }
       })
-      .onRightClick(obj => {
+      .onRightClick((obj, ev) => {
         if (!obj) return; // ignore background clicks
 
         // Handle right-click events
         const objFns = {
+          globe: state.onGlobeRightClick,
           point: state.onPointRightClick,
           arc: state.onArcRightClick,
           polygon: state.onPolygonRightClick,
@@ -418,8 +424,10 @@ export default Kapsule({
 
         const globeObj = getGlobeObj(obj);
         const objType = globeObj.__globeObjType;
-        if (globeObj && objFns.hasOwnProperty(objType) && dataAccessors.hasOwnProperty(objType)) {
-          objFns[objType](dataAccessors[objType](globeObj.__data));
+        if (globeObj && objFns.hasOwnProperty(objType)) {
+          const args = [ev];
+          dataAccessors.hasOwnProperty(objType) && args.unshift(dataAccessors[objType](globeObj.__data));
+          objFns[objType](...args);
         }
       });
 

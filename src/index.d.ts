@@ -53,29 +53,31 @@ export interface GlobeGenericInstance<ChainableInstance> extends ThreeGlobeGener
   customLayerLabel(textAccessor: ObjAccessor<string>): ChainableInstance;
 
   // Interaction events
-  onPointClick(callback: (point: object) => void): ChainableInstance;
-  onPointRightClick(callback: (point: object) => void): ChainableInstance;
+  onGlobeClick(callback: (event: MouseEvent) => void): ChainableInstance;
+  onGlobeRightClick(callback: (event: MouseEvent) => void): ChainableInstance;
+  onPointClick(callback: (point: object, event: MouseEvent) => void): ChainableInstance;
+  onPointRightClick(callback: (point: object, event: MouseEvent) => void): ChainableInstance;
   onPointHover(callback: (point: object | null, prevPoint: object | null) => void): ChainableInstance;
-  onArcClick(callback: (arc: object) => void): ChainableInstance;
-  onArcRightClick(callback: (arc: object) => void): ChainableInstance;
+  onArcClick(callback: (arc: object, event: MouseEvent) => void): ChainableInstance;
+  onArcRightClick(callback: (arc: object, event: MouseEvent) => void): ChainableInstance;
   onArcHover(callback: (arc: object | null, prevArc: object | null) => void): ChainableInstance;
-  onPolygonClick(callback: (polygon: object) => void): ChainableInstance;
-  onPolygonRightClick(callback: (polygon: object) => void): ChainableInstance;
+  onPolygonClick(callback: (polygon: object, event: MouseEvent) => void): ChainableInstance;
+  onPolygonRightClick(callback: (polygon: object, event: MouseEvent) => void): ChainableInstance;
   onPolygonHover(callback: (polygon: object | null, prevPolygon: object | null) => void): ChainableInstance;
-  onPathClick(callback: (path: object) => void): ChainableInstance;
-  onPathRightClick(callback: (path: object) => void): ChainableInstance;
+  onPathClick(callback: (path: object, event: MouseEvent) => void): ChainableInstance;
+  onPathRightClick(callback: (path: object, event: MouseEvent) => void): ChainableInstance;
   onPathHover(callback: (path: object | null, prevPath: object | null) => void): ChainableInstance;
-  onHexClick(callback: (hex: HexBin) => void): ChainableInstance;
-  onHexRightClick(callback: (hex: HexBin) => void): ChainableInstance;
+  onHexClick(callback: (hex: HexBin, event: MouseEvent) => void): ChainableInstance;
+  onHexRightClick(callback: (hex: HexBin, event: MouseEvent) => void): ChainableInstance;
   onHexHover(callback: (hex: HexBin | null, prevHex: HexBin | null) => void): ChainableInstance;
-  onHexPolygonClick(callback: (polygon: object) => void): ChainableInstance;
-  onHexPolygonRightClick(callback: (polygon: object) => void): ChainableInstance;
+  onHexPolygonClick(callback: (polygon: object, event: MouseEvent) => void): ChainableInstance;
+  onHexPolygonRightClick(callback: (polygon: object, event: MouseEvent) => void): ChainableInstance;
   onHexPolygonHover(callback: (polygon: object | null, prevPolygon: object | null) => void): ChainableInstance;
-  onLabelClick(callback: (label: object) => void): ChainableInstance;
-  onLabelRightClick(callback: (label: object) => void): ChainableInstance;
+  onLabelClick(callback: (label: object, event: MouseEvent) => void): ChainableInstance;
+  onLabelRightClick(callback: (label: object, event: MouseEvent) => void): ChainableInstance;
   onLabelHover(callback: (label: object | null, prevLabel: object | null) => void): ChainableInstance;
-  onCustomLayerClick(callback: (obj: object) => void): ChainableInstance;
-  onCustomLayerRightClick(callback: (obj: object) => void): ChainableInstance;
+  onCustomLayerClick(callback: (obj: object, event: MouseEvent) => void): ChainableInstance;
+  onCustomLayerRightClick(callback: (obj: object, event: MouseEvent) => void): ChainableInstance;
   onCustomLayerHover(callback: (obj: object | null, prevObj: object | null) => void): ChainableInstance;
 
   // Render control

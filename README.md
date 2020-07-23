@@ -94,6 +94,8 @@ Globe({ configOptions })(<domElement>)
 | <b>showAtmosphere</b>([<i>boolean</i>]) | Getter/setter for whether to show a bright halo surrounding the globe, representing the atmosphere. | `true` |
 | <b>showGraticules</b>([<i>boolean</i>]) | Getter/setter for whether to show a graticule grid demarking latitude and longitude lines at every 10 degrees. | `false` |
 | <b>globeMaterial</b>() | Access the internal ThreeJS [MeshPhongMaterial](https://threejs.org/docs/#api/en/materials/MeshPhongMaterial) used to wrap the globe. Can be used for more advanced styling of the globe, by extending the material with various properties, like in [this example](https://github.com/vasturiano/globe.gl/blob/master/example/custom-globe-styling/index.html). | - |
+| <b>onGlobeClick</b>(<i>fn</i>) | Callback function for (left-button) clicks on the globe. The event object is included as single argument: `onGlobeClick(event)`. | - |
+| <b>onGlobeRightClick</b>(<i>fn</i>) | Callback function for right-clicks on the globe. The event object is included as single argument: `onGlobeRightClick(event)`. | - |
 
 ### Points Layer
 
@@ -113,8 +115,8 @@ Globe({ configOptions })(<domElement>)
 | <b>pointResolution</b>([<i>num</i>]) | Getter/setter for the radial geometric resolution of each cylinder, expressed in how many slice segments to divide the circumference. Higher values yield smoother cylinders. | 12 |
 | <b>pointsMerge</b>([<i>boolean</i>]) | Getter/setter for whether to merge all the point meshes into a single ThreeJS object, for improved rendering performance. Visually both options are equivalent, setting this option only affects the internal organization of the ThreeJS objects. | `false` |
 | <b>pointsTransitionDuration</b>([<i>num</i>]) | Getter/setter for duration (ms) of the transition to animate point changes involving geometry modifications. A value of `0` will move the objects immediately to their final position. New objects are animated by scaling them from the ground up. Only works if `pointsMerge` is disabled. | 1000 |
-| <b>onPointClick</b>(<i>fn</i>) | Callback function for point (left-button) clicks. The point object is included as single argument: `onPointClick(point)`. Only works if `pointsMerge` is disabled. | - |
-| <b>onPointRightClick</b>(<i>fn</i>) | Callback function for point right-clicks. The point object is included as single argument: `onPointRightClick(point)`. Only works if `pointsMerge` is disabled. | - |
+| <b>onPointClick</b>(<i>fn</i>) | Callback function for point (left-button) clicks. The point object and the event object are included as arguments: `onPointClick(point, event)`. Only works if `pointsMerge` is disabled. | - |
+| <b>onPointRightClick</b>(<i>fn</i>) | Callback function for point right-clicks. The point object and the event object are included as arguments: `onPointRightClick(point, event)`. Only works if `pointsMerge` is disabled. | - |
 | <b>onPointHover</b>(<i>fn</i>) | Callback function for point mouse over events. The point object (or `null` if there's no point under the mouse line of sight) is included as the first argument, and the previous point object (or `null`) as second argument: `onPointHover(point, prevPoint)`. Only works if `pointsMerge` is disabled. | - |
 
 ### Arcs Layer
@@ -142,8 +144,8 @@ Globe({ configOptions })(<domElement>)
 | <b>arcDashInitialGap</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Arc object accessor function, attribute or a numeric constant for the length of the initial gap before the first dash segment, in terms of relative line length. | 0 |
 | <b>arcDashAnimateTime</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Arc object accessor function, attribute or a numeric constant for the time duration (in `ms`) to animate the motion of dash positions from the start to the end point for a full line length. A value of `0` disables the animation. | 0 |
 | <b>arcsTransitionDuration</b>([<i>num</i>]) | Getter/setter for duration (ms) of the transition to animate arc changes involving geometry modifications. A value of `0` will move the arcs immediately to their final position. New arcs are animated by rising them from the ground up. | 1000 |
-| <b>onArcClick</b>(<i>fn</i>) | Callback function for arc (left-button) clicks. The arc object is included as single argument: `onArcClick(arc)`. | - |
-| <b>onArcRightClick</b>(<i>fn</i>) | Callback function for arc right-clicks. The arc object is included as single argument: `onArcRightClick(arc)`. | - |
+| <b>onArcClick</b>(<i>fn</i>) | Callback function for arc (left-button) clicks. The arc object and the event object are included as arguments: `onArcClick(arc, event)`. | - |
+| <b>onArcRightClick</b>(<i>fn</i>) | Callback function for arc right-clicks. The arc object and the event object are included as arguments: `onArcRightClick(arc, event)`. | - |
 | <b>onArcHover</b>(<i>fn</i>) | Callback function for arc mouse over events. The arc object (or `null` if there's no arc under the mouse line of sight) is included as the first argument, and the previous arc object (or `null`) as second argument: `onArcHover(arc, prevArc)`. | - |
 
 ### Polygons Layer
@@ -163,8 +165,8 @@ Globe({ configOptions })(<domElement>)
 | <b>polygonAltitude</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Polygon object accessor function, attribute or a numeric constant for the polygon cone's altitude in terms of globe radius units (`0` = 0 altitude (flat polygon), `1` = globe radius). | 0.01 |
 | <b>polygonCapCurvatureResolution</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Polygon object accessor function, attribute or a numeric constant for the resolution (in angular degrees) of the cap surface curvature. The finer the resolution, the more the polygon is fragmented into smaller faces to approximate the spheric surface, at the cost of performance. | 5 |
 | <b>polygonsTransitionDuration</b>([<i>num</i>]) | Getter/setter for duration (ms) of the transition to animate polygon altitude changes. A value of `0` will size the cone immediately to their final altitude. New polygons are animated by rising them from the ground up. | 1000 |
-| <b>onPolygonClick</b>(<i>fn</i>) | Callback function for polygon (left-button) clicks. The polygon object is included as single argument: `onPolygonClick(polygon)`. | - |
-| <b>onPolygonRightClick</b>(<i>fn</i>) | Callback function for polygon right-clicks. The polygon object is included as single argument: `onPolygonRightClick(polygon)`. | - |
+| <b>onPolygonClick</b>(<i>fn</i>) | Callback function for polygon (left-button) clicks. The polygon object and the event object are included as arguments: `onPolygonClick(polygon, event)`. | - |
+| <b>onPolygonRightClick</b>(<i>fn</i>) | Callback function for polygon right-clicks. The polygon object and the event object are included as arguments: `onPolygonRightClick(polygon, event)`. | - |
 | <b>onPolygonHover</b>(<i>fn</i>) | Callback function for polygon mouse over events. The polygon object (or `null` if there's no polygon under the mouse line of sight) is included as the first argument, and the previous polygon object (or `null`) as second argument: `onPolygonHover(polygon, prevPolygon)`. | - |
 
 ### Paths Layer
@@ -189,8 +191,8 @@ Globe({ configOptions })(<domElement>)
 | <b>pathDashInitialGap</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Path object accessor function, attribute or a numeric constant for the length of the initial gap before the first dash segment, in terms of relative line length. Not supported in Fat Lines with set width. | 0 |
 | <b>pathDashAnimateTime</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Path object accessor function, attribute or a numeric constant for the time duration (in `ms`) to animate the motion of dash positions from the start to the end point for a full line length. A value of `0` disables the animation. Not supported in Fat Lines with set width. | 0 |
 | <b>pathTransitionDuration</b>([<i>num</i>]) | Getter/setter for duration (ms) of the transition to animate path changes. A value of `0` will move the paths immediately to their final position. New paths are animated from start to end. | 1000 |
-| <b>onPathClick</b>(<i>fn</i>) | Callback function for path (left-button) clicks. The path object is included as single argument: `onPathClick(arc)`. | - |
-| <b>onPathRightClick</b>(<i>fn</i>) | Callback function for path right-clicks. The path object is included as single argument: `onPathRightClick(arc)`. | - |
+| <b>onPathClick</b>(<i>fn</i>) | Callback function for path (left-button) clicks. The path object and the event object are included as arguments: `onPathClick(arc, event)`. | - |
+| <b>onPathRightClick</b>(<i>fn</i>) | Callback function for path right-clicks. The path object and the event object are included as arguments: `onPathRightClick(arc, event)`. | - |
 | <b>onPathHover</b>(<i>fn</i>) | Callback function for path mouse over events. The path object (or `null` if there's no path under the mouse line of sight) is included as the first argument, and the previous path object (or `null`) as second argument: `onPathHover(path, prevPath)`. | - |
 
 ### Hex Bin Layer
@@ -214,8 +216,8 @@ Globe({ configOptions })(<domElement>)
 | <b>hexSideColor</b>([<i>fn</i>]) | Accessor method for each hexagon's side color. The method should follow the signature: `hexSideColor(({ points, sumWeight, center: { lat, lng }}) => ...)` and return a color string. | `() => '#ffffaa'` |
 | <b>hexBinMerge</b>([<i>boolean</i>]) | Getter/setter for whether to merge all the hexagon meshes into a single ThreeJS object, for improved rendering performance. Visually both options are equivalent, setting this option only affects the internal organization of the ThreeJS objects. | `false` |
 | <b>hexTransitionDuration</b>([<i>num</i>]) | Getter/setter for duration (ms) of the transition to animate hexagon changes related to geometry modifications (altitude, radius). A value of `0` will move the hexagons immediately to their final position. New hexagons are animated by scaling them from the ground up. Only works if `hexBinMerge` is disabled. | 1000 |
-| <b>onHexClick</b>(<i>fn</i>) | Callback function for hexagon (left-button) clicks. The hex object including all points binned is included as single argument: `onHexClick({ points, sumWeight, center: { lat, lng } })`. Only works if `hexBinMerge` is disabled. | - |
-| <b>onHexRightClick</b>(<i>fn</i>) | Callback function for hexagon right-clicks. The hex object including all points binned is included as single argument: `onHexRightClick({ points, sumWeight, center: { lat, lng } })`. Only works if `hexBinMerge` is disabled. | - |
+| <b>onHexClick</b>(<i>fn</i>) | Callback function for hexagon (left-button) clicks. The hex object including all points binned and the event object are included as arguments: `onHexClick({ points, sumWeight, center: { lat, lng } }, event)`. Only works if `hexBinMerge` is disabled. | - |
+| <b>onHexRightClick</b>(<i>fn</i>) | Callback function for hexagon right-clicks. The hex object including all points binned and the event object are included as arguments: `onHexRightClick({ points, sumWeight, center: { lat, lng } }, event)`. Only works if `hexBinMerge` is disabled. | - |
 | <b>onHexHover</b>(<i>fn</i>) | Callback function for hexagon mouse over events. The hex object (or `null` if there's no hex under the mouse line of sight) is included as the first argument, and the previous hex object (or `null`) as second argument: `onHexHover(hex, prevHex)`. Each hex object includes all points binned, and has the syntax: `{ points, sumWeight, center: { lat, lng } }`. Only works if `hexBinMerge` is disabled. | - |
 
 ### Hexed Polygons Layer
@@ -235,8 +237,8 @@ Globe({ configOptions })(<domElement>)
 | <b>hexPolygonMargin</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Hexed polygon object accessor function, attribute or a numeric constant for the radial margin of each hexagon. Margins above `0` will create gaps between adjacent hexagons within a polygon. The margin is specified in terms of fraction of the hexagon's surface diameter. Values below `0` or above `1` are disadvised. | 0.2 |
 | <b>hexPolygonCurvatureResolution</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Hexed polygon object accessor function, attribute or a numeric constant for the resolution (in angular degrees) of each hexed polygon surface curvature. The finer the resolution, the more the polygon hexes are fragmented into smaller faces to approximate the spheric surface, at the cost of performance. | 5 |
 | <b>hexPolygonsTransitionDuration</b>([<i>num</i>]) | Getter/setter for duration (ms) of the transition to animate hexed polygons altitude and margin changes. A value of `0` will move the hexagons immediately to their final state. New hexed polygons are animated by sizing each hexagon from `0` radius. | 0 |
-| <b>onHexPolygonClick</b>(<i>fn</i>) | Callback function for hexed polygon (left-button) clicks. The polygon object is included as single argument: `onHexPolygonClick(polygon)`. | - |
-| <b>onHexPolygonRightClick</b>(<i>fn</i>) | Callback function for hexed polygon right-clicks. The polygon object is included as single argument: `onHexPolygonRightClick(polygon)`. | - |
+| <b>onHexPolygonClick</b>(<i>fn</i>) | Callback function for hexed polygon (left-button) clicks. The polygon object and the event object are included as arguments: `onHexPolygonClick(polygon, event)`. | - |
+| <b>onHexPolygonRightClick</b>(<i>fn</i>) | Callback function for hexed polygon right-clicks. The polygon object and the event object are included as arguments: `onHexPolygonRightClick(polygon, event)`. | - |
 | <b>onHexPolygonHover</b>(<i>fn</i>) | Callback function for hexed polygon mouse over events. The polygon object (or `null` if there's no polygon under the mouse line of sight) is included as the first argument, and the previous polygon object (or `null`) as second argument: `onHexPolygonHover(polygon, prevPolygon)`. | - |
 
 ### Labels Layer
@@ -262,8 +264,8 @@ Globe({ configOptions })(<domElement>)
 | <b>labelDotRadius</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Label object accessor function, attribute or a numeric constant for the radius of the dot marker, in angular degrees. | 0.1 |
 | <b>labelDotOrientation</b>([<i>str</i> or <i>fn</i>]) | Label object accessor function or attribute for the orientation of the label if the dot marker is present. Possible values are `right`, `top` and `bottom`. | `() => 'bottom'` |
 | <b>labelsTransitionDuration</b>([<i>num</i>]) | Getter/setter for duration (ms) of the transition to animate label changes involving position modifications (`lat`, `lng`, `altitude`, `rotation`). A value of `0` will move the labels immediately to their final position. New labels are animated by scaling their size. | 1000 |
-| <b>onLabelClick</b>(<i>fn</i>) | Callback function for label (left-button) clicks. The label object is included as single argument: `onlabelClick(label)`. | - |
-| <b>onLabelRightClick</b>(<i>fn</i>) | Callback function for label right-clicks. The label object is included as single argument: `onlabelRightClick(label)`. | - |
+| <b>onLabelClick</b>(<i>fn</i>) | Callback function for label (left-button) clicks. The label object and the event object are included as arguments: `onlabelClick(label, event)`. | - |
+| <b>onLabelRightClick</b>(<i>fn</i>) | Callback function for label right-clicks. The label object and the event object are included as arguments: `onlabelRightClick(label, event)`. | - |
 | <b>onLabelHover</b>(<i>fn</i>) | Callback function for label mouse over events. The label object (or `null` if there's no label under the mouse line of sight) is included as the first argument, and the previous label object (or `null`) as second argument: `onlabelHover(label, prevlabel)`. | - |
 
 ### Custom Layer
@@ -278,8 +280,8 @@ Globe({ configOptions })(<domElement>)
 | <b>customLayerLabel</b>([<i>str</i> or <i>fn</i>]) | Object accessor function or attribute for label (shown as tooltip). Supports plain text or HTML content. | `name` |
 | <b>customThreeObject</b>([<i>Object3d</i>, <i>str</i> or <i>fn</i>]) | Object accessor function or attribute for generating a custom 3d object to render as part of the custom map layer. Should return an instance of [ThreeJS Object3d](https://threejs.org/docs/index.html#api/core/Object3D). The callback method's signature includes the object's data as well as the globe radius: `customThreeObject((objData, globeRadius) => { ... })`. | `null` |
 | <b>customThreeObjectUpdate</b>([<i>str</i> or <i>fn</i>]) | Object accessor function or attribute for updating an existing custom 3d object with new data. This can be used for performance improvement on data updates as the objects don't need to be removed and recreated at each update. The callback method's signature includes the object to be update, its new data and the globe radius: `customThreeObjectUpdate((obj, objData, globeRadius) => { ... })`. | `null` |
-| <b>onCustomLayerClick</b>(<i>fn</i>) | Callback function for custom object (left-button) clicks. The custom object is included as single argument: `onCustomLayerClick(obj)`. | - |
-| <b>onCustomLayerRightClick</b>(<i>fn</i>) | Callback function for custom object right-clicks. The custom object is included as single argument: `onCustomLayerRightClick(obj)`. | - |
+| <b>onCustomLayerClick</b>(<i>fn</i>) | Callback function for custom object (left-button) clicks. The custom object and the event object are included as arguments: `onCustomLayerClick(obj, event)`. | - |
+| <b>onCustomLayerRightClick</b>(<i>fn</i>) | Callback function for custom object right-clicks. The custom object and the event object are included as arguments: `onCustomLayerRightClick(obj, event)`. | - |
 | <b>onCustomLayerHover</b>(<i>fn</i>) | Callback function for custom object mouse over events. The custom object (or `null` if there's no object under the mouse line of sight) is included as the first argument, and the previous custom object (or `null`) as second argument: `onCustomLayerHover(obj, prevObj)`. | - |
 
 ### Render control
