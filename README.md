@@ -306,7 +306,7 @@ Globe({ configOptions })(<domElement>)
 | <b>getCoords</b>(<i>lat</i>, <i>lng</i> [,<i>altitude</i>]) | Utility method to translate spherical coordinates to cartesian. Given a pair of latitude/longitude coordinates and optionally altitude (in terms of globe radius units), returns the equivalent `{x, y, z}` cartesian spatial coordinates. ||
 | <b>getScreenCoords</b>(<i>lat</i>, <i>lng</i> [,<i>altitude</i>]) | Utility method to translate spherical coordinates to the viewport domain. Given a pair of latitude/longitude coordinates and optionally altitude (in terms of globe radius units), returns the current equivalent `{x, y}` in viewport coordinates. ||
 | <b>toGeoCoords</b>({ <i>x</i>, <i>y</i>, <i>z</i> }) | Utility method to translate cartesian coordinates to the geographic domain. Given a set of 3D cartesian coordinates `{x, y, z}`, returns the equivalent `{lat, lng, altitude}` spherical coordinates. Altitude is defined in terms of globe radius units. ||
-| <b>toGlobeCoords</b>({ <i>x</i>, <i>y</i> }) | Utility method to translate viewport coordinates to the globe surface coordinates directly under the specified viewport pixel. Returns the globe coordinates in the format `{ lat, lng }`, or `null` if the globe does not currently intersect with that viewport location. ||
+| <b>toGlobeCoords</b>(<i>x</i>, <i>y</i>) | Utility method to translate viewport coordinates to the globe surface coordinates directly under the specified viewport pixel. Returns the globe coordinates in the format `{ lat, lng }`, or `null` if the globe does not currently intersect with that viewport location. ||
 
 ## Giving Back
 
