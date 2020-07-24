@@ -229,6 +229,13 @@ export default Kapsule({
       const cartesianCoords = state.globe.getCoords(...geoCoords);
       return state.renderObjs.getScreenCoords(cartesianCoords.x, cartesianCoords.y, cartesianCoords.z);
     },
+    toGlobeCoords: (state, x, y) => {
+      const globeIntersects = state.renderObjs.intersectingObjects(x, y).find(d => d.object.__globeObjType === 'globe');
+      if (!globeIntersects) return null; // coords outside globe
+
+      const { lat, lng } = state.globe.toGeoCoords(globeIntersects.point);
+      return { lat, lng };
+    },
     scene: state => state.renderObjs.scene(), // Expose scene
     camera: state => state.renderObjs.camera(), // Expose camera
     renderer: state => state.renderObjs.renderer(), // Expose renderer

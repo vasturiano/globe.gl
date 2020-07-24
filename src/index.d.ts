@@ -96,6 +96,7 @@ export interface GlobeGenericInstance<ChainableInstance> extends ThreeGlobeGener
 
   // Utility
   getScreenCoords(lat: number, lng: number, altitude?: number): { x: number, y: number };
+  toGlobeCoords(x: number, y: number): { lat: number, lng: number} | null;
 }
 
 export type GlobeInstance = GlobeGenericInstance<GlobeInstance>;
