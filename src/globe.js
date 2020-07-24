@@ -409,6 +409,11 @@ export default Kapsule({
         const objType = globeObj.__globeObjType;
         if (globeObj && objFns.hasOwnProperty(objType)) {
           const args = [ev];
+          if (objType === 'globe') {
+            // include click coords in { lat, lng }
+            const { x, y } = state.renderObjs.getPointerPos();
+            args.unshift(this.toGlobeCoords(x, y));
+          }
           dataAccessors.hasOwnProperty(objType) && args.unshift(dataAccessors[objType](globeObj.__data));
           objFns[objType](...args);
         }
@@ -433,6 +438,11 @@ export default Kapsule({
         const objType = globeObj.__globeObjType;
         if (globeObj && objFns.hasOwnProperty(objType)) {
           const args = [ev];
+          if (objType === 'globe') {
+            // include click coords in { lat, lng }
+            const { x, y } = state.renderObjs.getPointerPos();
+            args.unshift(this.toGlobeCoords(x, y));
+          }
           dataAccessors.hasOwnProperty(objType) && args.unshift(dataAccessors[objType](globeObj.__data));
           objFns[objType](...args);
         }

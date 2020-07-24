@@ -53,8 +53,8 @@ export interface GlobeGenericInstance<ChainableInstance> extends ThreeGlobeGener
   customLayerLabel(textAccessor: ObjAccessor<string>): ChainableInstance;
 
   // Interaction events
-  onGlobeClick(callback: (event: MouseEvent) => void): ChainableInstance;
-  onGlobeRightClick(callback: (event: MouseEvent) => void): ChainableInstance;
+  onGlobeClick(callback: (coords: { lat, lng }, event: MouseEvent) => void): ChainableInstance;
+  onGlobeRightClick(callback: (coords: { lat, lng }, event: MouseEvent) => void): ChainableInstance;
   onPointClick(callback: (point: object, event: MouseEvent) => void): ChainableInstance;
   onPointRightClick(callback: (point: object, event: MouseEvent) => void): ChainableInstance;
   onPointHover(callback: (point: object | null, prevPoint: object | null) => void): ChainableInstance;

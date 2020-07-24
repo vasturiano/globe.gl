@@ -1586,10 +1586,10 @@ three-glow-mesh@^0.1.1:
   resolved "https://registry.yarnpkg.com/three-glow-mesh/-/three-glow-mesh-0.1.1.tgz#0accf2ef0c53620beeb9bfeb455a7319b8d54a11"
   integrity sha512-1PfgG0HdDG3XrkrK/OzAeu7Pw8d9cGNfupKIUS93DYCboXAVAl7/5TMNWsHy/h6x47rZwiQYVd04WOfIsKtY7Q==
 
-three-render-objects@^1.22.1:
-  version "1.22.1"
-  resolved "https://registry.yarnpkg.com/three-render-objects/-/three-render-objects-1.22.1.tgz#15b5ac76ac821fee0164f124d6577d6baff2bbcd"
-  integrity sha512-FyKfW41AfMGTozbDJ8DKFQuNR+Ej1kCo0pmnbplWCj5Un9unM6L0n2A9NXiwHjGRtqSFyLQ0koETyQzQLrc+vg==
+three-render-objects@^1.23.0:
+  version "1.23.0"
+  resolved "https://registry.yarnpkg.com/three-render-objects/-/three-render-objects-1.23.0.tgz#09311a7259a34b9808b52e10e814e88e64f7ddea"
+  integrity sha512-El2Try2QW7kZ9kbgEYcEPWcuSDdmBx2ZExZ5N7V0fdamMrqpJ5GeBH8vAsjt7dPUUaH3fAn0OYHArcxZeRrPhA==
   dependencies:
     "@tweenjs/tween.js" "^18.6.0"
     accessor-fn "^1.3.0"
