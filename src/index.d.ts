@@ -21,7 +21,7 @@ interface GeoCoords {
   altitude: number;
 }
 
-type PointerEventsFilterFn = (object: Object3D, data: object) => boolean;
+type PointerEventsFilterFn = (object: Object3D, data?: object) => boolean;
 
 export interface GlobeGenericInstance<ChainableInstance> extends ThreeGlobeGeneric<ChainableInstance> {
   (element: HTMLElement): ChainableInstance;
