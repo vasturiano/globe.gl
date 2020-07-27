@@ -1,4 +1,4 @@
-import { Scene, Camera, WebGLRenderer, WebGLRendererParameters } from 'three';
+import { Object3D, Scene, Camera, WebGLRenderer, WebGLRendererParameters } from 'three';
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
 import { ThreeGlobeGeneric, ConfigOptions as ThreeGlobeConfigOptions } from 'three-globe';
 
@@ -20,6 +20,8 @@ interface GeoCoords {
   lng: number;
   altitude: number;
 }
+
+type PointerEventsFilterFn = (object: Object3D, data: object) => boolean;
 
 export interface GlobeGenericInstance<ChainableInstance> extends ThreeGlobeGeneric<ChainableInstance> {
   (element: HTMLElement): ChainableInstance;
@@ -87,6 +89,8 @@ export interface GlobeGenericInstance<ChainableInstance> extends ThreeGlobeGener
   resumeAnimation(): ChainableInstance;
   enablePointerInteraction(): boolean;
   enablePointerInteraction(enable: boolean): ChainableInstance;
+  pointerEventsFilter(): PointerEventsFilterFn;
+  pointerEventsFilter(filterFn: PointerEventsFilterFn): ChainableInstance;
   onZoom(callback: (pov: GeoCoords) => void): ChainableInstance;
   scene(): Scene;
   camera(): Camera;

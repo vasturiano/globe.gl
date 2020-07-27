@@ -167,6 +167,11 @@ export default Kapsule({
     onCustomLayerClick: { default: () => {}, triggerUpdate: false },
     onCustomLayerRightClick: { default: () => {}, triggerUpdate: false },
     onCustomLayerHover: { default: () => {}, triggerUpdate: false },
+    pointerEventsFilter: {
+      default: () => true,
+      triggerUpdate: false,
+      onChange: (filterFn, state) => state.renderObjs.hoverFilter(obj => filterFn(obj, obj.__data))
+    },
     ...linkedGlobeProps,
     ...linkedRenderObjsProps
   },
