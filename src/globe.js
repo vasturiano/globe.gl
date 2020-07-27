@@ -389,7 +389,7 @@ export default Kapsule({
           state.hoverObj = hoverObj;
         }
       })
-      .onClick((obj, ev) => {
+      .onClick((obj, ev, point) => {
         if (!obj) return; // ignore background clicks
 
         // Handle click events on objects
@@ -411,14 +411,14 @@ export default Kapsule({
           const args = [ev];
           if (objType === 'globe') {
             // include click coords in { lat, lng }
-            const { x, y } = state.renderObjs.getPointerPos();
-            args.unshift(this.toGlobeCoords(x, y));
+            const { lat, lng } = this.toGeoCoords(point);
+            args.unshift({ lat, lng });
           }
           dataAccessors.hasOwnProperty(objType) && args.unshift(dataAccessors[objType](globeObj.__data));
           objFns[objType](...args);
         }
       })
-      .onRightClick((obj, ev) => {
+      .onRightClick((obj, ev, point) => {
         if (!obj) return; // ignore background clicks
 
         // Handle right-click events
@@ -440,8 +440,8 @@ export default Kapsule({
           const args = [ev];
           if (objType === 'globe') {
             // include click coords in { lat, lng }
-            const { x, y } = state.renderObjs.getPointerPos();
-            args.unshift(this.toGlobeCoords(x, y));
+            const { lat, lng } = this.toGeoCoords(point);
+            args.unshift({ lat, lng });
           }
           dataAccessors.hasOwnProperty(objType) && args.unshift(dataAccessors[objType](globeObj.__data));
           objFns[objType](...args);
