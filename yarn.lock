@@ -858,9 +858,9 @@
   integrity sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==
 
 "@types/node@*":
-  version "14.0.25"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.0.25.tgz#7ad8b00a1206d6c9e94810e49f3115f0bcc30456"
-  integrity sha512-okMqUHqrMlGOxfDZliX1yFX5MV6qcd5PpRz96XYtjkM0Ws/hwg23FMUqt6pETrVRZS+EKUB5HY19mmo54EuQbA==
+  version "14.0.26"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.0.26.tgz#22a3b8a46510da8944b67bfc27df02c34a35331c"
+  integrity sha512-W+fpe5s91FBGE0pEa0lnqGLL4USgpLgs4nokw16SrBBco/gQxuua7KnArSEOd5iaMqbbSHV10vUDkJYJJqpXKA==
 
 "@types/resolve@1.17.1":
   version "1.17.1"
@@ -922,9 +922,9 @@ builtin-modules@^3.1.0:
   integrity sha512-k0KL0aWZuBt2lrxrcASWDfwOLMnodeQjodT/1SxEQAXsHANgo6ZC/VEaSEHCXt7aSTZ4/4H5LKa+tBXmW7Vtvw==
 
 caniuse-lite@^1.0.30001093:
-  version "1.0.30001105"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001105.tgz#d2cb0b31e5cf2f3ce845033b61c5c01566549abf"
-  integrity sha512-JupOe6+dGMr7E20siZHIZQwYqrllxotAhiaej96y6x00b/48rPt42o+SzOSCPbrpsDWvRja40Hwrj0g0q6LZJg==
+  version "1.0.30001107"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001107.tgz#809360df7a5b3458f627aa46b0f6ed6d5239da9a"
+  integrity sha512-86rCH+G8onCmdN4VZzJet5uPELII59cUzDphko3thQFgAQG1RNa+sVLDoALIhRYmflo5iSIzWY3vu1XTWtNMQQ==
 
 chalk@^2.0.0:
   version "2.4.2"
@@ -1081,9 +1081,9 @@ earcut@^2.2.2:
   integrity sha512-eZoZPPJcUHnfRZ0PjLvx2qBordSiO8ofC3vt+qACLM95u+4DovnbYNpQtJh0DNsWj8RnxrQytD4WA8gj5cRIaQ==
 
 electron-to-chromium@^1.3.488:
-  version "1.3.506"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.506.tgz#74bd3e1fb31285b3247f165d4958da74d70ae4e4"
-  integrity sha512-k0PHtv4gD6KJu1k6lp8pvQOe12uZriOwS2x66Vnxkq0NOBucsNrItOj/ehomvcZ3S4K1ueqUCv+fsLhXBs6Zyw==
+  version "1.3.510"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.510.tgz#dee781ff8b595c0deb60172b75d50b6889757eda"
+  integrity sha512-sLtGB0znXdmo6lM8hy5wTVo+fLqvIuO8hEpgc0DvPmFZqvBu/WB7AarEwhxVKjf3rVbws/rC8Xf+AlsOb36lJQ==
 
 escalade@^3.0.1:
   version "3.0.2"
@@ -1582,14 +1582,14 @@ three-globe@^2.8.7:
     tinycolor2 "^1.4.1"
 
 three-glow-mesh@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/three-glow-mesh/-/three-glow-mesh-0.1.1.tgz#0accf2ef0c53620beeb9bfeb455a7319b8d54a11"
-  integrity sha512-1PfgG0HdDG3XrkrK/OzAeu7Pw8d9cGNfupKIUS93DYCboXAVAl7/5TMNWsHy/h6x47rZwiQYVd04WOfIsKtY7Q==
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/three-glow-mesh/-/three-glow-mesh-0.1.2.tgz#d7e1528e678380fc7022ffed6189246100493b4d"
+  integrity sha512-sjiRl8PdRuc5xzZtaAusumx4sS/zRAYiFSQ1bNefRrJOXgu+ZHxq4/vYwRoa85PwPKLkp2SCo3Lu4JfJrphngw==
 
-three-render-objects@^1.24.0:
-  version "1.24.0"
-  resolved "https://registry.yarnpkg.com/three-render-objects/-/three-render-objects-1.24.0.tgz#23b0f743092fd0093407604db35c35d1231cc8ab"
-  integrity sha512-BmJBVSkjFgJMdlhdvs8dWAUSA91tFd2tB27Z6l2Lax9K/gPpmSjmXMJtRlxdB/mPJxdNxzuEkaIYdCx3oX8v3Q==
+three-render-objects@^1.24.2:
+  version "1.24.2"
+  resolved "https://registry.yarnpkg.com/three-render-objects/-/three-render-objects-1.24.2.tgz#c68220979a67388adb222e81198e9c078335d775"
+  integrity sha512-sZdwcwrSn5QC6xpB3rivNUDaqt21n1QbGW3bCI4Gtd5xfRbw8KO0E05YzA5FPFgGBr5tglepZTPFQVEaK9lTNg==
   dependencies:
     "@tweenjs/tween.js" "^18.6.0"
     accessor-fn "^1.3.0"
