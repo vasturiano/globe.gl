@@ -1135,9 +1135,9 @@ earcut@^2.2.2:
   integrity sha512-eZoZPPJcUHnfRZ0PjLvx2qBordSiO8ofC3vt+qACLM95u+4DovnbYNpQtJh0DNsWj8RnxrQytD4WA8gj5cRIaQ==
 
 electron-to-chromium@^1.3.585:
-  version "1.3.588"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.588.tgz#c6515571737bfb42678115a5eaa818384593a9a5"
-  integrity sha512-0zr+ZfytnLeJZxGgmEpPTcItu5Mm4A5zHPZXLfHcGp0mdsk95rmD7ePNewYtK1yIdLbk8Z1U2oTRRfOtR4gbYg==
+  version "1.3.589"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.589.tgz#bd26183ed8697dde6ac19acbc16a3bf33b1f8220"
+  integrity sha512-rQItBTFnol20HaaLm26UgSUduX7iGerwW7pEYX17MB1tI6LzFajiLV7iZ7LVcUcsN/7HrZUoCLrBauChy/IqEg==
 
 escalade@^3.1.1:
   version "3.1.1"
@@ -1590,10 +1590,10 @@ three-conic-polygon-geometry@^1.3.7:
     delaunator "^4.0.1"
     earcut "^2.2.2"
 
-three-fatline@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/three-fatline/-/three-fatline-0.4.0.tgz#205b090597097a87037bdf122f3725900f5af49d"
-  integrity sha512-Xe2sNqtK40nI42CrMUh6qLJaLFqYp7clIlr/OTO/pOIVp8kO5MGylgv66Yod5yauffgiBK87ta714G+xDBgxhg==
+three-fatline@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/three-fatline/-/three-fatline-0.4.1.tgz#8f9eb5a34348ba03cb3186797c27a39b49dd35e1"
+  integrity sha512-SqqxEtTVc1bv2z28H5SSxXyVRbk7v9rrnKnKAKWX0L6z9Z9F94jGIVew94HPhZwJnFFgQFGuVF2nyqh4Q3U3AQ==
 
 three-geojson-geometry@^1.1.0:
   version "1.1.0"
@@ -1602,10 +1602,10 @@ three-geojson-geometry@^1.1.0:
   dependencies:
     earcut "^2.2.2"
 
-three-globe@^2.10.0:
-  version "2.10.0"
-  resolved "https://registry.yarnpkg.com/three-globe/-/three-globe-2.10.0.tgz#a1370d17d325d02b3e08dfed8effab09c5960a62"
-  integrity sha512-8a+V3Lho+OdrLoVkZfgE1ZTWMTtmLVSsy+Nn+8zsVkd7VrxTyrLj2dtBI3hqzMHYWKUhJTLpyFhHw196RvDFnQ==
+three-globe@^2.10.1:
+  version "2.10.1"
+  resolved "https://registry.yarnpkg.com/three-globe/-/three-globe-2.10.1.tgz#a0f501d2f96d13adc3dba4f5cdbffea3d3e8949d"
+  integrity sha512-s2nGNF3ikosnZdu+DGE8YADZi/yx9w6SxLBTfMWYXRT9L8n1NUwGHeUXuxHQIpeJhgB1NAvmAMYwCFHhqPqmvg==
   dependencies:
     "@tweenjs/tween.js" "^18.6.4"
     accessor-fn "^1.3.0"
@@ -1619,7 +1619,7 @@ three-globe@^2.10.0:
     index-array-by "^1.3.0"
     kapsule "^1.13.3"
     three-conic-polygon-geometry "^1.3.7"
-    three-fatline "^0.4.0"
+    three-fatline "^0.4.1"
     three-geojson-geometry "^1.1.0"
     three-glow-mesh "^0.1.2"
     tinycolor2 "^1.4.2"
