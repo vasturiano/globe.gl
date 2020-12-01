@@ -1667,17 +1667,18 @@ three-fatline@^0.4.1:
   resolved "https://registry.yarnpkg.com/three-fatline/-/three-fatline-0.4.1.tgz#8f9eb5a34348ba03cb3186797c27a39b49dd35e1"
   integrity sha512-SqqxEtTVc1bv2z28H5SSxXyVRbk7v9rrnKnKAKWX0L6z9Z9F94jGIVew94HPhZwJnFFgQFGuVF2nyqh4Q3U3AQ==
 
-three-geojson-geometry@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/three-geojson-geometry/-/three-geojson-geometry-1.1.0.tgz#27e906cdd3de2a3b0299d8657528df0b6dc5436b"
-  integrity sha512-x/2FIuF+AG9s411HmNtQZ5JhWl3ig+I+mtAmX4ecEEt+STk0bPt8NzFRUaeJldrn/99v1UGzE7NdTtelp7gxUQ==
+three-geojson-geometry@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/three-geojson-geometry/-/three-geojson-geometry-1.1.1.tgz#5ed37646db3bbe88c982b9289deae205e9c712db"
+  integrity sha512-/PLGu/PQBnxQYFKxE0uFv6MW6ENdhS3J4Md/DR9nYe7ZHVR+b8/o/qkUFik9rIw/BNYgoc8BHr6LjvUSsABSmQ==
   dependencies:
+    d3-geo "^2.0.1"
     earcut "^2.2.2"
 
-three-globe@^2.10.3:
-  version "2.10.3"
-  resolved "https://registry.yarnpkg.com/three-globe/-/three-globe-2.10.3.tgz#eef60233dbe8be590457b23517e06903d284722a"
-  integrity sha512-T6ce6j8sDHmDh/wDpyyC0pmW4eduPfB+fZiGWAu27q3zPqrRQmNwBtc4iMVahUbBIFttQe6DZkKmDSmV7sH52w==
+three-globe@^2.10.4:
+  version "2.10.4"
+  resolved "https://registry.yarnpkg.com/three-globe/-/three-globe-2.10.4.tgz#2169aa489d14d719a5c22deac46150b463d484cf"
+  integrity sha512-X6Tgt26f9/KDOVTS//Qij+MIRBEGQf9Io29s/7vQhbB3LgFr4HbP0tyYwnlEzBiJWA6BzcdmWQbG0Y0VTl3DVQ==
   dependencies:
     "@tweenjs/tween.js" "^18.6.4"
     accessor-fn "^1.3.0"
@@ -1692,7 +1693,7 @@ three-globe@^2.10.3:
     kapsule "^1.13.3"
     three-conic-polygon-geometry "1.4.0"
     three-fatline "^0.4.1"
-    three-geojson-geometry "^1.1.0"
+    three-geojson-geometry "^1.1.1"
     three-glow-mesh "^0.1.2"
     tinycolor2 "^1.4.2"
 
