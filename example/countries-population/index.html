@@ -25,7 +25,7 @@
     world.controls().autoRotateSpeed = 1.8;
 
     fetch('../datasets/ne_110m_admin_0_countries.geojson').then(res => res.json()).then(countries => {
-      world.polygonsData(countries.features);
+      world.polygonsData(countries.features.filter(d => d.properties.ISO_A2 !== 'AQ'));
 
       setTimeout(() => world
         .polygonsTransitionDuration(4000)
