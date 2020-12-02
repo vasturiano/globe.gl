@@ -1,0 +1,42 @@
+<head>
+  <style> body { margin: 0; } </style>
+
+  <script src="//unpkg.com/three"></script>
+
+  <script src="//unpkg.com/globe.gl"></script>
+<!--    <script src="../../dist/globe.gl.js"></script>-->
+</head>
+
+<body>
+<div id="globeViz"></div>
+
+<script>
+  const TILE_MARGIN = 0.35; // degrees
+
+  // Gen random data
+  const GRID_SIZE = [60, 20];
+  const COLORS = ['red', 'green', 'yellow', 'blue', 'orange', 'pink', 'brown', 'purple', 'magenta'];
+
+  const materials = COLORS.map(color => new THREE.MeshLambertMaterial({ color, opacity: 0.6, transparent: true }));
+  const tileWidth = 360 / GRID_SIZE[0];
+  const tileHeight = 180 / GRID_SIZE[1];
+  const tilesData = [];
+  [...Array(GRID_SIZE[0]).keys()].forEach(lngIdx =>
+    [...Array(GRID_SIZE[1]).keys()].forEach(latIdx =>
+      tilesData.push({
+        lng: -180 + lngIdx * tileWidth,
+        lat: -90 + (latIdx + 0.5) * tileHeight,
+        material: materials[Math.floor(Math.random() * materials.length)]
+      })
+    )
+  );
+
+  Globe()
+    .tilesData(tilesData)
+    .tileWidth(tileWidth - TILE_MARGIN)
+    .tileHeight(tileHeight - TILE_MARGIN)
+    .tileMaterial('material')
+    (document.getElementById('globeViz'))
+
+</script>
+</body>

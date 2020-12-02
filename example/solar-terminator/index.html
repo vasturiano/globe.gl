@@ -1,0 +1,70 @@
+<head>
+  <style>
+    body {
+      margin: 0;
+      font-family: SansSerif;
+    }
+
+    #time {
+      position: absolute;
+      bottom: 8px;
+      left: 8px;
+      color: lightblue;
+    }
+  </style>
+
+  <script src="//unpkg.com/three"></script>
+
+    <script src="//unpkg.com/globe.gl"></script>
+<!--  <script src="../../dist/globe.gl.js"></script>-->
+
+  <script src="//unpkg.com/solar-calculator"></script>
+</head>
+
+<body>
+  <div id="globeViz"></div>
+  <div id="time"></div>
+
+  <script>
+    const VELOCITY = 9; // minutes per frame
+
+    const sunPosAt = dt => {
+      const day = new Date(+dt).setUTCHours(0, 0, 0, 0);
+      const t = solar.century(dt);
+      const longitude = (day - dt) / 864e5 * 360 - 180;
+      return [longitude - solar.equationOfTime(t) / 4, solar.declination(t)];
+    };
+
+    let dt = +new Date();
+    const solarTile = { pos: sunPosAt(dt) };
+    const timeEl = document.getElementById('time');
+
+    const world = Globe()
+      (document.getElementById('globeViz'))
+      .globeImageUrl('//unpkg.com/three-globe/example/img/earth-dark.jpg')
+      .tilesData([solarTile])
+      .tileLng(d => d.pos[0])
+      .tileLat(d => d.pos[1])
+      .tileAltitude(0.005)
+      .tileWidth(180)
+      .tileHeight(180)
+      .tileUseGlobeProjection(false)
+      .tileMaterial(() => new THREE.MeshLambertMaterial({ color: '#ffff00', opacity: 0.3, transparent: true }))
+      .tilesTransitionDuration(0);
+
+    // animate time of day
+    requestAnimationFrame(() =>
+      (function animate() {
+        dt += VELOCITY * 60 * 1000;
+        solarTile.pos = sunPosAt(dt);
+        world.tilesData([solarTile]);
+        timeEl.textContent = new Date(dt).toLocaleString();
+        requestAnimationFrame(animate);
+      })()
+    );
+
+    // Auto-rotate
+    world.controls().autoRotate = true;
+    world.controls().autoRotateSpeed = 1.8;
+  </script>
+</body>

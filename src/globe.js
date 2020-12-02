@@ -88,6 +88,16 @@ const linkedGlobeProps = Object.assign(...[
   'hexPolygonMargin',
   'hexPolygonCurvatureResolution',
   'hexPolygonsTransitionDuration',
+  'tilesData',
+  'tileLat',
+  'tileLng',
+  'tileAltitude',
+  'tileWidth',
+  'tileHeight',
+  'tileUseGlobeProjection',
+  'tileMaterial',
+  'tileCurvatureResolution',
+  'tilesTransitionDuration',
   'labelsData',
   'labelLat',
   'labelLng',
@@ -159,6 +169,10 @@ export default Kapsule({
     onHexPolygonClick: { default: () => {}, triggerUpdate: false },
     onHexPolygonRightClick: { default: () => {}, triggerUpdate: false },
     onHexPolygonHover: { default: () => {}, triggerUpdate: false },
+    tileLabel: { default: 'name', triggerUpdate: false },
+    onTileClick: { default: () => {}, triggerUpdate: false },
+    onTileRightClick: { default: () => {}, triggerUpdate: false },
+    onTileHover: { default: () => {}, triggerUpdate: false },
     labelLabel: { triggerUpdate: false },
     onLabelClick: { default: () => {}, triggerUpdate: false },
     onLabelRightClick: { default: () => {}, triggerUpdate: false },
@@ -253,6 +267,7 @@ export default Kapsule({
       this.pathsData([]);
       this.hexBinPointsData([]);
       this.hexPolygonsData([]);
+      this.tilesData([]);
       this.labelsData([]);
       this.customLayerData([]);
     },
@@ -321,6 +336,7 @@ export default Kapsule({
       path: d => d,
       hexbin: d => d,
       hexPolygon: d => d,
+      tile: d => d,
       label: d => d,
       custom: d => d
     };
@@ -348,6 +364,7 @@ export default Kapsule({
           path: state.pathLabel,
           hexbin: state.hexLabel,
           hexPolygon: state.hexPolygonLabel,
+          tile: state.tileLabel,
           label: state.labelLabel,
           custom: state.customLayerLabel
         };
@@ -368,6 +385,7 @@ export default Kapsule({
           path: state.onPathHover,
           hexbin: state.onHexHover,
           hexPolygon: state.onHexPolygonHover,
+          tile: state.onTileHover,
           label: state.onLabelHover,
           custom: state.onCustomLayerHover
         };
@@ -406,6 +424,7 @@ export default Kapsule({
           path: state.onPathClick,
           hexbin: state.onHexClick,
           hexPolygon: state.onHexPolygonClick,
+          tile: state.onTileClick,
           label: state.onLabelClick,
           custom: state.onCustomLayerClick
         };
@@ -435,6 +454,7 @@ export default Kapsule({
           path: state.onPathRightClick,
           hexbin: state.onHexRightClick,
           hexPolygon: state.onHexPolygonRightClick,
+          tile: state.onTileRightClick,
           label: state.onLabelRightClick,
           custom: state.onCustomLayerRightClick
         };

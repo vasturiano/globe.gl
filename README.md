@@ -27,6 +27,8 @@ Check out the examples:
 * [Path Lines](https://vasturiano.github.io/globe.gl/example/random-paths/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/random-paths/index.html))
 * [Map Labels](https://vasturiano.github.io/globe.gl/example/world-cities/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/world-cities/index.html))
 * [Hexed Country Polygons](https://vasturiano.github.io/globe.gl/example/hexed-polygons/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/hexed-polygons/index.html))
+* [Tiles](https://vasturiano.github.io/globe.gl/example/tiles/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/tiles/index.html))
+* [Solar Terminator](https://vasturiano.github.io/globe.gl/example/solar-terminator/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/solar-terminator/index.html))
 * [Custom Globe Styling](https://vasturiano.github.io/globe.gl/example/custom-globe-styling/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/custom-globe-styling/index.html))
 * [Custom Layer](https://vasturiano.github.io/globe.gl/example/custom-layer/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/custom-layer/index.html))
 * [World Population](https://vasturiano.github.io/globe.gl/example/world-population/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/world-population/index.html))
@@ -240,6 +242,29 @@ Globe({ configOptions })(<domElement>)
 | <b>onHexPolygonClick</b>(<i>fn</i>) | Callback function for hexed polygon (left-button) clicks. The polygon object and the event object are included as arguments: `onHexPolygonClick(polygon, event)`. | - |
 | <b>onHexPolygonRightClick</b>(<i>fn</i>) | Callback function for hexed polygon right-clicks. The polygon object and the event object are included as arguments: `onHexPolygonRightClick(polygon, event)`. | - |
 | <b>onHexPolygonHover</b>(<i>fn</i>) | Callback function for hexed polygon mouse over events. The polygon object (or `null` if there's no polygon under the mouse line of sight) is included as the first argument, and the previous polygon object (or `null`) as second argument: `onHexPolygonHover(polygon, prevPolygon)`. | - |
+
+### Tiles Layer
+
+<p align="center">
+   <a href="//vasturiano.github.io/globe.gl/example/tiles/"><img width="70%" src="https://vasturiano.github.io/globe.gl/example/tiles/preview.png"></a>
+</p>
+
+| Method | Description | Default |
+| --- | --- | :--: |
+| <b>tilesData</b>([<i>array</i>]) | Getter/setter for the list of tiles to represent in the tiles map layer. Each tile is displayed as a spherical surface segment. The segments can be placed side-by-side for a tiled surface and each can be styled separately. | `[]` |
+| <b>tileLabel</b>([<i>str</i> or <i>fn</i>]) | Tile object accessor function or attribute for label (shown as tooltip). Supports plain text or HTML content. | `name` |
+| <b>tileLat</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Tile object accessor function, attribute or a numeric constant for the segment's centroid latitude coordinate. | `lat` |
+| <b>tileLng</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Tile object accessor function, attribute or a numeric constant for the segment's centroid longitude coordinate. | `lng` |
+| <b>tileAltitude</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Tile object accessor function, attribute or a numeric constant for the segment's altitude in terms of globe radius units. | 0.01 |
+| <b>tileWidth</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Tile object accessor function, attribute or a numeric constant for the segment's longitudinal width, in angular degrees. | 1 |
+| <b>tileHeight</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Tile object accessor function, attribute or a numeric constant for the segment's latitudinal height, in angular degrees. | 1 |
+| <b>tileUseGlobeProjection</b>([<i>boolean</i>, <i>str</i> or <i>fn</i>]) | Tile object accessor function, attribute or a boolean constant for whether to use the globe's projection to shape the segment to its relative tiled position (`true`), or break free from this projection and shape the segment as if it would be laying directly on the equatorial perimeter (`false`). | `true` |
+| <b>tileMaterial</b>([<i>str</i> or <i>fn</i>]) | Tile object accessor function or attribute for the [ThreeJS material](https://threejs.org/docs/#api/en/materials/Material) used to style the segment's surface. | `() => new MeshLambertMaterial({ color: '#ffbb88' })` |
+| <b>tileCurvatureResolution</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Tile object accessor function, attribute or a numeric constant for the resolution (in angular degrees) of the surface curvature. The finer the resolution, the more the tile geometry is fragmented into smaller faces to approximate the spheric surface, at the cost of performance. | 5 |
+| <b>tilesTransitionDuration</b>([<i>num</i>]) | Getter/setter for duration (ms) of the transition to animate tile changes involving geometry modifications. A value of `0` will move the tiles immediately to their final position. New tiles are animated by scaling them from the centroid outwards. | 1000 |
+| <b>onTileClick</b>(<i>fn</i>) | Callback function for tile (left-button) clicks. The tile object and the event object are included as arguments: `onTileClick(tile, event)`. | - |
+| <b>onTileRightClick</b>(<i>fn</i>) | Callback function for tile right-clicks. The tile object and the event object are included as arguments: `onTileRightClick(tile, event)`. | - |
+| <b>onTileHover</b>(<i>fn</i>) | Callback function for tile mouse over events. The tile object (or `null` if there's no tile under the mouse line of sight) is included as the first argument, and the previous tile object (or `null`) as second argument: `onTileHover(tile, prevTile)`. | - |
 
 ### Labels Layer
 

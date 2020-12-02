@@ -49,6 +49,8 @@ export interface GlobeGenericInstance<ChainableInstance> extends ThreeGlobeGener
   pathLabel(textAccessor: ObjAccessor<string>): ChainableInstance;
   hexLabel(): Accessor<HexBin, string>;
   hexLabel(textAccessor: Accessor<HexBin, string>): ChainableInstance;
+  tileLabel(): ObjAccessor<string>;
+  tileLabel(textAccessor: ObjAccessor<string>): ChainableInstance;
   labelLabel(): ObjAccessor<string>;
   labelLabel(textAccessor: ObjAccessor<string>): ChainableInstance;
   customLayerLabel(): ObjAccessor<string>;
@@ -75,6 +77,9 @@ export interface GlobeGenericInstance<ChainableInstance> extends ThreeGlobeGener
   onHexPolygonClick(callback: (polygon: object, event: MouseEvent) => void): ChainableInstance;
   onHexPolygonRightClick(callback: (polygon: object, event: MouseEvent) => void): ChainableInstance;
   onHexPolygonHover(callback: (polygon: object | null, prevPolygon: object | null) => void): ChainableInstance;
+  onTileClick(callback: (tile: object, event: MouseEvent) => void): ChainableInstance;
+  onTileRightClick(callback: (tile: object, event: MouseEvent) => void): ChainableInstance;
+  onTileHover(callback: (tile: object | null, prevTile: object | null) => void): ChainableInstance;
   onLabelClick(callback: (label: object, event: MouseEvent) => void): ChainableInstance;
   onLabelRightClick(callback: (label: object, event: MouseEvent) => void): ChainableInstance;
   onLabelHover(callback: (label: object | null, prevLabel: object | null) => void): ChainableInstance;
