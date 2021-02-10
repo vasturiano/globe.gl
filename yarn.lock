@@ -764,7 +764,7 @@
     "@babel/types" "^7.4.4"
     esutils "^2.0.2"
 
-"@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
+"@babel/runtime@^7.12.5", "@babel/runtime@^7.8.4":
   version "7.12.13"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.12.13.tgz#0a21452352b02542db0ffb928ac2d3ca7cb6d66d"
   integrity sha512-8+3UMPBrjFa/6TtKi/7sehPKqfAm4g6K+YQjyyFOLUTxzOngcRZTlAVY8sc2CORJYqdHQY8gRPHmn+qo15rCBw==
@@ -845,6 +845,11 @@
     "@types/estree" "0.0.39"
     estree-walker "^1.0.1"
     picomatch "^2.2.2"
+
+"@scarf/scarf@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@scarf/scarf/-/scarf-1.1.0.tgz#b84b4a91cd938a688d36245b7a7db6fbc476a499"
+  integrity sha512-b2iE8kjjzzUo2WZ0xuE2N77kfnTds7ClrDxcz3Atz7h2XrNVoAPUoT75i7CY0st5x++70V91Y+c6RpBX9MX7Jg==
 
 "@turf/boolean-point-in-polygon@^6.3.0":
   version "6.3.0"
@@ -1195,9 +1200,9 @@ earcut@^2.2.2:
   integrity sha512-eZoZPPJcUHnfRZ0PjLvx2qBordSiO8ofC3vt+qACLM95u+4DovnbYNpQtJh0DNsWj8RnxrQytD4WA8gj5cRIaQ==
 
 electron-to-chromium@^1.3.649:
-  version "1.3.655"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.655.tgz#e5ccf5c445ca131fea9d0698d08cc9c8ca01fa81"
-  integrity sha512-b+V6KreLR1SvNBY1WOZWsm5Dc/ZC/B5/E1m5TpUrWnEwrd1pJgKgsrLYtQYTDgdTj1/QoZE7qMPIeJ6hZwpsVA==
+  version "1.3.660"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.660.tgz#bfa8ce23735391cbd1c75c38f483e3179d0e0370"
+  integrity sha512-UOSKNfUBY8FDOSo4mfaUsN3KftlNLcYOg9v5apqLvNcWj+Ogy/i9SEDMZpfSVOeDkOcpu9iusucX6jxTWzqGLA==
 
 escalade@^3.1.1:
   version "3.1.1"
@@ -1461,11 +1466,12 @@ picomatch@^2.2.2:
   integrity sha512-q0M/9eZHzmr0AulXyPwNfZjtwZ/RBZlbN3K3CErVrk50T2ASYI7Bye0EvekFY3IP1Nt2DHu0re+V2ZHIpMkuWg==
 
 polished@^3.6.6:
-  version "3.6.7"
-  resolved "https://registry.yarnpkg.com/polished/-/polished-3.6.7.tgz#44cbd0047f3187d83db0c479ef0c7d5583af5fb6"
-  integrity sha512-b4OViUOihwV0icb9PHmWbR+vPqaSzSAEbgLskvb7ANPATVXGiYv/TQFHQo65S53WU9i5EQ1I03YDOJW7K0bmYg==
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/polished/-/polished-3.7.0.tgz#ece3368df30d33082bc8a957aa212d3f98119278"
+  integrity sha512-1tnvQ2wsxfR/DyPE2Xu9sRbnLAwXAarCWiZJ8Hfirw59bTigqjbzEWSAmzYizT6ocQW995V8n7RP48jq50DjJA==
   dependencies:
-    "@babel/runtime" "^7.9.2"
+    "@babel/runtime" "^7.12.5"
+    "@scarf/scarf" "^1.1.0"
 
 randombytes@^2.1.0:
   version "2.1.0"
@@ -1671,10 +1677,10 @@ three-geojson-geometry@^1.1.2:
     d3-geo "^2.0.1"
     earcut "^2.2.2"
 
-three-globe@^2.14.4:
-  version "2.14.4"
-  resolved "https://registry.yarnpkg.com/three-globe/-/three-globe-2.14.4.tgz#8e42a234254b1f21369f435496491f97d19b8c44"
-  integrity sha512-PbtEPnUsO8HOvwnxRAInu5XRcDzs4C5k0X3Mu8qLiolP6TdadMqvwNIXPJ3hT03g0i2exBt7xLraMGVa5wDAFA==
+three-globe@^2.14.5:
+  version "2.14.5"
+  resolved "https://registry.yarnpkg.com/three-globe/-/three-globe-2.14.5.tgz#3d3fec36b7a80fbc33b249c4cbb55fea25dc4317"
+  integrity sha512-0xjo3fV4S4H+CCXDYN6rHqfr4S3aW94miqGbB3hHzjIUtrJ5ziUgjjgJq3Zs/CxXQq4XJsu/vtz8FKiYKkFSxQ==
   dependencies:
     "@tweenjs/tween.js" "^18.6.4"
     accessor-fn "^1.3.0"
@@ -1717,10 +1723,10 @@ to-fast-properties@^2.0.0:
   resolved "https://registry.yarnpkg.com/to-fast-properties/-/to-fast-properties-2.0.0.tgz#dc5e698cbd079265bc73e0377681a4e4e83f616e"
   integrity sha1-3F5pjL0HkmW8c+A3doGk5Og/YW4=
 
-typescript@^4.1.3:
-  version "4.1.3"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.1.3.tgz#519d582bd94cba0cf8934c7d8e8467e473f53bb7"
-  integrity sha512-B3ZIOf1IKeH2ixgHhj6la6xdwR9QrLC5d1VKeCSY4tvkqhF2eqd9O7txNlS0PO3GrBAFIdr3L1ndNwteUbZLYg==
+typescript@^4.1.4:
+  version "4.1.4"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.1.4.tgz#f058636e2f4f83f94ddaae07b20fd5e14598432f"
+  integrity sha512-+Uru0t8qIRgjuCpiSPpfGuhHecMllk5Zsazj5LZvVsEStEjmIRRBZe+jHjGQvsgS7M1wONy2PQXd67EMyV6acg==
 
 unicode-canonical-property-names-ecmascript@^1.0.4:
   version "1.0.4"
