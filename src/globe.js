@@ -20,6 +20,7 @@ const bindGlobe = linkKapsule('globe', ThreeGlobe);
 const linkedGlobeProps = Object.assign(...[
   'globeImageUrl',
   'bumpImageUrl',
+  'showGlobe',
   'showAtmosphere',
   'showGraticules',
   'pointsData',
