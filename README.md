@@ -97,7 +97,7 @@ Globe({ configOptions })(<domElement>)
 | <b>showGlobe</b>([<i>boolean</i>]) | Getter/setter for whether to show the globe surface itself. | `true` |
 | <b>showAtmosphere</b>([<i>boolean</i>]) | Getter/setter for whether to show a bright halo surrounding the globe, representing the atmosphere. | `true` |
 | <b>showGraticules</b>([<i>boolean</i>]) | Getter/setter for whether to show a graticule grid demarking latitude and longitude lines at every 10 degrees. | `false` |
-| <b>globeMaterial</b>() | Access the internal ThreeJS [MeshPhongMaterial](https://threejs.org/docs/#api/en/materials/MeshPhongMaterial) used to wrap the globe. Can be used for more advanced styling of the globe, by extending the material with various properties, like in [this example](https://github.com/vasturiano/globe.gl/blob/master/example/custom-globe-styling/index.html). | - |
+| <b>globeMaterial</b>([<i>material</i>]) | Getter/setter of the ThreeJS material used to wrap the globe. Can be used for more advanced styling of the globe, like in [this example](https://github.com/vasturiano/globe.gl/blob/master/example/custom-globe-styling/index.html). | [MeshPhongMaterial](https://threejs.org/docs/#api/en/materials/MeshPhongMaterial) |
 | <b>onGlobeClick</b>(<i>fn</i>) | Callback function for (left-button) clicks on the globe. The clicked globe coordinates and the event object are included as arguments: `onGlobeClick({ lat, lng }, event)`. | - |
 | <b>onGlobeRightClick</b>(<i>fn</i>) | Callback function for right-clicks on the globe. The clicked globe coordinates and the event object are included as arguments: `onGlobeRightClick({ lat, lng }, event)`. | - |
 
