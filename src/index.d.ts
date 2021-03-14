@@ -96,6 +96,8 @@ export interface GlobeGenericInstance<ChainableInstance> extends ThreeGlobeGener
   enablePointerInteraction(enable: boolean): ChainableInstance;
   pointerEventsFilter(): PointerEventsFilterFn;
   pointerEventsFilter(filterFn: PointerEventsFilterFn): ChainableInstance;
+  lineHoverPrecision(): number;
+  lineHoverPrecision(precision: number): ChainableInstance;
   onZoom(callback: (pov: GeoCoords) => void): ChainableInstance;
   scene(): Scene;
   camera(): Camera;

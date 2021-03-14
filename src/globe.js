@@ -189,6 +189,11 @@ export default Kapsule({
       triggerUpdate: false,
       onChange: (filterFn, state) => state.renderObjs.hoverFilter(obj => filterFn(obj, obj.__data))
     },
+    lineHoverPrecision: {
+      default: 0.2,
+      triggerUpdate: false,
+      onChange: (val, state) => state.renderObjs.lineHoverPrecision(val)
+    },
     ...linkedGlobeProps,
     ...linkedRenderObjsProps
   },
@@ -358,7 +363,6 @@ export default Kapsule({
         const isBackground = o => !o; // || o.__globeObjType === 'globe' || o.__globeObjType === 'atmosphere';
         return isBackground(aObj) - isBackground(bObj);
       })
-      .lineHoverPrecision(0.2)
       .tooltipContent(obj => {
         const objAccessors = {
           point: state.pointLabel,
