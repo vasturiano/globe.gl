@@ -24,6 +24,7 @@ const linkedGlobeProps = Object.assign(...[
   'showAtmosphere',
   'showGraticules',
   'globeMaterial',
+  'onGlobeReady',
   'pointsData',
   'pointLat',
   'pointLng',
