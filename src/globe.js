@@ -380,11 +380,9 @@ export default Kapsule({
         };
 
         const globeObj = getGlobeObj(obj);
-        if (!globeObj) return '';
+        const objType = globeObj && globeObj.__globeObjType;
 
-        const objType = globeObj.__globeObjType;
-
-        return globeObj && objAccessors.hasOwnProperty(objType) && dataAccessors.hasOwnProperty(objType)
+        return globeObj && objType && objAccessors.hasOwnProperty(objType) && dataAccessors.hasOwnProperty(objType)
           ? accessorFn(objAccessors[objType])(dataAccessors[objType](globeObj.__data)) || ''
           : '';
       })
