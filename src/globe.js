@@ -149,6 +149,7 @@ const linkedRenderObjsMethods = Object.assign(
 //
 
 const GLOBE_RADIUS = 100;
+let TOOLTIP_ACTIVE = false;
 
 export default Kapsule({
   props: {
@@ -385,6 +386,39 @@ export default Kapsule({
       custom: (d) => d,
     };
 
+    const activateTooltip = (hoverObjFns, hoverObj) => {
+      // ignore non-recognised obj types
+      hoverObj &&
+        !hoverObjFns.hasOwnProperty(hoverObj.__globeObjType) &&
+        (hoverObj = null);
+
+      if (hoverObj !== state.hoverObj) {
+        const prevObjType = state.hoverObj
+          ? state.hoverObj.__globeObjType
+          : null;
+        const prevObjData = state.hoverObj
+          ? dataAccessors[prevObjType](state.hoverObj.__data)
+          : null;
+        const objType = hoverObj ? hoverObj.__globeObjType : null;
+        const objData = hoverObj
+          ? dataAccessors[objType](hoverObj.__data)
+          : null;
+        if (prevObjType && prevObjType !== objType) {
+          // Hover out
+          hoverObjFns[prevObjType](null, prevObjData);
+        }
+        if (objType) {
+          // Hover in
+          hoverObjFns[objType](
+            objData,
+            prevObjType === objType ? prevObjData : null
+          );
+        }
+
+        state.hoverObj = hoverObj;
+      }
+    };
+
     state.renderObjs
       .objects([
         // Populate scene
@@ -441,39 +475,22 @@ export default Kapsule({
 
         let hoverObj = getGlobeObj(obj);
 
-        // ignore non-recognised obj types
-        hoverObj &&
-          !hoverObjFns.hasOwnProperty(hoverObj.__globeObjType) &&
-          (hoverObj = null);
-
-        if (hoverObj !== state.hoverObj) {
-          const prevObjType = state.hoverObj
-            ? state.hoverObj.__globeObjType
-            : null;
-          const prevObjData = state.hoverObj
-            ? dataAccessors[prevObjType](state.hoverObj.__data)
-            : null;
-          const objType = hoverObj ? hoverObj.__globeObjType : null;
-          const objData = hoverObj
-            ? dataAccessors[objType](hoverObj.__data)
-            : null;
-          if (prevObjType && prevObjType !== objType) {
-            // Hover out
-            hoverObjFns[prevObjType](null, prevObjData);
-          }
-          if (objType) {
-            // Hover in
-            hoverObjFns[objType](
-              objData,
-              prevObjType === objType ? prevObjData : null
-            );
-          }
-
-          state.hoverObj = hoverObj;
-        }
+        activateTooltip(hoverObjFns, hoverObj);
       })
       .onClick((obj, ev, point) => {
         if (!obj) return; // ignore background clicks
+
+        const hoverObjFns = {
+          point: state.onPointHover,
+          arc: state.onArcHover,
+          polygon: state.onPolygonHover,
+          path: state.onPathHover,
+          hexbin: state.onHexHover,
+          hexPolygon: state.onHexPolygonHover,
+          tile: state.onTileHover,
+          label: state.onLabelHover,
+          custom: state.onCustomLayerHover,
+        };
 
         // Handle click events on objects
         const objFns = {
@@ -502,6 +519,7 @@ export default Kapsule({
             args.unshift(dataAccessors[objType](globeObj.__data));
           objFns[objType](...args);
         }
+        activateTooltip(hoverObjFns, globeObj);
       })
       .onRightClick((obj, ev, point) => {
         if (!obj) return; // ignore background clicks
