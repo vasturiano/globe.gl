@@ -149,44 +149,44 @@ export default Kapsule({
 
   props: {
     onZoom: { triggerUpdate: false },
-    onGlobeClick: { default: () => {}, triggerUpdate: false },
-    onGlobeRightClick: { default: () => {}, triggerUpdate: false },
+    onGlobeClick: { triggerUpdate: false },
+    onGlobeRightClick: { triggerUpdate: false },
     pointLabel: { default: 'name', triggerUpdate: false },
-    onPointClick: { default: () => {}, triggerUpdate: false },
-    onPointRightClick: { default: () => {}, triggerUpdate: false },
-    onPointHover: { default: () => {}, triggerUpdate: false },
+    onPointClick: { triggerUpdate: false },
+    onPointRightClick: { triggerUpdate: false },
+    onPointHover: { triggerUpdate: false },
     arcLabel: { default: 'name', triggerUpdate: false },
-    onArcClick: { default: () => {}, triggerUpdate: false },
-    onArcRightClick: { default: () => {}, triggerUpdate: false },
-    onArcHover: { default: () => {}, triggerUpdate: false },
+    onArcClick: { triggerUpdate: false },
+    onArcRightClick: { triggerUpdate: false },
+    onArcHover: { triggerUpdate: false },
     polygonLabel: { default: 'name', triggerUpdate: false },
-    onPolygonClick: { default: () => {}, triggerUpdate: false },
-    onPolygonRightClick: { default: () => {}, triggerUpdate: false },
-    onPolygonHover: { default: () => {}, triggerUpdate: false },
+    onPolygonClick: { triggerUpdate: false },
+    onPolygonRightClick: { triggerUpdate: false },
+    onPolygonHover: { triggerUpdate: false },
     pathLabel: { default: 'name', triggerUpdate: false },
-    onPathClick: { default: () => {}, triggerUpdate: false },
-    onPathRightClick: { default: () => {}, triggerUpdate: false },
-    onPathHover: { default: () => {}, triggerUpdate: false },
+    onPathClick: { triggerUpdate: false },
+    onPathRightClick: { triggerUpdate: false },
+    onPathHover: { triggerUpdate: false },
     hexLabel: { triggerUpdate: false },
-    onHexClick: { default: () => {}, triggerUpdate: false },
-    onHexRightClick: { default: () => {}, triggerUpdate: false },
-    onHexHover: { default: () => {}, triggerUpdate: false },
+    onHexClick: { triggerUpdate: false },
+    onHexRightClick: { triggerUpdate: false },
+    onHexHover: { triggerUpdate: false },
     hexPolygonLabel: { triggerUpdate: false },
-    onHexPolygonClick: { default: () => {}, triggerUpdate: false },
-    onHexPolygonRightClick: { default: () => {}, triggerUpdate: false },
-    onHexPolygonHover: { default: () => {}, triggerUpdate: false },
+    onHexPolygonClick: { triggerUpdate: false },
+    onHexPolygonRightClick: { triggerUpdate: false },
+    onHexPolygonHover: { triggerUpdate: false },
     tileLabel: { default: 'name', triggerUpdate: false },
-    onTileClick: { default: () => {}, triggerUpdate: false },
-    onTileRightClick: { default: () => {}, triggerUpdate: false },
-    onTileHover: { default: () => {}, triggerUpdate: false },
+    onTileClick: { triggerUpdate: false },
+    onTileRightClick: { triggerUpdate: false },
+    onTileHover: { triggerUpdate: false },
     labelLabel: { triggerUpdate: false },
-    onLabelClick: { default: () => {}, triggerUpdate: false },
-    onLabelRightClick: { default: () => {}, triggerUpdate: false },
-    onLabelHover: { default: () => {}, triggerUpdate: false },
+    onLabelClick: { triggerUpdate: false },
+    onLabelRightClick: { triggerUpdate: false },
+    onLabelHover: { triggerUpdate: false },
     customLayerLabel: { default: 'name', triggerUpdate: false },
-    onCustomLayerClick: { default: () => {}, triggerUpdate: false },
-    onCustomLayerRightClick: { default: () => {}, triggerUpdate: false },
-    onCustomLayerHover: { default: () => {}, triggerUpdate: false },
+    onCustomLayerClick: { triggerUpdate: false },
+    onCustomLayerRightClick: { triggerUpdate: false },
+    onCustomLayerHover: { triggerUpdate: false },
     pointerEventsFilter: {
       default: () => true,
       triggerUpdate: false,
@@ -400,6 +400,19 @@ export default Kapsule({
           custom: state.onCustomLayerHover
         };
 
+        const clickObjFns = {
+          globe: state.onGlobeClick,
+          point: state.onPointClick,
+          arc: state.onArcClick,
+          polygon: state.onPolygonClick,
+          path: state.onPathClick,
+          hexbin: state.onHexClick,
+          hexPolygon: state.onHexPolygonClick,
+          tile: state.onTileClick,
+          label: state.onLabelClick,
+          custom: state.onCustomLayerClick
+        };
+
         let hoverObj = getGlobeObj(obj);
 
         // ignore non-recognised obj types
@@ -412,12 +425,15 @@ export default Kapsule({
           const objData = hoverObj ? dataAccessors[objType](hoverObj.__data) : null;
           if (prevObjType && prevObjType !== objType) {
             // Hover out
-            hoverObjFns[prevObjType](null, prevObjData);
+            hoverObjFns[prevObjType] && hoverObjFns[prevObjType](null, prevObjData);
           }
           if (objType) {
             // Hover in
-            hoverObjFns[objType](objData, prevObjType === objType ? prevObjData : null);
+            hoverObjFns[objType] && hoverObjFns[objType](objData, prevObjType === objType ? prevObjData : null);
           }
+
+          // set pointer if hovered object is clickable
+          state.renderObjs.renderer().domElement.classList[(objType && clickObjFns[objType]) ? 'add' : 'remove']('clickable');
 
           state.hoverObj = hoverObj;
         }
@@ -441,7 +457,7 @@ export default Kapsule({
 
         const globeObj = getGlobeObj(obj);
         const objType = globeObj.__globeObjType;
-        if (globeObj && objFns.hasOwnProperty(objType)) {
+        if (globeObj && objFns.hasOwnProperty(objType) && objFns[objType]) {
           const args = [ev];
           if (objType === 'globe') {
             // include click coords in { lat, lng }
@@ -471,7 +487,7 @@ export default Kapsule({
 
         const globeObj = getGlobeObj(obj);
         const objType = globeObj.__globeObjType;
-        if (globeObj && objFns.hasOwnProperty(objType)) {
+        if (globeObj && objFns.hasOwnProperty(objType) && objFns[objType]) {
           const args = [ev];
           if (objType === 'globe') {
             // include click coords in { lat, lng }

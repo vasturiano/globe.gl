@@ -1,6 +1,7 @@
 import resolve from '@rollup/plugin-node-resolve';
 import commonJs from '@rollup/plugin-commonjs';
 import babel from '@rollup/plugin-babel';
+import postCss from 'rollup-plugin-postcss';
 import { terser } from "rollup-plugin-terser";
 import dts from 'rollup-plugin-dts';
 import { name, homepage, version, dependencies } from './package.json';
@@ -31,6 +32,7 @@ export default [
     plugins: [
       resolve(),
       commonJs(),
+      postCss(),
       babel({ exclude: 'node_modules/**', babelHelpers: 'bundled' })
     ]
   },
@@ -49,6 +51,7 @@ export default [
     ],
     external: Object.keys(dependencies),
     plugins: [
+      postCss(),
       babel({ babelHelpers: 'bundled' })
     ]
   },

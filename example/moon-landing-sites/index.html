@@ -32,7 +32,6 @@
         <div>${d.agency} - ${d.program} Program</div>
         <div>Landing on <i>${new Date(d.date).toLocaleDateString()}</i></div>
       `)
-    .onLabelHover(label => elem.style.cursor = label ? 'pointer' : null)
     .onLabelClick(d => window.open(d.url, '_blank'))
     (elem);
 
