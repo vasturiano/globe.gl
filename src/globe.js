@@ -228,7 +228,8 @@ export default Kapsule({
         return curGeoCoords;
       } else { // Setter
         const finalGeoCoords = Object.assign({}, curGeoCoords, geoCoords);
-
+        ['lat', 'lng', 'altitude'].forEach(p => finalGeoCoords[p] = +finalGeoCoords[p]); // coerce coords to number
+        
         if (!transitionDuration) { // no animation
           setCameraPos(finalGeoCoords);
         } else {
