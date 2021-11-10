@@ -1,0 +1,24 @@
+<head>
+  <style> body { margin: 0; } </style>
+
+  <script src="//unpkg.com/globe.gl"></script>
+<!--  <script src="../../dist/globe.gl.js"></script>-->
+</head>
+
+<body>
+  <div id="globeViz"></div>
+
+  <script>
+    const shieldRing = { lat: 90, lng: 0 };
+
+    const globe = Globe()
+      .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
+      .ringsData([shieldRing])
+      .ringAltitude(0.25)
+      .ringColor(() => 'lightblue')
+      .ringMaxRadius(180)
+      .ringPropagationSpeed(20)
+      .ringRepeatPeriod(200)
+      (document.getElementById('globeViz'));
+  </script>
+</body>
