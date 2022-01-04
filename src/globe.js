@@ -469,11 +469,15 @@ export default Kapsule({
         const objType = globeObj.__globeObjType;
         if (globeObj && objFns.hasOwnProperty(objType) && objFns[objType]) {
           const args = [ev];
+
+          // include click coords
           if (objType === 'globe') {
-            // include click coords in { lat, lng }
             const { lat, lng } = this.toGeoCoords(point);
             args.unshift({ lat, lng });
+          } else {
+            args.push(this.toGeoCoords(point));
           }
+
           dataAccessors.hasOwnProperty(objType) && args.unshift(dataAccessors[objType](globeObj.__data));
           objFns[objType](...args);
         }
@@ -499,11 +503,15 @@ export default Kapsule({
         const objType = globeObj.__globeObjType;
         if (globeObj && objFns.hasOwnProperty(objType) && objFns[objType]) {
           const args = [ev];
+
+          // include click coords
           if (objType === 'globe') {
-            // include click coords in { lat, lng }
             const { lat, lng } = this.toGeoCoords(point);
             args.unshift({ lat, lng });
+          } else {
+            args.push(this.toGeoCoords(point));
           }
+
           dataAccessors.hasOwnProperty(objType) && args.unshift(dataAccessors[objType](globeObj.__data));
           objFns[objType](...args);
         }
