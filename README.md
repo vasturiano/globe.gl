@@ -31,6 +31,7 @@ Check out the examples:
 * [Tiles](https://vasturiano.github.io/globe.gl/example/tiles/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/tiles/index.html))
 * [Ripple Rings](https://vasturiano.github.io/globe.gl/example/random-rings/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/random-rings/index.html))
 * [Emit Arcs on Click](https://vasturiano.github.io/globe.gl/example/emit-arcs-on-click/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/emit-arcs-on-click/index.html))
+* [Clouds](https://vasturiano.github.io/globe.gl/example/clouds/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/clouds/index.html))
 * [Solar Terminator](https://vasturiano.github.io/globe.gl/example/solar-terminator/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/solar-terminator/index.html))
 * [Custom Globe Styling](https://vasturiano.github.io/globe.gl/example/custom-globe-styling/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/custom-globe-styling/index.html))
 * [Custom Layer](https://vasturiano.github.io/globe.gl/example/custom-layer/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/custom-layer/index.html))
