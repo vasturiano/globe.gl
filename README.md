@@ -17,7 +17,12 @@ Globe.GL
 A web component to represent data visualization layers on a 3-dimensional globe in a spherical projection.
 This library is a convenience wrapper around the [three-globe](https://github.com/vasturiano/three-globe) plugin, and uses [ThreeJS](https://github.com/mrdoob/three.js/)/WebGL for 3D rendering.
 
-Check out the examples:
+See also the [AR version](https://github.com/vasturiano/globe-ar).
+
+And check out the [React bindings](https://github.com/vasturiano/react-globe.gl).
+
+## Examples
+
 * [Basic](https://vasturiano.github.io/globe.gl/example/basic/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/basic/index.html))
 * [Arc Links](https://vasturiano.github.io/globe.gl/example/random-arcs/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/random-arcs/index.html))
 * [Highlight links](https://vasturiano.github.io/globe.gl/example/airline-routes/highlight-links.html) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/airline-routes/highlight-links.html))
@@ -41,11 +46,6 @@ Check out the examples:
 * [Earth Shield](https://vasturiano.github.io/globe.gl/example/earth-shield/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/earth-shield/index.html))
 * [Submarine Cables](https://vasturiano.github.io/globe.gl/example/submarine-cables/index.html) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/submarine-cables/index.html))
 * [Moon Landing Sites](https://vasturiano.github.io/globe.gl/example/moon-landing-sites/index.html) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/moon-landing-sites/index.html))
-
-
-See also the [AR version](https://github.com/vasturiano/globe-ar).
-
-And check out the [React bindings](https://github.com/vasturiano/react-globe.gl).
 
 ## Quick start
 
