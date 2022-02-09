@@ -3,8 +3,7 @@ Globe.GL
 
 [![NPM package][npm-img]][npm-url]
 [![Build Size][build-size-img]][build-size-url]
-[![Dependencies][dependencies-img]][dependencies-url]
-[![jsdelivr][jsdelivr-img]][jsdelivr-url]
+[![NPM Downloads][npm-downloads-img]][npm-downloads-url]
 
 <p align="center">
    <a href="//vasturiano.github.io/globe.gl/example/world-population/"><img width="48%" src="https://vasturiano.github.io/globe.gl/example/world-population/preview.png"></a>
@@ -50,30 +49,30 @@ And check out the [React bindings](https://github.com/vasturiano/react-globe.gl)
 
 ## Quick start
 
-```
+```js
 import Globe from 'globe.gl';
 ```
 or
-```
+```js
 const Globe = require('globe.gl');
 ```
 or even
-```
+```html
 <script src="//unpkg.com/globe.gl"></script>
 ```
 then
-```
+```js
 const myGlobe = Globe();
-myGlobe(<myDOMElement>)
-  .globeImageUrl(<imageUrl>)
-  .pointsData(<myData>);
+myGlobe(myDOMElement)
+  .globeImageUrl(myImageUrl)
+  .pointsData(myData);
 ```
 
 ## API reference
 
 ### Initialisation
 
-```
+```js
 Globe({ configOptions })(<domElement>)
 ```
 
@@ -368,11 +367,9 @@ Globe({ configOptions })(<domElement>)
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=L398E7PKP47E8&currency_code=USD&source=url) If this project has helped you and you'd like to contribute back, you can always [buy me a ☕](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=L398E7PKP47E8&currency_code=USD&source=url)!
 
-[npm-img]: https://img.shields.io/npm/v/globe.gl.svg
+[npm-img]: https://img.shields.io/npm/v/globe.gl
 [npm-url]: https://npmjs.org/package/globe.gl
-[build-size-img]: https://img.shields.io/bundlephobia/minzip/globe.gl.svg
+[build-size-img]: https://img.shields.io/bundlephobia/minzip/globe.gl
 [build-size-url]: https://bundlephobia.com/result?p=globe.gl
-[dependencies-img]: https://img.shields.io/david/vasturiano/globe.gl.svg
-[dependencies-url]: https://david-dm.org/vasturiano/globe.gl
-[jsdelivr-img]: https://data.jsdelivr.com/v1/package/npm/globe.gl/badge?style=rounded
-[jsdelivr-url]: https://www.jsdelivr.com/package/npm/globe.gl
+[npm-downloads-img]: https://img.shields.io/npm/dt/globe.gl
+[npm-downloads-url]: https://www.npmtrends.com/globe.gl
