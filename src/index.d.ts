@@ -57,34 +57,34 @@ export interface GlobeGenericInstance<ChainableInstance> extends ThreeGlobeGener
   customLayerLabel(textAccessor: ObjAccessor<string>): ChainableInstance;
 
   // Interaction events
-  onGlobeClick(callback: (coords: { lat, lng }, event: MouseEvent) => void): ChainableInstance;
-  onGlobeRightClick(callback: (coords: { lat, lng }, event: MouseEvent) => void): ChainableInstance;
-  onPointClick(callback: (point: object, event: MouseEvent, coords: { lat, lng, altitude }) => void): ChainableInstance;
-  onPointRightClick(callback: (point: object, event: MouseEvent, coords: { lat, lng, altitude }) => void): ChainableInstance;
+  onGlobeClick(callback: (coords: { lat: number, lng: number }, event: MouseEvent) => void): ChainableInstance;
+  onGlobeRightClick(callback: (coords: { lat: number, lng: number }, event: MouseEvent) => void): ChainableInstance;
+  onPointClick(callback: (point: object, event: MouseEvent, coords: { lat: number, lng: number, altitude: number }) => void): ChainableInstance;
+  onPointRightClick(callback: (point: object, event: MouseEvent, coords: { lat: number, lng: number, altitude: number }) => void): ChainableInstance;
   onPointHover(callback: (point: object | null, prevPoint: object | null) => void): ChainableInstance;
-  onArcClick(callback: (arc: object, event: MouseEvent, coords: { lat, lng, altitude }) => void): ChainableInstance;
-  onArcRightClick(callback: (arc: object, event: MouseEvent, coords: { lat, lng, altitude }) => void): ChainableInstance;
+  onArcClick(callback: (arc: object, event: MouseEvent, coords: { lat: number, lng: number, altitude: number }) => void): ChainableInstance;
+  onArcRightClick(callback: (arc: object, event: MouseEvent, coords: { lat: number, lng: number, altitude: number }) => void): ChainableInstance;
   onArcHover(callback: (arc: object | null, prevArc: object | null) => void): ChainableInstance;
-  onPolygonClick(callback: (polygon: object, event: MouseEvent, coords: { lat, lng, altitude }) => void): ChainableInstance;
-  onPolygonRightClick(callback: (polygon: object, event: MouseEvent, coords: { lat, lng, altitude }) => void): ChainableInstance;
+  onPolygonClick(callback: (polygon: object, event: MouseEvent, coords: { lat: number, lng: number, altitude: number }) => void): ChainableInstance;
+  onPolygonRightClick(callback: (polygon: object, event: MouseEvent, coords: { lat: number, lng: number, altitude: number }) => void): ChainableInstance;
   onPolygonHover(callback: (polygon: object | null, prevPolygon: object | null) => void): ChainableInstance;
-  onPathClick(callback: (path: object, event: MouseEvent, coords: { lat, lng, altitude }) => void): ChainableInstance;
-  onPathRightClick(callback: (path: object, event: MouseEvent, coords: { lat, lng, altitude }) => void): ChainableInstance;
+  onPathClick(callback: (path: object, event: MouseEvent, coords: { lat: number, lng: number, altitude: number }) => void): ChainableInstance;
+  onPathRightClick(callback: (path: object, event: MouseEvent, coords: { lat: number, lng: number, altitude: number }) => void): ChainableInstance;
   onPathHover(callback: (path: object | null, prevPath: object | null) => void): ChainableInstance;
-  onHexClick(callback: (hex: HexBin, event: MouseEvent, coords: { lat, lng, altitude }) => void): ChainableInstance;
-  onHexRightClick(callback: (hex: HexBin, event: MouseEvent, coords: { lat, lng, altitude }) => void): ChainableInstance;
+  onHexClick(callback: (hex: HexBin, event: MouseEvent, coords: { lat: number, lng: number, altitude: number }) => void): ChainableInstance;
+  onHexRightClick(callback: (hex: HexBin, event: MouseEvent, coords: { lat: number, lng: number, altitude: number }) => void): ChainableInstance;
   onHexHover(callback: (hex: HexBin | null, prevHex: HexBin | null) => void): ChainableInstance;
-  onHexPolygonClick(callback: (polygon: object, event: MouseEvent, coords: { lat, lng, altitude }) => void): ChainableInstance;
-  onHexPolygonRightClick(callback: (polygon: object, event: MouseEvent, coords: { lat, lng, altitude }) => void): ChainableInstance;
+  onHexPolygonClick(callback: (polygon: object, event: MouseEvent, coords: { lat: number, lng: number, altitude: number }) => void): ChainableInstance;
+  onHexPolygonRightClick(callback: (polygon: object, event: MouseEvent, coords: { lat: number, lng: number, altitude: number }) => void): ChainableInstance;
   onHexPolygonHover(callback: (polygon: object | null, prevPolygon: object | null) => void): ChainableInstance;
-  onTileClick(callback: (tile: object, event: MouseEvent, coords: { lat, lng, altitude }) => void): ChainableInstance;
-  onTileRightClick(callback: (tile: object, event: MouseEvent, coords: { lat, lng, altitude }) => void): ChainableInstance;
+  onTileClick(callback: (tile: object, event: MouseEvent, coords: { lat: number, lng: number, altitude: number }) => void): ChainableInstance;
+  onTileRightClick(callback: (tile: object, event: MouseEvent, coords: { lat: number, lng: number, altitude: number }) => void): ChainableInstance;
   onTileHover(callback: (tile: object | null, prevTile: object | null) => void): ChainableInstance;
-  onLabelClick(callback: (label: object, event: MouseEvent, coords: { lat, lng, altitude }) => void): ChainableInstance;
-  onLabelRightClick(callback: (label: object, event: MouseEvent, coords: { lat, lng, altitude }) => void): ChainableInstance;
+  onLabelClick(callback: (label: object, event: MouseEvent, coords: { lat: number, lng: number, altitude: number }) => void): ChainableInstance;
+  onLabelRightClick(callback: (label: object, event: MouseEvent, coords: { lat: number, lng: number, altitude: number }) => void): ChainableInstance;
   onLabelHover(callback: (label: object | null, prevLabel: object | null) => void): ChainableInstance;
-  onCustomLayerClick(callback: (obj: object, event: MouseEvent, coords: { lat, lng, altitude }) => void): ChainableInstance;
-  onCustomLayerRightClick(callback: (obj: object, event: MouseEvent, coords: { lat, lng, altitude }) => void): ChainableInstance;
+  onCustomLayerClick(callback: (obj: object, event: MouseEvent, coords: { lat: number, lng: number, altitude: number }) => void): ChainableInstance;
+  onCustomLayerRightClick(callback: (obj: object, event: MouseEvent, coords: { lat: number, lng: number, altitude: number }) => void): ChainableInstance;
   onCustomLayerHover(callback: (obj: object | null, prevObj: object | null) => void): ChainableInstance;
 
   // Render control
