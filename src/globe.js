@@ -128,11 +128,17 @@ const linkedGlobeProps = Object.assign(...[
   'labelDotRadius',
   'labelDotOrientation',
   'labelsTransitionDuration',
+  'objectsData',
+  'objectLat',
+  'objectLng',
+  'objectAltitude',
+  'objectThreeObject',
   'customLayerData',
   'customThreeObject',
   'customThreeObjectUpdate'
 ].map(p => ({ [p]: bindGlobe.linkProp(p)})));
 const linkedGlobeMethods = Object.assign(...[
+  'getGlobeRadius',
   'getCoords',
   'toGeoCoords'
 ].map(p => ({ [p]: bindGlobe.linkMethod(p)})));
@@ -192,6 +198,10 @@ export default Kapsule({
     onLabelClick: { triggerUpdate: false },
     onLabelRightClick: { triggerUpdate: false },
     onLabelHover: { triggerUpdate: false },
+    objectLabel: { default: 'name', triggerUpdate: false },
+    onObjectClick: { triggerUpdate: false },
+    onObjectRightClick: { triggerUpdate: false },
+    onObjectHover: { triggerUpdate: false },
     customLayerLabel: { default: 'name', triggerUpdate: false },
     onCustomLayerClick: { triggerUpdate: false },
     onCustomLayerRightClick: { triggerUpdate: false },
@@ -290,6 +300,7 @@ export default Kapsule({
       this.hexPolygonsData([]);
       this.tilesData([]);
       this.labelsData([]);
+      this.objectsData([]);
       this.customLayerData([]);
     },
     ...linkedGlobeMethods,
@@ -359,6 +370,7 @@ export default Kapsule({
       hexPolygon: d => d,
       tile: d => d,
       label: d => d,
+      object: d => d,
       custom: d => d
     };
 
@@ -386,6 +398,7 @@ export default Kapsule({
           hexPolygon: state.hexPolygonLabel,
           tile: state.tileLabel,
           label: state.labelLabel,
+          object: state.objectLabel,
           custom: state.customLayerLabel
         };
 
@@ -407,6 +420,7 @@ export default Kapsule({
           hexPolygon: state.onHexPolygonHover,
           tile: state.onTileHover,
           label: state.onLabelHover,
+          object: state.onObjectHover,
           custom: state.onCustomLayerHover
         };
 
@@ -420,6 +434,7 @@ export default Kapsule({
           hexPolygon: state.onHexPolygonClick,
           tile: state.onTileClick,
           label: state.onLabelClick,
+          object: state.onObjectClick,
           custom: state.onCustomLayerClick
         };
 
@@ -462,6 +477,7 @@ export default Kapsule({
           hexPolygon: state.onHexPolygonClick,
           tile: state.onTileClick,
           label: state.onLabelClick,
+          object: state.onObjectClick,
           custom: state.onCustomLayerClick
         };
 
@@ -496,6 +512,7 @@ export default Kapsule({
           hexPolygon: state.onHexPolygonRightClick,
           tile: state.onTileRightClick,
           label: state.onLabelRightClick,
+          object: state.onObjectRightClick,
           custom: state.onCustomLayerRightClick
         };
 

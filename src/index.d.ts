@@ -53,6 +53,8 @@ export interface GlobeGenericInstance<ChainableInstance> extends ThreeGlobeGener
   tileLabel(textAccessor: ObjAccessor<string>): ChainableInstance;
   labelLabel(): ObjAccessor<string>;
   labelLabel(textAccessor: ObjAccessor<string>): ChainableInstance;
+  objectLabel(): ObjAccessor<string>;
+  objectLabel(textAccessor: ObjAccessor<string>): ChainableInstance;
   customLayerLabel(): ObjAccessor<string>;
   customLayerLabel(textAccessor: ObjAccessor<string>): ChainableInstance;
 
@@ -83,6 +85,9 @@ export interface GlobeGenericInstance<ChainableInstance> extends ThreeGlobeGener
   onLabelClick(callback: (label: object, event: MouseEvent, coords: { lat: number, lng: number, altitude: number }) => void): ChainableInstance;
   onLabelRightClick(callback: (label: object, event: MouseEvent, coords: { lat: number, lng: number, altitude: number }) => void): ChainableInstance;
   onLabelHover(callback: (label: object | null, prevLabel: object | null) => void): ChainableInstance;
+  onObjectClick(callback: (obj: object, event: MouseEvent, coords: { lat: number, lng: number, altitude: number }) => void): ChainableInstance;
+  onObjectRightClick(callback: (obj: object, event: MouseEvent, coords: { lat: number, lng: number, altitude: number }) => void): ChainableInstance;
+  onObjectHover(callback: (obj: object | null, prevObj: object | null) => void): ChainableInstance;
   onCustomLayerClick(callback: (obj: object, event: MouseEvent, coords: { lat: number, lng: number, altitude: number }) => void): ChainableInstance;
   onCustomLayerRightClick(callback: (obj: object, event: MouseEvent, coords: { lat: number, lng: number, altitude: number }) => void): ChainableInstance;
   onCustomLayerHover(callback: (obj: object | null, prevObj: object | null) => void): ChainableInstance;
