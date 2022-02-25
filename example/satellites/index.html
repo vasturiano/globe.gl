@@ -48,11 +48,16 @@
     world.objectThreeObject(() => new THREE.Mesh(satGeometry, satMaterial));
 
     fetch('../datasets/space-track-leo.txt').then(r => r.text()).then(rawData => {
-      const tleData = rawData.replace(/\r/g, '').split(/\n(?=[^12])/).map(tle => tle.split('\n'));
+      const tleData = rawData.replace(/\r/g, '')
+        .split(/\n(?=[^12])/)
+        .filter(d => d)
+        .map(tle => tle.split('\n'));
       const satData = tleData.map(([name, ...tle]) => ({
         satrec: satellite.twoline2satrec(...tle),
         name: name.trim().replace(/^0 /, '')
-      }));
+      }))
+      // exclude those that can't be propagated
+      .filter(d => !!satellite.propagate(d.satrec, new Date()).position);
 
       // time ticker
       let time = new Date();

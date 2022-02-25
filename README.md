@@ -12,6 +12,8 @@ Globe.GL
    <a href="//vasturiano.github.io/globe.gl/example/submarine-cables/"><img width="48%" src="https://vasturiano.github.io/globe.gl/example/submarine-cables/preview.png"></a>
    <a href="//vasturiano.github.io/globe.gl/example/hexed-polygons/"><img width="48%" src="https://vasturiano.github.io/globe.gl/example/hexed-polygons/preview.png"></a>
    <a href="//vasturiano.github.io/globe.gl/example/world-cities/"><img width="48%" src="https://vasturiano.github.io/globe.gl/example/world-cities/preview.png"></a>
+   <a href="//vasturiano.github.io/globe.gl/example/satellites/"><img width="48%" src="https://vasturiano.github.io/globe.gl/example/satellites/preview.png"></a>
+   <a href="//vasturiano.github.io/globe.gl/example/moon-landing-sites/"><img width="48%" src="https://vasturiano.github.io/globe.gl/example/moon-landing-sites/preview.png"></a>
 </p>
 
 A web component to represent data visualization layers on a 3-dimensional globe in a spherical projection.
