@@ -28,7 +28,7 @@
 
   <script>
     const EARTH_RADIUS_KM = 6371; // km
-    const SAT_SIZE = 80; // km
+    const SAT_SIZE = 100; // km
     const TIME_STEP = 3 * 1000; // per frame
 
     const timeLogger = document.getElementById('time-log');
@@ -57,7 +57,8 @@
         name: name.trim().replace(/^0 /, '')
       }))
       // exclude those that can't be propagated
-      .filter(d => !!satellite.propagate(d.satrec, new Date()).position);
+      .filter(d => !!satellite.propagate(d.satrec, new Date()).position)
+      .slice(0, 2000);
 
       // time ticker
       let time = new Date();
