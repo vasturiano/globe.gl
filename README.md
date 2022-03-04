@@ -85,6 +85,7 @@ myGlobe(myDOMElement)
 * [Hexed Polygons Layer](#hexed-polygons-layer)
 * [Tiles Layer](#tiles-layer)
 * [Rings Layer](#rings-layer)
+* [Labels Layer](#labels-layer)
 * [HTML Elements Layer](#html-elements-layer)
 * [3D Objects Layer](#3d-objects-layer)
 * [Custom Layer](#custom-layer)
@@ -103,7 +104,7 @@ Globe({ configOptions })(<domElement>)
 | <b>waitForGlobeReady</b>: <i>boolean</i> | Whether to wait until the globe wrapping or background image has been fully loaded before rendering the globe or any of the data layers. | `true` |
 | <b>animateIn</b>: <i>boolean</i> | Whether to animate the globe initialization, by scaling and rotating the globe into its inital position. | `true` |
 
-### Container layout
+### Container Layout
 
 | Method | Description | Default |
 | --- | --- | :--: |
@@ -391,7 +392,7 @@ Globe({ configOptions })(<domElement>)
 | <b>onCustomLayerRightClick</b>(<i>fn</i>) | Callback function for custom object right-clicks. The custom object, the event object and the clicked coordinates are included as arguments: `onCustomLayerRightClick(obj, event, { lat, lng, altitude })`. | - |
 | <b>onCustomLayerHover</b>(<i>fn</i>) | Callback function for custom object mouse over events. The custom object (or `null` if there's no object under the mouse line of sight) is included as the first argument, and the previous custom object (or `null`) as second argument: `onCustomLayerHover(obj, prevObj)`. | - |
 
-### Render control
+### Render Control
 
 | Method | Description | Default |
 | --- | --- | :--: |
