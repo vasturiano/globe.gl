@@ -23,7 +23,11 @@ interface GeoCoords {
 
 type PointerEventsFilterFn = (object: Object3D, data?: object) => boolean;
 
-export interface GlobeGenericInstance<ChainableInstance> extends ThreeGlobeGeneric<ChainableInstance> {
+// don't surface these internal props from inner ThreeGlobe
+type ExcludedInnerProps = 'setPointOfView';
+
+export interface GlobeGenericInstance<ChainableInstance>
+  extends Omit<ThreeGlobeGeneric<ChainableInstance>, ExcludedInnerProps> {
   (element: HTMLElement): ChainableInstance;
   resetProps(): ChainableInstance;
   _destructor(): void;

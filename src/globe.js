@@ -1,8 +1,13 @@
 import { AmbientLight, DirectionalLight, Vector2 } from 'three';
+import { CSS2DRenderer } from 'three/examples/jsm/renderers/CSS2DRenderer.js';
 
-const three = window.THREE
-  ? window.THREE // Prefer consumption from global THREE, if exists
-  : { AmbientLight, DirectionalLight, Vector2 };
+const THREE = {
+  ...(window.THREE
+      ? window.THREE // Prefer consumption from global THREE, if exists
+      : { AmbientLight, DirectionalLight, Vector2 }
+  ),
+  CSS2DRenderer
+};
 
 import ThreeGlobe from 'three-globe';
 import ThreeRenderObjects from 'three-render-objects';
@@ -128,6 +133,12 @@ const linkedGlobeProps = Object.assign(...[
   'labelDotRadius',
   'labelDotOrientation',
   'labelsTransitionDuration',
+  'htmlElementsData',
+  'htmlLat',
+  'htmlLng',
+  'htmlAltitude',
+  'htmlElement',
+  'htmlTransitionDuration',
   'objectsData',
   'objectLat',
   'objectLng',
@@ -157,8 +168,6 @@ const linkedRenderObjsMethods = Object.assign(...[
 ].map(p => ({ [p]: bindRenderObjs.linkMethod(p)})));
 
 //
-
-const GLOBE_RADIUS = 100;
 
 export default Kapsule({
 
@@ -300,6 +309,7 @@ export default Kapsule({
       this.hexPolygonsData([]);
       this.tilesData([]);
       this.labelsData([]);
+      this.htmlElementsData([]);
       this.objectsData([]);
       this.customLayerData([]);
     },
@@ -307,12 +317,20 @@ export default Kapsule({
     ...linkedRenderObjsMethods
   },
 
-  stateInit: ({ rendererConfig, waitForGlobeReady = true, ...globeInitConfig }) => ({
-    globe: new ThreeGlobe({ waitForGlobeReady, ...globeInitConfig }),
-    renderObjs: ThreeRenderObjects({ controlType: 'orbit', rendererConfig, waitForLoadComplete: waitForGlobeReady })
-      .skyRadius(GLOBE_RADIUS * 500)
-      .showNavInfo(false)
-  }),
+  stateInit: ({ rendererConfig, waitForGlobeReady = true, ...globeInitConfig }) => {
+    const globe = new ThreeGlobe({ waitForGlobeReady, ...globeInitConfig });
+    return {
+      globe,
+      renderObjs: ThreeRenderObjects({
+        controlType: 'orbit',
+        rendererConfig,
+        waitForLoadComplete: waitForGlobeReady,
+        extraRenderers: [new THREE.CSS2DRenderer()] // Used in HTML elements layer
+      })
+        .skyRadius(globe.getGlobeRadius() * 500)
+        .showNavInfo(false)
+    }
+  },
 
   init: function(domNode, state) {
     // Wipe DOM
@@ -328,15 +346,16 @@ export default Kapsule({
     state.renderObjs(roDomNode);
 
     // inject renderer size on three-globe
-    state.globe.rendererSize(state.renderObjs.renderer().getSize(new three.Vector2()));
+    state.globe.rendererSize(state.renderObjs.renderer().getSize(new THREE.Vector2()));
 
     // set initial distance
     this.pointOfView({ altitude: 2.5 });
 
     // calibrate orbit controls
+    const globeR = state.globe.getGlobeRadius();
     const controls = state.renderObjs.controls();
-    controls.minDistance = GLOBE_RADIUS * 1.01; // just above the surface
-    setTimeout(() => controls.maxDistance = GLOBE_RADIUS * 100); // apply async  after renderObjs sets maxDistance
+    controls.minDistance = globeR * 1.01; // just above the surface
+    setTimeout(() => controls.maxDistance = globeR * 100); // apply async after renderObjs sets maxDistance
     controls.enablePan = false;
     controls.enableDamping = true;
     controls.dampingFactor = 0.1;
@@ -347,6 +366,9 @@ export default Kapsule({
       const pov = this.pointOfView();
       controls.rotateSpeed = pov.altitude * 0.2; // Math.pow(pov.altitude + 1, 2) * 0.025;
       controls.zoomSpeed = (pov.altitude + 1) * 0.1; // Math.sqrt(pov.altitude) * 0.2;
+
+      // Update three-globe pov when camera moves, for proper hiding of elements
+      state.globe.setPointOfView(state.renderObjs.camera().position);
 
       state.onZoom && state.onZoom(pov);
     });
@@ -376,8 +398,8 @@ export default Kapsule({
 
     state.renderObjs
       .objects([ // Populate scene
-        new three.AmbientLight(0xbbbbbb),
-        new three.DirectionalLight(0xffffff, 0.6),
+        new THREE.AmbientLight(0xbbbbbb),
+        new THREE.DirectionalLight(0xffffff, 0.6),
         state.globe
       ])
       .hoverOrderComparator((a, b) => {

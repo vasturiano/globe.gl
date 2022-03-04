@@ -33,6 +33,7 @@ And check out the [React bindings](https://github.com/vasturiano/react-globe.gl)
 * [Hollow Globe](https://vasturiano.github.io/globe.gl/example/hollow-globe/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/hollow-globe/index.html))
 * [Path Lines](https://vasturiano.github.io/globe.gl/example/random-paths/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/random-paths/index.html))
 * [Map Labels](https://vasturiano.github.io/globe.gl/example/world-cities/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/world-cities/index.html))
+* [HTML Markers](https://vasturiano.github.io/globe.gl/example/html-markers/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/html-markers/index.html))
 * [Hexed Country Polygons](https://vasturiano.github.io/globe.gl/example/hexed-polygons/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/hexed-polygons/index.html))
 * [Tiles](https://vasturiano.github.io/globe.gl/example/tiles/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/tiles/index.html))
 * [Ripple Rings](https://vasturiano.github.io/globe.gl/example/random-rings/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/random-rings/index.html))
@@ -72,6 +73,23 @@ myGlobe(myDOMElement)
 ```
 
 ## API reference
+
+* [Initialisation](#initialisation)
+* [Container Layout](#container-layout)
+* [Globe Layer](#globe-layer)
+* [Points Layer](#points-layer)
+* [Arcs Layer](#arcs-layer)
+* [Polygons Layer](#polygons-layer)
+* [Paths Layer](#paths-layer)
+* [Hex Bin Layer](#hex-bin-layer)
+* [Hexed Polygons Layer](#hexed-polygons-layer)
+* [Tiles Layer](#tiles-layer)
+* [Rings Layer](#rings-layer)
+* [HTML Elements Layer](#html-elements-layer)
+* [3D Objects Layer](#3d-objects-layer)
+* [Custom Layer](#custom-layer)
+* [Render Control](#render-control)
+* [Utility](#utility)
 
 ### Initialisation
 
@@ -324,7 +342,22 @@ Globe({ configOptions })(<domElement>)
 | <b>onLabelRightClick</b>(<i>fn</i>) | Callback function for label right-clicks. The label object, the event object and the clicked coordinates are included as arguments: `onLabelRightClick(label, event, { lat, lng, altitude })`. | - |
 | <b>onLabelHover</b>(<i>fn</i>) | Callback function for label mouse over events. The label object (or `null` if there's no label under the mouse line of sight) is included as the first argument, and the previous label object (or `null`) as second argument: `onLabelHover(label, prevlabel)`. | - |
 
-### Objects Layer
+### HTML Elements Layer
+
+<p align="center">
+   <a href="//vasturiano.github.io/globe.gl/example/html-markers/"><img width="70%" src="https://vasturiano.github.io/globe.gl/example/html-markers/preview.png"></a>
+</p>
+
+| Method | Description | Default |
+| --- | --- | :--: |
+| <b>htmlElementsData</b>([<i>array</i>]) | Getter/setter for the list of objects to represent in the HTML elements map layer. Each HTML element is rendered using [ThreeJS CSS2DRenderer](https://threejs.org/docs/#examples/en/renderers/CSS2DRenderer). | `[]` |
+| <b>htmlLat</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | HTML element accessor function, attribute or a numeric constant for the latitude coordinate of the element's central position. | `lat` |
+| <b>htmlLng</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | HTML element accessor function, attribute or a numeric constant for the longitude coordinate of the element's central position. | `lng` |
+| <b>htmlAltitude</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | HTML element accessor function, attribute or a numeric constant for the altitude coordinate of the element's position, in terms of globe radius units. | 0 |
+| <b>htmlElement</b>([<i>str</i> or <i>fn</i>]) | Accessor function or attribute to retrieve the DOM element to use. Should return an instance of [HTMLElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement). | `null` |
+| <b>htmlTransitionDuration</b>([<i>num</i>]) | Getter/setter for duration (ms) of the transition to animate HTML elements position changes. A value of `0` will move the elements immediately to their final position. | 1000 |
+
+### 3D Objects Layer
 
 <p align="center">
    <a href="//vasturiano.github.io/globe.gl/example/satellites/"><img width="70%" src="https://vasturiano.github.io/globe.gl/example/satellites/preview.png"></a>
