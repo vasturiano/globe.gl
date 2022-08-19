@@ -1494,9 +1494,9 @@ earcut@2:
   integrity sha512-/pjZsA1b4RPHbeWZQn66SWS8nZZWLQQ23oE3Eam7aroEFGEvwKAsJfZ9ytiEMycfzXWpca4FA9QIOehf7PocBQ==
 
 electron-to-chromium@^1.4.202:
-  version "1.4.224"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.224.tgz#ecf2eed395cfedcbbe634658ccc4b457f7b254c3"
-  integrity sha512-dOujC5Yzj0nOVE23iD5HKqrRSDj2SD7RazpZS/b/WX85MtO6/LzKDF4TlYZTBteB+7fvSg5JpWh0sN7fImNF8w==
+  version "1.4.225"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.225.tgz#3e27bdd157cbaf19768141f2e0f0f45071e52338"
+  integrity sha512-ICHvGaCIQR3P88uK8aRtx8gmejbVJyC6bB4LEC3anzBrIzdzC7aiZHY4iFfXhN4st6I7lMO0x4sgBHf/7kBvRw==
 
 entities@^2.0.0:
   version "2.2.0"
@@ -2304,9 +2304,9 @@ rollup-pluginutils@^2.8.2:
     estree-walker "^0.6.1"
 
 rollup@^2.78.0:
-  version "2.78.0"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.78.0.tgz#00995deae70c0f712ea79ad904d5f6b033209d9e"
-  integrity sha512-4+YfbQC9QEVvKTanHhIAFVUFSRsezvQF8vFOJwtGfb9Bb+r014S+qryr9PSmw8x6sMnPkmFBGAvIFVQxvJxjtg==
+  version "2.78.1"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.78.1.tgz#52fe3934d9c83cb4f7c4cb5fb75d88591be8648f"
+  integrity sha512-VeeCgtGi4P+o9hIg+xz4qQpRl6R401LWEXBmxYKOV4zlF82lyhgh2hTZnheFUbANE8l2A41F458iwj2vEYaXJg==
   optionalDependencies:
     fsevents "~2.3.2"
 
@@ -2483,9 +2483,9 @@ three-globe@^2.24:
     tinycolor2 "^1.4"
 
 three-render-objects@^1.27:
-  version "1.27.1"
-  resolved "https://registry.yarnpkg.com/three-render-objects/-/three-render-objects-1.27.1.tgz#1ed7d684aa119b8404cbf389c2d7a190b0f2e875"
-  integrity sha512-zooBtOdnC4recVvUn7dCAA4V+xaSfyVkKcs6kn+AeRek/46R/IGCncs+j5DQFONwtDLH1PmZks03BmSAadmDAQ==
+  version "1.27.2"
+  resolved "https://registry.yarnpkg.com/three-render-objects/-/three-render-objects-1.27.2.tgz#6dccb2f45c0c63286ecac7808477dfd17e119050"
+  integrity sha512-cFNVSBLTM2ZjyupDs6lPUKQeOpAKrjz1OfO+GmKwMx7VpeA60+Nt8ncfBc3HwKa9V5cp1I0gjFTIjW9tORE4kw==
   dependencies:
     "@tweenjs/tween.js" "18"
     accessor-fn "1"

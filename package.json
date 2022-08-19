@@ -7,7 +7,9 @@
   "main": "dist/globe.gl.common.js",
   "module": "dist/globe.gl.module.js",
   "types": "dist/globe.gl.d.ts",
-  "sideEffects": false,
+  "sideEffects": [
+    "./src/*.css"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vasturiano/globe.gl.git"
