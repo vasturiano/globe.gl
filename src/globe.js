@@ -355,7 +355,7 @@ export default Kapsule({
     const globeR = state.globe.getGlobeRadius();
     const controls = state.renderObjs.controls();
     controls.minDistance = globeR * 1.01; // just above the surface
-    setTimeout(() => controls.maxDistance = globeR * 100); // apply async after renderObjs sets maxDistance
+    controls.maxDistance = globeR * 100;
     controls.enablePan = false;
     controls.enableDamping = true;
     controls.dampingFactor = 0.1;
