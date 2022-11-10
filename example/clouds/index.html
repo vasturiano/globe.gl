@@ -27,7 +27,7 @@
 
     new THREE.TextureLoader().load(CLOUDS_IMG_URL, cloudsTexture => {
       const clouds = new THREE.Mesh(
-        new THREE.SphereBufferGeometry(world.getGlobeRadius() * (1 + CLOUDS_ALT), 75, 75),
+        new THREE.SphereGeometry(world.getGlobeRadius() * (1 + CLOUDS_ALT), 75, 75),
         new THREE.MeshPhongMaterial({ map: cloudsTexture, transparent: true })
       );
       world.scene().add(clouds);
