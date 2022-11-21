@@ -15,9 +15,9 @@
       .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
       (document.getElementById('globeViz'));
 
-    // from https://github.com/telegeography/www.submarinecablemap.com
-    fetch('//raw.githubusercontent.com/telegeography/www.submarinecablemap.com/master/web/public/api/v3/cable/cable-geo.json')
-      .then(r =>r.json())
+    // from https://www.submarinecablemap.com
+    fetch('//api.allorigins.win/get?url=https://www.submarinecablemap.com/api/v3/cable/cable-geo.json')
+      .then(r => r.json().then(d => JSON.parse(d.contents)))
       .then(cablesGeo => {
         let cablePaths = [];
         cablesGeo.features.forEach(({ geometry, properties }) => {
