@@ -50,7 +50,7 @@
     "three-render-objects": "^1.27"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.7",
+    "@babel/core": "^7.20.12",
     "@babel/plugin-proposal-class-properties": "^7.18.6",
     "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
     "@babel/preset-env": "^7.20.2",
@@ -60,7 +60,7 @@
     "@rollup/plugin-terser": "^0.2.1",
     "postcss": "^8.4.20",
     "rimraf": "^3.0.2",
-    "rollup": "^3.8.1",
+    "rollup": "^3.9.1",
     "rollup-plugin-dts": "^5.1.0",
     "rollup-plugin-postcss": "^4.0.2",
     "typescript": "^4.9.4"
