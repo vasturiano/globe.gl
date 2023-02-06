@@ -56,7 +56,7 @@ And check out the [React bindings](https://github.com/vasturiano/react-globe.gl)
 ```js
 import Globe from 'globe.gl';
 ```
-or
+or using a *script* tag
 ```html
 <script src="//unpkg.com/globe.gl"></script>
 ```
