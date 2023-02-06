@@ -299,7 +299,8 @@ export default Kapsule({
     camera: state => state.renderObjs.camera(), // Expose camera
     renderer: state => state.renderObjs.renderer(), // Expose renderer
     controls: state => state.renderObjs.controls(), // Expose controls
-    _destructor: function() {
+    _destructor: function(state) {
+      state.globe._destructor();
       this.pauseAnimation();
       this.pointsData([]);
       this.arcsData([]);
