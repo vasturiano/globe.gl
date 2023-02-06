@@ -57,10 +57,6 @@ And check out the [React bindings](https://github.com/vasturiano/react-globe.gl)
 import Globe from 'globe.gl';
 ```
 or
-```js
-const Globe = require('globe.gl');
-```
-or even
 ```html
 <script src="//unpkg.com/globe.gl"></script>
 ```

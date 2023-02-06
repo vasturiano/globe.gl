@@ -2,11 +2,16 @@
   "name": "globe.gl",
   "version": "2.26.12",
   "description": "UI component for Globe Data Visualization using ThreeJS/WebGL",
+  "type": "module",
   "unpkg": "dist/globe.gl.min.js",
   "jsdelivr": "dist/globe.gl.min.js",
-  "main": "dist/globe.gl.common.js",
-  "module": "dist/globe.gl.module.js",
+  "main": "dist/globe.gl.mjs",
+  "module": "dist/globe.gl.mjs",
   "types": "dist/globe.gl.d.ts",
+  "exports": {
+    "umd": "./dist/globe.gl.min.js",
+    "default": "./dist/globe.gl.mjs"
+  },
   "sideEffects": [
     "./src/*.css"
   ],
@@ -34,7 +39,7 @@
   "homepage": "https://github.com/vasturiano/globe.gl",
   "scripts": {
     "build": "rimraf dist && rollup -c",
-    "dev": "rollup -w -c rollup.config.dev.mjs",
+    "dev": "rollup -w -c rollup.config.dev.js",
     "prepare": "npm run build"
   },
   "files": [
@@ -46,23 +51,24 @@
     "accessor-fn": "1",
     "kapsule": "^1.13",
     "three": ">=0.118 <1",
-    "three-globe": "^2.24",
+    "three-globe": "^2.25",
     "three-render-objects": "^1.27"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
-    "@babel/plugin-proposal-class-properties": "^7.18.6",
-    "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
     "@babel/preset-env": "^7.20.2",
     "@rollup/plugin-babel": "^6.0.3",
-    "@rollup/plugin-commonjs": "^24.0.0",
+    "@rollup/plugin-commonjs": "^24.0.1",
     "@rollup/plugin-node-resolve": "^15.0.1",
-    "@rollup/plugin-terser": "^0.2.1",
-    "postcss": "^8.4.20",
-    "rimraf": "^3.0.2",
-    "rollup": "^3.9.1",
-    "rollup-plugin-dts": "^5.1.0",
+    "@rollup/plugin-terser": "^0.4.0",
+    "postcss": "^8.4.21",
+    "rimraf": "^4.1.2",
+    "rollup": "^3.14.0",
+    "rollup-plugin-dts": "^5.1.1",
     "rollup-plugin-postcss": "^4.0.2",
-    "typescript": "^4.9.4"
+    "typescript": "^4.9.5"
+  },
+  "engines": {
+    "node": ">=12"
   }
 }
