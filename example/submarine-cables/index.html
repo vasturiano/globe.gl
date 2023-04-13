@@ -16,8 +16,8 @@
       (document.getElementById('globeViz'));
 
     // from https://www.submarinecablemap.com
-    fetch('//api.allorigins.win/get?url=https://www.submarinecablemap.com/api/v3/cable/cable-geo.json')
-      .then(r => r.json().then(d => JSON.parse(d.contents)))
+    fetch('//http-proxy.vastur.com?url=https://www.submarinecablemap.com/api/v3/cable/cable-geo.json')
+      .then(r => r.json())
       .then(cablesGeo => {
         let cablePaths = [];
         cablesGeo.features.forEach(({ geometry, properties }) => {
