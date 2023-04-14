@@ -47,7 +47,7 @@
     "example/**/*"
   ],
   "dependencies": {
-    "@tweenjs/tween.js": "18",
+    "@tweenjs/tween.js": "18 - 19",
     "accessor-fn": "1",
     "kapsule": "^1.14",
     "three": ">=0.118 <1",
