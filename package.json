@@ -9,6 +9,7 @@
   "module": "dist/globe.gl.mjs",
   "types": "dist/globe.gl.d.ts",
   "exports": {
+    "types": "./dist/globe.gl.d.ts",
     "umd": "./dist/globe.gl.min.js",
     "default": "./dist/globe.gl.mjs"
   },
@@ -49,10 +50,10 @@
   "dependencies": {
     "@tweenjs/tween.js": "18 - 19",
     "accessor-fn": "1",
-    "kapsule": "^1.14",
+    "kapsule": "1",
     "three": ">=0.118 <1",
-    "three-globe": "^2.25",
-    "three-render-objects": "^1.28"
+    "three-globe": "2",
+    "three-render-objects": "1"
   },
   "devDependencies": {
     "@babel/core": "^7.21.4",

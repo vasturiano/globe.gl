@@ -1356,7 +1356,7 @@ d3-geo-voronoi@^2.0:
   dependencies:
     d3-array "2.5.0 - 3"
 
-"d3-interpolate@1 - 3", "d3-interpolate@1.2.0 - 3":
+"d3-interpolate@1.2.0 - 3", d3-interpolate@3:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/d3-interpolate/-/d3-interpolate-3.0.1.tgz#3c47aa5b32c5b3dfb56ef3fd4342078a632b400d"
   integrity sha512-3bYs1rOD33uo8aqJfKP3JWPAibgw8Zm2+L9vBKEHJ2Rg+viTR7o5Mmv5mZcieN+FRYaAOWX5SJATX6k1PWz72g==
@@ -1396,7 +1396,7 @@ d3-tricontour@1:
     d3-delaunay "6"
     d3-scale "4"
 
-data-joint@^1.3:
+data-joint@1:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/data-joint/-/data-joint-1.3.1.tgz#d134950322c90f531e81bbbe8454277549031466"
   integrity sha512-tMK0m4OVGqiA3zkn8JmO6YAqD8UwJqIAx4AAwFl1SKTtKAqcXePuT+n2aayiX9uITtlN3DFtKKTOxJRUc2+HvQ==
@@ -1458,9 +1458,9 @@ earcut@2:
   integrity sha512-/pjZsA1b4RPHbeWZQn66SWS8nZZWLQQ23oE3Eam7aroEFGEvwKAsJfZ9ytiEMycfzXWpca4FA9QIOehf7PocBQ==
 
 electron-to-chromium@^1.4.284:
-  version "1.4.362"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.362.tgz#1dfd7a076fc4785a16941f06410d0668e1a7a1aa"
-  integrity sha512-PYzAoScDfUcAwZfJQvr6hK2xXzLsMocj/Wuz6LpW6TZQNVv9TflBSB+UoEPuFujc478BgAxCoCFarcVPmjzsog==
+  version "1.4.365"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.365.tgz#ccd9e352d4493aa288d87e6ea36f3edf350c045e"
+  integrity sha512-FRHZO+1tUNO4TOPXmlxetkoaIY8uwHzd1kKopK/Gx2SKn1L47wJXWD44wxP5CGRyyP98z/c8e1eBzJrgPeiBOg==
 
 entities@^2.0.0:
   version "2.2.0"
@@ -1532,14 +1532,14 @@ gensync@^1.0.0-beta.2:
   integrity sha512-3hN7NaskYvMDLQY55gnW3NQ+mesEAepTqlg+VEbj7zzqEMBVNhzcGYYeqFo/TlYz6eQiFcp1HcsCZO+nGgS8zg==
 
 glob@^10.0.0:
-  version "10.0.0"
-  resolved "https://registry.yarnpkg.com/glob/-/glob-10.0.0.tgz#034ab2e93644ba702e769c3e0558143d3fbd1612"
-  integrity sha512-zmp9ZDC6NpDNLujV2W2n+3lH+BafIVZ4/ct+Yj3BMZTH/+bgm/eVjHzeFLwxJrrIGgjjS2eiQLlpurHsNlEAtQ==
+  version "10.1.0"
+  resolved "https://registry.yarnpkg.com/glob/-/glob-10.1.0.tgz#baa48c6a157cfa34ca7887f2a29c6156bc6b65f8"
+  integrity sha512-daGobsYuT0G4hng24B5LbeLNvwKZYRhWyDl3RvqqAGZjJnCopWWK6PWnAGBY1M/vdA63QE+jddhZcYp+74Bq6Q==
   dependencies:
     fs.realpath "^1.0.0"
     minimatch "^9.0.0"
     minipass "^5.0.0"
-    path-scurry "^1.6.4"
+    path-scurry "^1.7.0"
 
 glob@^8.0.3:
   version "8.1.0"
@@ -1633,7 +1633,7 @@ is-builtin-module@^3.2.1:
   dependencies:
     builtin-modules "^3.3.0"
 
-is-core-module@^2.11.0:
+is-core-module@^2.12.0:
   version "2.12.0"
   resolved "https://registry.yarnpkg.com/is-core-module/-/is-core-module-2.12.0.tgz#36ad62f6f73c8253fd6472517a12483cf03e7ec4"
   integrity sha512-RECHCBCd/viahWmwj6enj19sKbHfJrddi/6cBDsNTKbNq0f7VeaUkBo60BqzvPqo/W54ChS62Z5qyun7cfOMqQ==
@@ -1672,7 +1672,7 @@ json5@^2.2.2:
   resolved "https://registry.yarnpkg.com/json5/-/json5-2.2.3.tgz#78cd6f1a19bdc12b73db5ad0c61efd66c1e29283"
   integrity sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==
 
-kapsule@^1.14:
+kapsule@1, kapsule@^1.14:
   version "1.14.2"
   resolved "https://registry.yarnpkg.com/kapsule/-/kapsule-1.14.2.tgz#07528c2e83b16ec6152d35897b9eb82ce9e5bce6"
   integrity sha512-6ROjWt7DHJ6pBv8RqpcP5uhP7+IgoaF5XavzcRU0U1/5wT/dZgBDNPrdZMNXaWyWLZvAdJ/ONuVRW0Dr9NbLkA==
@@ -1722,9 +1722,9 @@ lru-cache@^5.1.1:
     yallist "^3.0.2"
 
 lru-cache@^9.0.0:
-  version "9.0.2"
-  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-9.0.2.tgz#97f13c6b20532fba9bae821c39cd7d471f65119d"
-  integrity sha512-7zYMKApzQ9qQE13xQUzbXVY3p2C5lh+9V+bs8M9fRf1TF59id+8jkljRWtIPfBfNP4yQAol5cqh/e8clxatdXw==
+  version "9.0.3"
+  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-9.0.3.tgz#8a04f282df5320227bb7215c55df2660d3e4e25b"
+  integrity sha512-cyjNRew29d4kbgnz1sjDqxg7qg8NW4s+HQzCGjeon7DV5T2yDije16W9HaUFV1dhVEMh+SjrOcK0TomBmf3Egg==
 
 magic-string@^0.27.0:
   version "0.27.0"
@@ -1823,10 +1823,10 @@ path-parse@^1.0.7:
   resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.7.tgz#fbc114b60ca42b30d9daf5858e4bd68bbedb6735"
   integrity sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==
 
-path-scurry@^1.6.4:
-  version "1.6.4"
-  resolved "https://registry.yarnpkg.com/path-scurry/-/path-scurry-1.6.4.tgz#020a9449e5382a4acb684f9c7e1283bc5695de66"
-  integrity sha512-Qp/9IHkdNiXJ3/Kon++At2nVpnhRiPq/aSvQN+H3U1WZbvNRK0RIQK/o4HMqPoXjpuGJUEWpHSs6Mnjxqh3TQg==
+path-scurry@^1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/path-scurry/-/path-scurry-1.7.0.tgz#99c741a2cfbce782294a39994d63748b5a24f6db"
+  integrity sha512-UkZUeDjczjYRE495+9thsgcVgsaCPkaw80slmfVFgllxY+IO8ubTsOpFVjDPROBqJdHfVPUFRHPBV/WciOVfWg==
   dependencies:
     lru-cache "^9.0.0"
     minipass "^5.0.0"
@@ -2183,11 +2183,11 @@ resolve-from@^5.0.0:
   integrity sha512-qYg9KP24dD5qka9J47d0aVky0N+b4fTU89LN9iDnjB5waksiC49rvMB0PrUJQGoTmH50XPiqOvAjDfaijGxYZw==
 
 resolve@^1.14.2, resolve@^1.19.0, resolve@^1.22.1:
-  version "1.22.2"
-  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.22.2.tgz#0ed0943d4e301867955766c9f3e1ae6d01c6845f"
-  integrity sha512-Sb+mjNHOULsBv818T40qSPeRiuWLyaGMa5ewydRLFimneixmVy2zdivRl+AF6jaYPC8ERxGDmFSiqui6SfPd+g==
+  version "1.22.3"
+  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.22.3.tgz#4b4055349ffb962600972da1fdc33c46a4eb3283"
+  integrity sha512-P8ur/gp/AmbEzjr729bZnLjXK5Z+4P0zhIJgBgzqRih7hL7BOukHGtSTA3ACMY467GRFz3duQsi0bDZdR7DKdw==
   dependencies:
-    is-core-module "^2.11.0"
+    is-core-module "^2.12.0"
     path-parse "^1.0.7"
     supports-preserve-symlinks-flag "^1.0.0"
 
@@ -2360,7 +2360,7 @@ terser@^5.15.1:
     commander "^2.20.0"
     source-map-support "~0.5.20"
 
-three-conic-polygon-geometry@^1.6:
+three-conic-polygon-geometry@1:
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/three-conic-polygon-geometry/-/three-conic-polygon-geometry-1.6.1.tgz#72279973322de2eb1781844cb1624b71c883c604"
   integrity sha512-nycXmeeKBiSKWsae/77Z4IjOWnRKuIphFVtJT1Y6yqO0gSwtVVnNcdkMh8wMVlV26zafU4aazHkOSZVPWfpbGA==
@@ -2374,11 +2374,11 @@ three-conic-polygon-geometry@^1.6:
     earcut "2"
 
 three-fatline@^0.6:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/three-fatline/-/three-fatline-0.6.0.tgz#9086a5c748e4f1440ef95ed94ba32dc3fb575c57"
-  integrity sha512-BQAk1+3p5/RZgdsQB1Xl5esr/sbNxU9o+vm3KvMdWmTtPRZzOgOJi/yOUrmYbNPk2myNktr/QQHl4RA8ATEE0Q==
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/three-fatline/-/three-fatline-0.6.1.tgz#6593d93939b8c38f2c1d8276e7e4b77df06a265d"
+  integrity sha512-H0XwIRNTshpD5zS7iBiatCB5CVaBA4D6+vzpws4R+Wg2d2k49xWpRLA/ayzFeoCa67upRnXCFrHWIIGHyJEIqQ==
 
-three-geojson-geometry@^1.3:
+three-geojson-geometry@1:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/three-geojson-geometry/-/three-geojson-geometry-1.3.1.tgz#0e0aa4ffacba9f491024e053875fc1fdeaa127fc"
   integrity sha512-dUBA0R5Xn43JcIr3n0RjBIxMb+zGUoKODAkJfcbL6Am9qZF0PE11+T3ZSQBnlElOpKdwfox9x6cQ59J1Kh7qFQ==
@@ -2386,28 +2386,28 @@ three-geojson-geometry@^1.3:
     d3-geo "1 - 3"
     earcut "2"
 
-three-globe@^2.25:
-  version "2.25.5"
-  resolved "https://registry.yarnpkg.com/three-globe/-/three-globe-2.25.5.tgz#a584e3f2cd8cf5152d29b3fa243eacb3a5c51892"
-  integrity sha512-yqwiy98uoiN7YdgugOesvjLqh3CRnSSYrRSLbI+TvHR4bLzXQ4/s8msM49URcly16JxvcZNsv+6809IG6W6QJw==
+three-globe@2:
+  version "2.25.7"
+  resolved "https://registry.yarnpkg.com/three-globe/-/three-globe-2.25.7.tgz#e502f3d739a4d720582f7f079a5cf766ee58478a"
+  integrity sha512-MnwRly2R/6ScPpIo3HV0iJiWDBPXgy67M7hplKG8bpSDVDkHQtrDk4c6MsVf231tQx37hH/Cj0r/1fW2j8YZWw==
   dependencies:
     "@tweenjs/tween.js" "18 - 19"
     accessor-fn "1"
-    d3-geo "1 - 3"
-    d3-interpolate "1 - 3"
-    d3-scale "1 - 4"
-    data-joint "^1.3"
+    d3-geo "3"
+    d3-interpolate "3"
+    d3-scale "4"
+    data-joint "1"
     earcut "2"
     frame-ticker "1"
     h3-js "4"
     index-array-by "1"
-    kapsule "^1.14"
-    three-conic-polygon-geometry "^1.6"
+    kapsule "1"
+    three-conic-polygon-geometry "1"
     three-fatline "^0.6"
-    three-geojson-geometry "^1.3"
-    tinycolor2 "^1.6"
+    three-geojson-geometry "1"
+    tinycolor2 "1"
 
-three-render-objects@^1.28:
+three-render-objects@1:
   version "1.28.2"
   resolved "https://registry.yarnpkg.com/three-render-objects/-/three-render-objects-1.28.2.tgz#9fc305720c4ecfe46a7f6fd57292dfa360496a0a"
   integrity sha512-bimDM0ckinhXuwE+eo3ccEevSoiwqV2wUCDxnI0yqFeWgQ//E2T3UsHDcN8tTjq0AO6dDtixPcdEtUaf9nGaRQ==
@@ -2422,7 +2422,7 @@ three-render-objects@^1.28:
   resolved "https://registry.yarnpkg.com/three/-/three-0.151.3.tgz#0b3c7de4b070d5b66b15217f42465d67cbfa6004"
   integrity sha512-+vbuqxFy8kzLeO5MgpBHUvP/EAiecaDwDuOPPDe6SbrZr96kccF0ktLngXc7xA7bzyd3N0t2f6mw3Z9y6JCojQ==
 
-tinycolor2@^1.6:
+tinycolor2@1:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/tinycolor2/-/tinycolor2-1.6.0.tgz#f98007460169b0263b97072c5ae92484ce02d09e"
   integrity sha512-XPaBkWQJdsf3pLKJV9p4qN/S+fm2Oj8AIPo1BTUhg5oxkvm9+SVEGFdhyOz7tTdUTfvxMiAs4sp6/eZO2Ew+pw==
