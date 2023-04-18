@@ -52,7 +52,7 @@
     "accessor-fn": "1",
     "kapsule": "1",
     "three": ">=0.118 <1",
-    "three-globe": "2",
+    "three-globe": "^2.26",
     "three-render-objects": "1"
   },
   "devDependencies": {
@@ -62,9 +62,9 @@
     "@rollup/plugin-commonjs": "^24.1.0",
     "@rollup/plugin-node-resolve": "^15.0.2",
     "@rollup/plugin-terser": "^0.4.1",
-    "postcss": "^8.4.21",
+    "postcss": "^8.4.22",
     "rimraf": "^5.0.0",
-    "rollup": "^3.20.2",
+    "rollup": "^3.20.6",
     "rollup-plugin-dts": "^5.3.0",
     "rollup-plugin-postcss": "^4.0.2",
     "typescript": "^5.0.4"

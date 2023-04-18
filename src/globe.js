@@ -143,6 +143,8 @@ const linkedGlobeProps = Object.assign(...[
   'objectLat',
   'objectLng',
   'objectAltitude',
+  'objectRotation',
+  'objectFacesSurface',
   'objectThreeObject',
   'customLayerData',
   'customThreeObject',
