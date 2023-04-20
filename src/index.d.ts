@@ -25,7 +25,7 @@ interface GeoCoords {
 type PointerEventsFilterFn = (object: Object3D, data?: object) => boolean;
 
 // don't surface these internal props from inner ThreeGlobe
-type ExcludedInnerProps = 'setPointOfView';
+type ExcludedInnerProps = 'setPointOfView' | 'pauseAnimation' | 'resumeAnimation';
 
 export interface GlobeGenericInstance<ChainableInstance>
   extends Omit<ThreeGlobeGeneric<ChainableInstance>, ExcludedInnerProps> {

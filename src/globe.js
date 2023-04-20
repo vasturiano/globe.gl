@@ -237,12 +237,14 @@ export default Kapsule({
         cancelAnimationFrame(state.animationFrameRequestId);
         state.animationFrameRequestId = null;
       }
+      state.globe?.pauseAnimation();
       return this;
     },
     resumeAnimation: function(state) {
       if (state.animationFrameRequestId === null) {
         this._animationCycle();
       }
+      state.globe?.resumeAnimation();
       return this;
     },
     _animationCycle(state) {

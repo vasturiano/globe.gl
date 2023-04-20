@@ -52,7 +52,7 @@
     "accessor-fn": "1",
     "kapsule": "1",
     "three": ">=0.118 <1",
-    "three-globe": "^2.26",
+    "three-globe": "^2.27",
     "three-render-objects": "1"
   },
   "devDependencies": {
