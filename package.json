@@ -48,23 +48,23 @@
     "example/**/*"
   ],
   "dependencies": {
-    "@tweenjs/tween.js": "18 - 19",
+    "@tweenjs/tween.js": "18 - 20",
     "accessor-fn": "1",
     "kapsule": "1",
     "three": ">=0.118 <1",
     "three-globe": "^2.27",
-    "three-render-objects": "1"
+    "three-render-objects": "^1.28"
   },
   "devDependencies": {
-    "@babel/core": "^7.21.4",
-    "@babel/preset-env": "^7.21.4",
+    "@babel/core": "^7.21.5",
+    "@babel/preset-env": "^7.21.5",
     "@rollup/plugin-babel": "^6.0.3",
     "@rollup/plugin-commonjs": "^24.1.0",
     "@rollup/plugin-node-resolve": "^15.0.2",
     "@rollup/plugin-terser": "^0.4.1",
-    "postcss": "^8.4.22",
+    "postcss": "^8.4.23",
     "rimraf": "^5.0.0",
-    "rollup": "^3.20.6",
+    "rollup": "^3.21.2",
     "rollup-plugin-dts": "^5.3.0",
     "rollup-plugin-postcss": "^4.0.2",
     "typescript": "^5.0.4"
