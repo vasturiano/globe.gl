@@ -403,7 +403,7 @@ export default Kapsule({
 
     state.renderObjs
       .objects([ // Populate scene
-        new THREE.AmbientLight(0xbbbbbb),
+        new THREE.AmbientLight(0xcccccc),
         new THREE.DirectionalLight(0xffffff, 0.6),
         state.globe
       ])
