@@ -401,7 +401,7 @@ export default Kapsule({
       custom: d => d
     };
 
-    state.renderObjs.renderer().useLegacyLights = false; // force behavior of three < 154
+    state.renderObjs.renderer().useLegacyLights = false; // force behavior of three < 155
     state.renderObjs
       .objects([ // Populate scene
         new THREE.AmbientLight(0xcccccc, Math.PI),
