@@ -401,10 +401,11 @@ export default Kapsule({
       custom: d => d
     };
 
+    state.renderObjs.renderer().useLegacyLights = false; // force behavior of three < 154
     state.renderObjs
       .objects([ // Populate scene
-        new THREE.AmbientLight(0xcccccc),
-        new THREE.DirectionalLight(0xffffff, 0.6),
+        new THREE.AmbientLight(0xcccccc, Math.PI),
+        new THREE.DirectionalLight(0xffffff, 0.6 * Math.PI),
         state.globe
       ])
       .hoverOrderComparator((a, b) => {
