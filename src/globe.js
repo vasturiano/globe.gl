@@ -30,7 +30,6 @@ const linkedGlobeProps = Object.assign(...[
   'showAtmosphere',
   'atmosphereColor',
   'atmosphereAltitude',
-  'globeMaterial',
   'onGlobeReady',
   'pointsData',
   'pointLat',
@@ -151,6 +150,7 @@ const linkedGlobeProps = Object.assign(...[
   'customThreeObjectUpdate'
 ].map(p => ({ [p]: bindGlobe.linkProp(p)})));
 const linkedGlobeMethods = Object.assign(...[
+  'globeMaterial',
   'getGlobeRadius',
   'getCoords',
   'toGeoCoords'
