@@ -78,6 +78,9 @@ export interface GlobeGenericInstance<ChainableInstance>
   onPathClick(callback: (path: object, event: MouseEvent, coords: { lat: number, lng: number, altitude: number }) => void): ChainableInstance;
   onPathRightClick(callback: (path: object, event: MouseEvent, coords: { lat: number, lng: number, altitude: number }) => void): ChainableInstance;
   onPathHover(callback: (path: object | null, prevPath: object | null) => void): ChainableInstance;
+  onHeatmapClick(callback: (heatmap: object, event: MouseEvent, coords: { lat: number, lng: number, altitude: number }) => void): ChainableInstance;
+  onHeatmapRightClick(callback: (heatmap: object, event: MouseEvent, coords: { lat: number, lng: number, altitude: number }) => void): ChainableInstance;
+  onHeatmapHover(callback: (heatmap: object | null, prevHeatmap: object | null) => void): ChainableInstance;
   onHexClick(callback: (hex: HexBin, event: MouseEvent, coords: { lat: number, lng: number, altitude: number }) => void): ChainableInstance;
   onHexRightClick(callback: (hex: HexBin, event: MouseEvent, coords: { lat: number, lng: number, altitude: number }) => void): ChainableInstance;
   onHexHover(callback: (hex: HexBin | null, prevHex: HexBin | null) => void): ChainableInstance;

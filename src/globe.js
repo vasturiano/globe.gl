@@ -79,6 +79,17 @@ const linkedGlobeProps = Object.assign(...[
   'pathDashInitialGap',
   'pathDashAnimateTime',
   'pathTransitionDuration',
+  'heatmapsData',
+  'heatmapPoints',
+  'heatmapPointLat',
+  'heatmapPointLng',
+  'heatmapPointWeight',
+  'heatmapBandwidth',
+  'heatmapColorFn',
+  'heatmapColorSaturation',
+  'heatmapBaseAltitude',
+  'heatmapTopAltitude',
+  'heatmapsTransitionDuration',
   'hexBinPointsData',
   'hexBinPointLat',
   'hexBinPointLng',
@@ -193,6 +204,9 @@ export default Kapsule({
     onPathClick: { triggerUpdate: false },
     onPathRightClick: { triggerUpdate: false },
     onPathHover: { triggerUpdate: false },
+    onHeatmapClick: { triggerUpdate: false },
+    onHeatmapRightClick: { triggerUpdate: false },
+    onHeatmapHover: { triggerUpdate: false },
     hexLabel: { triggerUpdate: false },
     onHexClick: { triggerUpdate: false },
     onHexRightClick: { triggerUpdate: false },
@@ -310,6 +324,7 @@ export default Kapsule({
       this.arcsData([]);
       this.polygonsData([]);
       this.pathsData([]);
+      this.heatmapsData([]);
       this.hexBinPointsData([]);
       this.hexPolygonsData([]);
       this.tilesData([]);
@@ -393,6 +408,7 @@ export default Kapsule({
       arc: d => d,
       polygon: d => d.data,
       path: d => d,
+      heatmap: d => d,
       hexbin: d => d,
       hexPolygon: d => d,
       tile: d => d,
@@ -444,6 +460,7 @@ export default Kapsule({
           arc: state.onArcHover,
           polygon: state.onPolygonHover,
           path: state.onPathHover,
+          heatmap: state.onHeatmapHover,
           hexbin: state.onHexHover,
           hexPolygon: state.onHexPolygonHover,
           tile: state.onTileHover,
@@ -458,6 +475,7 @@ export default Kapsule({
           arc: state.onArcClick,
           polygon: state.onPolygonClick,
           path: state.onPathClick,
+          heatmap: state.onHeatmapClick,
           hexbin: state.onHexClick,
           hexPolygon: state.onHexPolygonClick,
           tile: state.onTileClick,
@@ -501,6 +519,7 @@ export default Kapsule({
           arc: state.onArcClick,
           polygon: state.onPolygonClick,
           path: state.onPathClick,
+          heatmap: state.onHeatmapClick,
           hexbin: state.onHexClick,
           hexPolygon: state.onHexPolygonClick,
           tile: state.onTileClick,
@@ -536,6 +555,7 @@ export default Kapsule({
           arc: state.onArcRightClick,
           polygon: state.onPolygonRightClick,
           path: state.onPathRightClick,
+          heatmap: state.onHeatmapRightClick,
           hexbin: state.onHexRightClick,
           hexPolygon: state.onHexPolygonRightClick,
           tile: state.onTileRightClick,
