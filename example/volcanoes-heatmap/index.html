@@ -1,0 +1,27 @@
+<head>
+  <style> body { margin: 0; } </style>
+
+  <script src="//unpkg.com/globe.gl"></script>
+<!--  <script src="../../dist/globe.gl.js"></script>-->
+</head>
+
+<body>
+  <div id="globeViz"></div>
+
+  <script>
+    const world = Globe()
+      .globeImageUrl('//unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
+      .heatmapPointLat('lat')
+      .heatmapPointLng('lon')
+      .heatmapPointWeight(d => d.elevation * 5e-5)
+      .heatmapTopAltitude(0.2)
+      .heatmapBandwidth(1.35)
+      .heatmapColorSaturation(3.2)
+      .enablePointerInteraction(false)
+      (document.getElementById('globeViz'));
+
+    fetch('../datasets/world_volcanoes.json').then(res => res.json()).then(volcanoes => {
+      world.heatmapsData([volcanoes])
+    });
+  </script>
+</body>
