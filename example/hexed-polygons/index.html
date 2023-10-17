@@ -2,7 +2,7 @@
   <style> body { margin: 0; } </style>
 
   <script src="//unpkg.com/globe.gl"></script>
-  <!--<script src="../../dist/globe.gl.js"></script>-->
+<!--  <script src="../../dist/globe.gl.js"></script>-->
 </head>
 
 <body>
@@ -16,6 +16,7 @@
         .hexPolygonsData(countries.features)
         .hexPolygonResolution(3)
         .hexPolygonMargin(0.3)
+        .hexPolygonUseDots(true)
         .hexPolygonColor(() => `#${Math.round(Math.random() * Math.pow(2, 24)).toString(16).padStart(6, '0')}`)
         .hexPolygonLabel(({ properties: d }) => `
           <b>${d.ADMIN} (${d.ISO_A2})</b> <br />
