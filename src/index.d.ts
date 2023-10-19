@@ -1,4 +1,4 @@
-import { Object3D, Scene, Camera, WebGLRenderer, WebGLRendererParameters } from 'three';
+import { Object3D, Light, Scene, Camera, WebGLRenderer, WebGLRendererParameters } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
 import { ThreeGlobeGeneric, ConfigOptions as ThreeGlobeConfigOptions } from 'three-globe';
@@ -112,6 +112,8 @@ export interface GlobeGenericInstance<ChainableInstance>
   lineHoverPrecision(): number;
   lineHoverPrecision(precision: number): ChainableInstance;
   onZoom(callback: (pov: GeoCoords) => void): ChainableInstance;
+  lights(): Light[];
+  lights(lights: Light[]): ChainableInstance;
   scene(): Scene;
   camera(): Camera;
   renderer(): WebGLRenderer;

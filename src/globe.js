@@ -179,6 +179,7 @@ const linkedRenderObjsProps = Object.assign(...[
   'enablePointerInteraction'
 ].map(p => ({ [p]: bindRenderObjs.linkProp(p)})));
 const linkedRenderObjsMethods = Object.assign(...[
+  'lights',
   'postProcessingComposer'
 ].map(p => ({ [p]: bindRenderObjs.linkMethod(p)})));
 
@@ -351,7 +352,12 @@ export default Kapsule({
       })
         .skyRadius(globe.getGlobeRadius() * 500)
         .showNavInfo(false)
-    }
+        .objects([globe]) // Populate scene
+        .lights([
+          new THREE.AmbientLight(0xcccccc, Math.PI),
+          new THREE.DirectionalLight(0xffffff, 0.6 * Math.PI),
+        ])
+    };
   },
 
   init: function(domNode, state) {
@@ -421,11 +427,6 @@ export default Kapsule({
 
     state.renderObjs.renderer().useLegacyLights = false; // force behavior of three < 155
     state.renderObjs
-      .objects([ // Populate scene
-        new THREE.AmbientLight(0xcccccc, Math.PI),
-        new THREE.DirectionalLight(0xffffff, 0.6 * Math.PI),
-        state.globe
-      ])
       .hoverOrderComparator((a, b) => {
         const aObj = getGlobeObj(a);
         const bObj = getGlobeObj(b);

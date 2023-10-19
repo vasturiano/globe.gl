@@ -53,7 +53,7 @@
     "kapsule": "1",
     "three": ">=0.118 <1",
     "three-globe": "^2.30",
-    "three-render-objects": "^1.28"
+    "three-render-objects": "^1.29"
   },
   "devDependencies": {
     "@babel/core": "^7.23.2",
