@@ -27,9 +27,7 @@
       globeMaterial.shininess = 15;
     });
 
-    setTimeout(() => { // wait for scene to be populated (asynchronously)
-      const directionalLight = world.scene().children.find(obj3d => obj3d.type === 'DirectionalLight');
-      directionalLight && directionalLight.position.set(1, 1, 1); // change light position to see the specularMap's effect
-    });
+    const directionalLight = world.lights().find(light => light.type === 'DirectionalLight');
+    directionalLight && directionalLight.position.set(1, 1, 1); // change light position to see the specularMap's effect
   </script>
 </body>
