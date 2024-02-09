@@ -1,7 +1,6 @@
 <head>
   <style> body { margin: 0; } </style>
 
-  <script src="//unpkg.com/three"></script>
   <script src="//unpkg.com/topojson-client"></script>
 
   <script src="//unpkg.com/globe.gl"></script>
@@ -11,7 +10,9 @@
 <body>
   <div id="globeViz"></div>
 
-  <script>
+  <script type="module">
+    import * as THREE from '//unpkg.com/three/build/three.module.js';
+
     const world = Globe()
       (document.getElementById('globeViz'))
       .backgroundColor('rgba(0,0,0,0)')

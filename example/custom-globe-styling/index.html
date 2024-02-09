@@ -1,8 +1,6 @@
 <head>
   <style> body { margin: 0; } </style>
 
-  <script src="//unpkg.com/three"></script>
-
   <script src="//unpkg.com/globe.gl"></script>
 <!--    <script src="../../dist/globe.gl.js"></script>-->
 </head>
@@ -10,7 +8,8 @@
 <body>
   <div id="globeViz"></div>
 
-  <script>
+  <script type="module">
+    import * as THREE from '//unpkg.com/three/build/three.module.js';
 
     const world = Globe()
       .globeImageUrl('//unpkg.com/three-globe/example/img/earth-blue-marble.jpg')

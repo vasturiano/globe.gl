@@ -15,7 +15,6 @@
     }
   </style>
 
-  <script src="//unpkg.com/three"></script>
   <script src="//unpkg.com/satellite.js/dist/satellite.min.js"></script>
 
   <script src="//unpkg.com/globe.gl"></script>
@@ -26,7 +25,9 @@
   <div id="chart"></div>
   <div id="time-log"></div>
 
-  <script>
+  <script type="module">
+    import * as THREE from '//unpkg.com/three/build/three.module.js';
+
     const EARTH_RADIUS_KM = 6371; // km
     const SAT_SIZE = 100; // km
     const TIME_STEP = 3 * 1000; // per frame

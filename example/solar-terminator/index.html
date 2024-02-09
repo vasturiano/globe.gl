@@ -13,9 +13,7 @@
     }
   </style>
 
-  <script src="//unpkg.com/three"></script>
-
-    <script src="//unpkg.com/globe.gl"></script>
+  <script src="//unpkg.com/globe.gl"></script>
 <!--  <script src="../../dist/globe.gl.js"></script>-->
 
   <script src="//unpkg.com/solar-calculator"></script>
@@ -25,7 +23,9 @@
   <div id="globeViz"></div>
   <div id="time"></div>
 
-  <script>
+  <script type="module">
+    import * as THREE from '//unpkg.com/three/build/three.module.js';
+
     const VELOCITY = 9; // minutes per frame
 
     const sunPosAt = dt => {
