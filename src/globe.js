@@ -1,10 +1,10 @@
-import { AmbientLight, DirectionalLight, Vector2 } from 'three';
+import { AmbientLight, DirectionalLight, Vector2, REVISION } from 'three';
 import { CSS2DRenderer } from 'three/examples/jsm/renderers/CSS2DRenderer.js';
 
 const THREE = {
   ...(window.THREE
       ? window.THREE // Prefer consumption from global THREE, if exists
-      : { AmbientLight, DirectionalLight, Vector2 }
+      : { AmbientLight, DirectionalLight, Vector2, REVISION }
   ),
   CSS2DRenderer
 };
@@ -425,7 +425,7 @@ export default Kapsule({
       custom: d => d
     };
 
-    state.renderObjs.renderer().useLegacyLights = false; // force behavior of three < 155
+    THREE.REVISION < 155 && (state.renderObjs.renderer().useLegacyLights = false); // force behavior of three < 155
     state.renderObjs
       .hoverOrderComparator((a, b) => {
         const aObj = getGlobeObj(a);
