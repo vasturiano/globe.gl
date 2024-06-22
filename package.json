@@ -1,6 +1,6 @@
 {
   "name": "globe.gl",
-  "version": "2.32.4",
+  "version": "2.32.5",
   "description": "UI component for Globe Data Visualization using ThreeJS/WebGL",
   "type": "module",
   "unpkg": "dist/globe.gl.min.js",
