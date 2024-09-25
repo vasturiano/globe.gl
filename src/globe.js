@@ -14,7 +14,7 @@ import ThreeRenderObjects from 'three-render-objects';
 
 import accessorFn from 'accessor-fn';
 import Kapsule from 'kapsule';
-import * as TWEEN from '@tweenjs/tween.js';
+import { Tween, Group as TweenGroup, Easing } from '@tweenjs/tween.js';
 
 import linkKapsule from './kapsule-link.js';
 
@@ -267,6 +267,7 @@ export default Kapsule({
     _animationCycle(state) {
       // Frame cycle
       state.renderObjs.tick();
+      state.tweenGroup.update();
       state.animationFrameRequestId = requestAnimationFrame(this._animationCycle);
     },
     pointOfView: function(state, geoCoords = {}, transitionDuration = 0) {
@@ -286,11 +287,12 @@ export default Kapsule({
           while ((curGeoCoords.lng - finalGeoCoords.lng) > 180) curGeoCoords.lng -= 360;
           while ((curGeoCoords.lng - finalGeoCoords.lng) < -180) curGeoCoords.lng += 360;
 
-          new TWEEN.Tween(curGeoCoords)
+          state.tweenGroup.add(new Tween(curGeoCoords)
             .to(finalGeoCoords, transitionDuration)
-            .easing(TWEEN.Easing.Cubic.InOut)
+            .easing(Easing.Cubic.InOut)
             .onUpdate(setCameraPos)
-            .start();
+            .start()
+          );
         }
         return this;
       }
@@ -356,7 +358,8 @@ export default Kapsule({
         .lights([
           new THREE.AmbientLight(0xcccccc, Math.PI),
           new THREE.DirectionalLight(0xffffff, 0.6 * Math.PI),
-        ])
+        ]),
+      tweenGroup: new TweenGroup()
     };
   },
 
