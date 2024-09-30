@@ -51,8 +51,8 @@
     "@tweenjs/tween.js": "18 - 25",
     "accessor-fn": "1",
     "kapsule": "1",
-    "three": ">=0.118 <1",
-    "three-globe": "^2.31",
+    "three": ">=0.154 <1",
+    "three-globe": "^2.32",
     "three-render-objects": "^1.29"
   },
   "devDependencies": {
@@ -64,7 +64,7 @@
     "@rollup/plugin-terser": "^0.4.4",
     "postcss": "^8.4.47",
     "rimraf": "^6.0.1",
-    "rollup": "^4.22.4",
+    "rollup": "^4.22.5",
     "rollup-plugin-dts": "^6.1.1",
     "rollup-plugin-postcss": "^4.0.2",
     "typescript": "^5.6.2"
