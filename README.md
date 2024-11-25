@@ -113,14 +113,14 @@ Globe({ configOptions })(<domElement>)
 | <b>width</b>([<i>px</i>]) | Getter/setter for the canvas width. | *&lt;window width&gt;* |
 | <b>height</b>([<i>px</i>]) | Getter/setter for the canvas height. | *&lt;window height&gt;* |
 | <b>backgroundColor</b>([<i>str</i>]) | Getter/setter for the background color. | `#000011` |
-| <b>backgroundImageUrl</b>([<i>url</i>]) | Getter/setter for the URL of the image to be used as background to the globe. If no image is provided, the background color is shown instead. | `null` |
+| <b>backgroundImageUrl</b>([<i>url</i>]) | Getter/setter for the URL of the equirectangular projection image to be used as background to the globe. If no image is provided, the background color is shown instead. | `null` |
 
 ### Globe Layer
 
 | Method | Description | Default |
 | --- | --- | :--: |
-| <b>globeImageUrl</b>([<i>url</i>]) | Getter/setter for the URL of the image used in the material that wraps the globe. If no image is provided, the globe is represented as a black sphere. | `null` |
-| <b>bumpImageUrl</b>([<i>url</i>]) | Getter/setter for the URL of the image used to create a [bump map](https://threejs.org/docs/#api/en/materials/MeshStandardMaterial.bumpMap) in the material, to represent the globe's terrain. | `null` |
+| <b>globeImageUrl</b>([<i>url</i>]) | Getter/setter for the URL of the equirectangular projection image used in the material that wraps the globe. If no image is provided, the globe is represented as a black sphere. | `null` |
+| <b>bumpImageUrl</b>([<i>url</i>]) | Getter/setter for the URL of the equirectangular projection image used to create a [bump map](https://threejs.org/docs/#api/en/materials/MeshStandardMaterial.bumpMap) in the material, to represent the globe's terrain. | `null` |
 | <b>showGlobe</b>([<i>boolean</i>]) | Getter/setter for whether to show the globe surface itself. | `true` |
 | <b>showGraticules</b>([<i>boolean</i>]) | Getter/setter for whether to show a graticule grid demarking latitude and longitude lines at every 10 degrees. | `false` |
 | <b>showAtmosphere</b>([<i>boolean</i>]) | Getter/setter for whether to show a bright halo surrounding the globe, representing the atmosphere. | `true` |
