@@ -119,8 +119,8 @@ Globe({ configOptions })(<domElement>)
 
 | Method | Description | Default |
 | --- | --- | :--: |
-| <b>globeImageUrl</b>([<i>url</i>]) | Getter/setter for the URL of the equirectangular projection image used in the material that wraps the globe. If no image is provided, the globe is represented as a black sphere. | `null` |
-| <b>bumpImageUrl</b>([<i>url</i>]) | Getter/setter for the URL of the equirectangular projection image used to create a [bump map](https://threejs.org/docs/#api/en/materials/MeshStandardMaterial.bumpMap) in the material, to represent the globe's terrain. | `null` |
+| <b>globeImageUrl</b>([<i>url</i>]) | Getter/setter for the URL of the image used in the material that wraps the globe. This image should follow an [equirectangular projection](https://en.wikipedia.org/wiki/Equirectangular_projection). If no image is provided, the globe is represented as a black sphere. | `null` |
+| <b>bumpImageUrl</b>([<i>url</i>]) | Getter/setter for the URL of the image used to create a [bump map](https://threejs.org/docs/#api/en/materials/MeshStandardMaterial.bumpMap) in the material, to represent the globe's terrain. This image should follow an [equirectangular projection](https://en.wikipedia.org/wiki/Equirectangular_projection). | `null` |
 | <b>showGlobe</b>([<i>boolean</i>]) | Getter/setter for whether to show the globe surface itself. | `true` |
 | <b>showGraticules</b>([<i>boolean</i>]) | Getter/setter for whether to show a graticule grid demarking latitude and longitude lines at every 10 degrees. | `false` |
 | <b>showAtmosphere</b>([<i>boolean</i>]) | Getter/setter for whether to show a bright halo surrounding the globe, representing the atmosphere. | `true` |
