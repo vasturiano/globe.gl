@@ -11,15 +11,14 @@
   <div id="globeViz"></div>
 
   <script>
-    const world = Globe()
+    const world = new Globe(document.getElementById('globeViz'))
       .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
       .heatmapPointLat('lat')
       .heatmapPointLng('lng')
       .heatmapPointWeight('pop')
       .heatmapBandwidth(0.9)
       .heatmapColorSaturation(2.8)
-      .enablePointerInteraction(false)
-      (document.getElementById('globeViz'));
+      .enablePointerInteraction(false);
 
     fetch('../datasets/world_population.csv').then(res => res.text())
       .then(csv => d3.csvParse(csv, ({ lat, lng, pop }) => ({ lat: +lat, lng: +lng, pop: +pop })))

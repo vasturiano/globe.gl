@@ -31,12 +31,11 @@
     )
   );
 
-  Globe()
+  new Globe(document.getElementById('globeViz'))
     .tilesData(tilesData)
     .tileWidth(tileWidth - TILE_MARGIN)
     .tileHeight(tileHeight - TILE_MARGIN)
-    .tileMaterial('material')
-    (document.getElementById('globeViz'))
+    .tileMaterial('material');
 
 </script>
 </body>

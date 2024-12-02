@@ -9,11 +9,10 @@
 <div id="globeViz"></div>
 
   <script>
-    const globe = Globe()
+    const globe = new Globe(document.getElementById('globeViz'))
       .globeImageUrl('//unpkg.com/three-globe/example/img/earth-dark.jpg')
       .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
-      .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
-      (document.getElementById('globeViz'));
+      .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png');
 
     // from https://www.submarinecablemap.com
     fetch('//http-proxy.vastur.com?url=https://www.submarinecablemap.com/api/v3/cable/cable-geo.json')

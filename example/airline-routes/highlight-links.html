@@ -17,8 +17,7 @@
   const MAP_CENTER = { lat: 37.6, lng: -16.6, altitude: 0.4 };
   const OPACITY = 0.3;
 
-  const myGlobe = Globe()
-    (document.getElementById('globeViz'))
+  const myGlobe = new Globe(document.getElementById('globeViz'))
     .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
 
     .arcLabel(d => `${d.airline}: ${d.srcIata} &#8594; ${d.dstIata}`)

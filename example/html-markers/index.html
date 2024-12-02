@@ -23,7 +23,7 @@
     color: ['red', 'white', 'blue', 'green'][Math.round(Math.random() * 3)]
   }));
 
-  Globe()
+  new Globe(document.getElementById('globeViz'))
     .globeImageUrl('//unpkg.com/three-globe/example/img/earth-dark.jpg')
     .htmlElementsData(gData)
     .htmlElement(d => {
@@ -36,7 +36,6 @@
       el.style.cursor = 'pointer';
       el.onclick = () => console.info(d);
       return el;
-    })
-    (document.getElementById('globeViz'));
+    });
 </script>
 </body>

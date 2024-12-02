@@ -17,7 +17,7 @@
       weight: Math.random()
     }));
 
-    const world = Globe()
+    const world = new Globe(document.getElementById('globeViz'))
       .globeImageUrl('//unpkg.com/three-globe/example/img/earth-dark.jpg')
       .heatmapsData([gData])
       .heatmapPointLat('lat')
@@ -25,7 +25,6 @@
       .heatmapPointWeight('weight')
       .heatmapTopAltitude(0.7)
       .heatmapsTransitionDuration(3000)
-      .enablePointerInteraction(false)
-      (document.getElementById('globeViz'));
+      .enablePointerInteraction(false);
   </script>
 </body>

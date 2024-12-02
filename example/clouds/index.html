@@ -11,8 +11,7 @@
   <script type="module">
     import * as THREE from '//unpkg.com/three/build/three.module.js';
 
-    const world = Globe({ animateIn: false })
-      (document.getElementById('globeViz'))
+    const world = new Globe(document.getElementById('globeViz'), { animateIn: false })
       .globeImageUrl('//unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
       .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png');
 

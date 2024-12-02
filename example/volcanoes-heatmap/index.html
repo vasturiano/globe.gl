@@ -9,7 +9,7 @@
   <div id="globeViz"></div>
 
   <script>
-    const world = Globe()
+    const world = new Globe(document.getElementById('globeViz'))
       .globeImageUrl('//unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
       .heatmapPointLat('lat')
       .heatmapPointLng('lon')
@@ -17,8 +17,7 @@
       .heatmapTopAltitude(0.2)
       .heatmapBandwidth(1.35)
       .heatmapColorSaturation(3.2)
-      .enablePointerInteraction(false)
-      (document.getElementById('globeViz'));
+      .enablePointerInteraction(false);
 
     fetch('../datasets/world_volcanoes.json').then(res => res.json()).then(volcanoes => {
       world.heatmapsData([volcanoes])

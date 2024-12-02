@@ -15,7 +15,7 @@
     const RINGS_MAX_R = 5; // deg
     const RING_PROPAGATION_SPEED = 5; // deg/sec
 
-    const globe = Globe()
+    const globe = new Globe(document.getElementById('globeViz'))
       .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
       .arcColor(() => 'darkOrange')
       .onGlobeClick(emitArc)
@@ -27,8 +27,7 @@
       .ringColor(() => t => `rgba(255,100,50,${1-t})`)
       .ringMaxRadius(RINGS_MAX_R)
       .ringPropagationSpeed(RING_PROPAGATION_SPEED)
-      .ringRepeatPeriod(FLIGHT_TIME * ARC_REL_LEN / NUM_RINGS)
-      (document.getElementById('globeViz'));
+      .ringRepeatPeriod(FLIGHT_TIME * ARC_REL_LEN / NUM_RINGS);
 
     let prevCoords = { lat: 0, lng: 0 };
     function emitArc({ lat: endLat, lng: endLng }) {

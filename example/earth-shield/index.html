@@ -11,14 +11,13 @@
   <script>
     const shieldRing = { lat: 90, lng: 0 };
 
-    const globe = Globe()
+    const globe = new Globe(document.getElementById('globeViz'))
       .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
       .ringsData([shieldRing])
       .ringAltitude(0.25)
       .ringColor(() => 'lightblue')
       .ringMaxRadius(180)
       .ringPropagationSpeed(20)
-      .ringRepeatPeriod(200)
-      (document.getElementById('globeViz'));
+      .ringRepeatPeriod(200);
   </script>
 </body>

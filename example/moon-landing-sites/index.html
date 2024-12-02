@@ -16,8 +16,7 @@
 
   const labelsTopOrientation = new Set(['Apollo 12', 'Luna 2', 'Luna 20', 'Luna 21', 'Luna 24', 'LCROSS Probe']); // avoid label collisions
 
-  const elem = document.getElementById('globeViz');
-  const moon = Globe()
+  const moon = new Globe(document.getElementById('globeViz'))
     .globeImageUrl('./lunar_surface.jpg')
     .bumpImageUrl('./lunar_bumpmap.jpg')
     .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
@@ -33,8 +32,7 @@
         <div>${d.agency} - ${d.program} Program</div>
         <div>Landing on <i>${new Date(d.date).toLocaleDateString()}</i></div>
       `)
-    .onLabelClick(d => window.open(d.url, '_blank'))
-    (elem);
+    .onLabelClick(d => window.open(d.url, '_blank'));
 
   fetch('./moon_landings.json').then(r => r.json()).then(landingSites => {
     moon.labelsData(landingSites);

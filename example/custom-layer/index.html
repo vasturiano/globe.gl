@@ -21,8 +21,7 @@
       color: ['red', 'white', 'blue', 'green'][Math.round(Math.random() * 3)]
     }));
 
-    const world = Globe()
-      (document.getElementById('globeViz'))
+    const world = new Globe(document.getElementById('globeViz'))
       .globeImageUrl('//unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
       .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
       .pointOfView({ altitude: 3.5 })

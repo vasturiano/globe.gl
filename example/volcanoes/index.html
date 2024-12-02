@@ -24,7 +24,7 @@
       </div>
     `;
 
-    const myGlobe = Globe()
+    const myGlobe = new Globe(document.getElementById('globeViz'))
       .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
       .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
       .pointLat('lat')
@@ -42,8 +42,7 @@
       .labelText('name')
       .labelSize(0.15)
       .labelResolution(1)
-      .labelLabel(getTooltip)
-      (document.getElementById('globeViz'));
+      .labelLabel(getTooltip);
 
     fetch('../datasets/world_volcanoes.json').then(res => res.json()).then(volcanoes => {
       myGlobe.pointsData(volcanoes)

@@ -21,7 +21,7 @@
       const maxVal = Math.max(...countries.features.map(getVal));
       colorScale.domain([0, maxVal]);
 
-      const world = Globe()
+      const world = new Globe(document.getElementById('globeViz'))
         .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
         .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
         .lineHoverPrecision(0)
@@ -39,8 +39,7 @@
           .polygonAltitude(d => d === hoverD ? 0.12 : 0.06)
           .polygonCapColor(d => d === hoverD ? 'steelblue' : colorScale(getVal(d)))
         )
-        .polygonsTransitionDuration(300)
-      (document.getElementById('globeViz'))
+        .polygonsTransitionDuration(300);
     });
   </script>
 </body>

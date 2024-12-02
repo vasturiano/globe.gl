@@ -18,12 +18,11 @@
       color: ['red', 'white', 'blue', 'green'][Math.round(Math.random() * 3)]
     }));
 
-    Globe()
+    new Globe(document.getElementById('globeViz'))
       .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
       .pointsData(gData)
       .pointAltitude('size')
-      .pointColor('color')
-    (document.getElementById('globeViz'))
+      .pointColor('color');
 
   </script>
 </body>

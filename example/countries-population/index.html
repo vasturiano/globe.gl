@@ -9,8 +9,7 @@
   <div id="globeViz"></div>
 
   <script>
-    const world = Globe()
-      (document.getElementById('globeViz'))
+    const world = new Globe(document.getElementById('globeViz'))
       .globeImageUrl('//unpkg.com/three-globe/example/img/earth-dark.jpg')
       .pointOfView({ altitude: 4 }, 5000)
       .polygonCapColor(feat => 'rgba(200, 0, 0, 0.6)')

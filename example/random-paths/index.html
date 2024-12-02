@@ -29,15 +29,14 @@
       })];
     });
 
-    const globe = Globe()
+    const globe = new Globe(document.getElementById('globeViz'))
       .globeImageUrl('//unpkg.com/three-globe/example/img/earth-dark.jpg')
       .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
       .pathsData(gData)
       .pathColor(() => ['rgba(0,0,255,0.6)', 'rgba(255,0,0,0.6)'])
       .pathDashLength(0.01)
       .pathDashGap(0.004)
-      .pathDashAnimateTime(100000)
-      (document.getElementById('globeViz'));
+      .pathDashAnimateTime(100000);
 
     setTimeout(() => {
       globe

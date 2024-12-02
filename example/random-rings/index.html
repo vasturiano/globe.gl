@@ -21,14 +21,13 @@
 
     const colorInterpolator = t => `rgba(255,100,50,${Math.sqrt(1-t)})`;
 
-    const globe = Globe()
+    const globe = new Globe(document.getElementById('globeViz'))
       .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
       .ringsData(gData)
       .ringColor(() => colorInterpolator)
       .ringMaxRadius('maxR')
       .ringPropagationSpeed('propagationSpeed')
-      .ringRepeatPeriod('repeatPeriod')
-      (document.getElementById('globeViz'));
+      .ringRepeatPeriod('repeatPeriod');
 
   </script>
 </body>

@@ -67,8 +67,7 @@ or using a *script* tag
 ```
 then
 ```js
-const myGlobe = Globe();
-myGlobe(myDOMElement)
+const myGlobe = new Globe(myDOMElement)
   .globeImageUrl(myImageUrl)
   .pointsData(myData);
 ```
@@ -97,7 +96,7 @@ myGlobe(myDOMElement)
 ### Initialisation
 
 ```js
-Globe({ configOptions })(<domElement>)
+new Globe(<domElement>, { configOptions })
 ```
 
 | Config options | Description | Default |

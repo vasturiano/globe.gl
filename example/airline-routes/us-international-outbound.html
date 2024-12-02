@@ -16,8 +16,7 @@
   const COUNTRY = 'United States';
   const OPACITY = 0.22;
 
-  const myGlobe = Globe()
-    (document.getElementById('globeViz'))
+  const myGlobe = new Globe(document.getElementById('globeViz'))
 
     .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
     .pointOfView({ lat: 39.6, lng: -98.5, altitude: 2 }) // aim at continental US centroid

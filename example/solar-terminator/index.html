@@ -39,8 +39,7 @@
     const solarTile = { pos: sunPosAt(dt) };
     const timeEl = document.getElementById('time');
 
-    const world = Globe()
-      (document.getElementById('globeViz'))
+    const world = new Globe(document.getElementById('globeViz'))
       .globeImageUrl('//unpkg.com/three-globe/example/img/earth-dark.jpg')
       .tilesData([solarTile])
       .tileLng(d => d.pos[0])
