@@ -27,7 +27,7 @@ type PointerEventsFilterFn = (object: Object3D, data?: object) => boolean;
 // don't surface these internal props from inner ThreeGlobe
 type ExcludedInnerProps = 'setPointOfView' | 'pauseAnimation' | 'resumeAnimation';
 
-export interface GlobeGenericInstance<ChainableInstance>
+interface GlobeGenericInstance<ChainableInstance>
   extends Omit<ThreeGlobeGeneric<ChainableInstance>, ExcludedInnerProps> {
 
   resetProps(): ChainableInstance;
@@ -127,7 +127,7 @@ export interface GlobeGenericInstance<ChainableInstance>
 
 export type GlobeInstance = GlobeGenericInstance<GlobeInstance>;
 
-interface Globe {
+declare const Globe: {
   new(element: HTMLElement, configOptions?: ConfigOptions): GlobeInstance;
 }
 
