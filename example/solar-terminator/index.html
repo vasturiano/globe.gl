@@ -15,8 +15,6 @@
 
   <script src="//unpkg.com/globe.gl"></script>
 <!--  <script src="../../dist/globe.gl.js"></script>-->
-
-  <script src="//unpkg.com/solar-calculator"></script>
 </head>
 
 <body>
@@ -24,7 +22,8 @@
   <div id="time"></div>
 
   <script type="module">
-    import * as THREE from '//unpkg.com/three/build/three.module.js';
+    import { MeshLambertMaterial } from 'https://esm.sh/three';
+    import * as solar from 'https://esm.sh/solar-calculator';
 
     const VELOCITY = 9; // minutes per frame
 
@@ -48,7 +47,7 @@
       .tileWidth(180)
       .tileHeight(180)
       .tileUseGlobeProjection(false)
-      .tileMaterial(() => new THREE.MeshLambertMaterial({ color: '#ffff00', opacity: 0.3, transparent: true }))
+      .tileMaterial(() => new MeshLambertMaterial({ color: '#ffff00', opacity: 0.3, transparent: true }))
       .tilesTransitionDuration(0);
 
     // animate time of day

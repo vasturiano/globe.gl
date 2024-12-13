@@ -1,8 +1,6 @@
 <head>
   <style> body { margin: 0; } </style>
 
-  <script src="//unpkg.com/d3-dsv"></script>
-
   <script src="//unpkg.com/globe.gl"></script>
 <!--  <script src="../../dist/globe.gl.js"></script>-->
 </head>
@@ -10,7 +8,9 @@
 <body>
   <div id="globeViz"></div>
 
-  <script>
+  <script type="module">
+    import { csvParse } from 'https://esm.sh/d3-dsv';
+
     const world = new Globe(document.getElementById('globeViz'))
       .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
       .heatmapPointLat('lat')
@@ -21,7 +21,7 @@
       .enablePointerInteraction(false);
 
     fetch('../datasets/world_population.csv').then(res => res.text())
-      .then(csv => d3.csvParse(csv, ({ lat, lng, pop }) => ({ lat: +lat, lng: +lng, pop: +pop })))
+      .then(csv => csvParse(csv, ({ lat, lng, pop }) => ({ lat: +lat, lng: +lng, pop: +pop })))
       .then(data => world.heatmapsData([data]));
   </script>
 </body>

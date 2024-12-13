@@ -1,9 +1,6 @@
 <head>
   <style> body { margin: 0; } </style>
 
-  <script src="//unpkg.com/d3"></script>
-  <script src="//unpkg.com/polished@3.5.2/dist/polished.js"></script>
-
   <script src="//unpkg.com/globe.gl"></script>
   <!--<script src="../../dist/globe.gl.js"></script>-->
 </head>
@@ -11,8 +8,12 @@
 <body>
   <div id="globeViz"></div>
 
-  <script>
-    const catColor = d3.scaleOrdinal(d3.schemeCategory10.map(col => polished.transparentize(0.2, col)));
+  <script type="module">
+    import { scaleOrdinal } from 'https://esm.sh/d3-scale';
+    import { schemeCategory10 } from 'https://esm.sh/d3-scale-chromatic';
+    import { transparentize } from 'https://esm.sh/polished';
+
+    const catColor = scaleOrdinal(schemeCategory10.map(col => transparentize(0.2, col)));
 
     const getAlt = d => d.elevation * 5e-5;
 

@@ -1,8 +1,6 @@
 <head>
   <style> body { margin: 0; } </style>
 
-  <script src="//unpkg.com/d3"></script>
-
   <script src="//unpkg.com/globe.gl"></script>
   <!--<script src="../../dist/globe.gl.js"></script>-->
 </head>
@@ -10,8 +8,10 @@
 <body>
   <div id="globeViz"></div>
 
-  <script>
-    const weightColor = d3.scaleLinear()
+  <script type="module">
+    import { scaleLinear } from 'https://esm.sh/d3-scale';
+
+    const weightColor = scaleLinear()
       .domain([0, 60])
       .range(['lightblue', 'darkred'])
       .clamp(true);

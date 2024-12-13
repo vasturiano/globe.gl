@@ -1,9 +1,6 @@
 <head>
   <style> body { margin: 0; } </style>
 
-  <script src="//unpkg.com/d3-dsv"></script>
-  <script src="//unpkg.com/index-array-by"></script>
-
   <script src="//unpkg.com/globe.gl"></script>
   <!--<script src="../../dist/globe.gl.js"></script>-->
 </head>
@@ -11,7 +8,9 @@
 <body>
 <div id="globeViz"></div>
 
-<script>
+<script type="module">
+  import { csvParseRows } from 'https://esm.sh/d3-dsv';
+  import indexBy from 'https://esm.sh/index-array-by';
 
   const COUNTRY = 'United States';
   const OPACITY = 0.22;
@@ -45,9 +44,9 @@
 
   Promise.all([
     fetch('https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat').then(res => res.text())
-      .then(d => d3.csvParseRows(d, airportParse)),
+      .then(d => csvParseRows(d, airportParse)),
     fetch('https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat').then(res => res.text())
-      .then(d => d3.csvParseRows(d, routeParse))
+      .then(d => csvParseRows(d, routeParse))
   ]).then(([airports, routes]) => {
 
     const byIata = indexBy(airports, 'iata', false);

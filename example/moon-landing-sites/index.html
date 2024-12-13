@@ -1,9 +1,6 @@
 <head>
   <style> body { margin: 0; } </style>
 
-  <script src="//unpkg.com/d3-array"></script>
-  <script src="//unpkg.com/d3-scale"></script>
-
   <script src="//unpkg.com/globe.gl"></script>
   <!--<script src="../../dist/globe.gl.js"></script>-->
 </head>
@@ -11,8 +8,10 @@
 <body>
 <div id="globeViz"></div>
 
-<script>
-  const colorScale = d3.scaleOrdinal(['orangered', 'mediumblue', 'darkgreen', 'yellow']);
+<script type="module">
+  import { scaleOrdinal } from 'https://esm.sh/d3-scale';
+
+  const colorScale = scaleOrdinal(['orangered', 'mediumblue', 'darkgreen', 'yellow']);
 
   const labelsTopOrientation = new Set(['Apollo 12', 'Luna 2', 'Luna 20', 'Luna 21', 'Luna 24', 'LCROSS Probe']); // avoid label collisions
 
