@@ -399,7 +399,7 @@ export default Kapsule({
       controls.zoomSpeed = (pov.altitude + 1) * 0.1; // Math.sqrt(pov.altitude) * 0.2;
 
       // Update three-globe pov when camera moves, for proper hiding of elements
-      state.globe.setPointOfView(state.renderObjs.camera().position);
+      state.globe.setPointOfView(state.renderObjs.camera());
 
       state.onZoom && state.onZoom(pov);
     });
