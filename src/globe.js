@@ -25,6 +25,8 @@ const bindGlobe = linkKapsule('globe', ThreeGlobe);
 const linkedGlobeProps = Object.assign(...[
   'globeImageUrl',
   'bumpImageUrl',
+  'globeTileEngineUrl',
+  'globeTileEngineMaxLevel',
   'showGlobe',
   'showGraticules',
   'showAtmosphere',
@@ -305,6 +307,7 @@ export default Kapsule({
 
       function setCameraPos({ lat, lng, altitude }) {
         state.renderObjs.cameraPosition(state.globe.getCoords(lat, lng, altitude));
+        state.globe.setPointOfView(state.renderObjs.camera()); // report position to globe
       }
     },
     getScreenCoords: (state, ...geoCoords) => {
@@ -385,7 +388,8 @@ export default Kapsule({
     // calibrate orbit controls
     const globeR = state.globe.getGlobeRadius();
     const controls = state.renderObjs.controls();
-    controls.minDistance = globeR * 1.01; // just above the surface
+    state.renderObjs.camera().near = 0.05; // less will start causing depth z-fighting issues
+    controls.minDistance = globeR * (1 + Math.max(1e-5, state.renderObjs.camera().near * 0.012)); // just above the surface, as much as camera near plane permits
     controls.maxDistance = globeR * 100;
     controls.enablePan = false;
     controls.enableDamping = true;
@@ -395,8 +399,8 @@ export default Kapsule({
     controls.addEventListener('change', () => {
       // adjust controls speed based on altitude
       const pov = this.pointOfView();
-      controls.rotateSpeed = pov.altitude * 0.2; // Math.pow(pov.altitude + 1, 2) * 0.025;
-      controls.zoomSpeed = (pov.altitude + 1) * 0.1; // Math.sqrt(pov.altitude) * 0.2;
+      controls.rotateSpeed = pov.altitude * 0.3;
+      controls.zoomSpeed = Math.sqrt(pov.altitude) * 0.4;
 
       // Update three-globe pov when camera moves, for proper hiding of elements
       state.globe.setPointOfView(state.renderObjs.camera());
