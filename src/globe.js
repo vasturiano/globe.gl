@@ -389,7 +389,7 @@ export default Kapsule({
     const globeR = state.globe.getGlobeRadius();
     const controls = state.renderObjs.controls();
     state.renderObjs.camera().near = 0.05; // less will start causing depth z-fighting issues
-    controls.minDistance = globeR * (1 + Math.max(1e-5, state.renderObjs.camera().near * 0.012)); // just above the surface, as much as camera near plane permits
+    controls.minDistance = globeR + Math.max(0.001, state.renderObjs.camera().near * 1.1); // just above the surface, as much as camera near plane permits
     controls.maxDistance = globeR * 100;
     controls.enablePan = false;
     controls.enableDamping = true;
