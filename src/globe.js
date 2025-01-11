@@ -396,11 +396,14 @@ export default Kapsule({
     controls.dampingFactor = 0.1;
     controls.rotateSpeed = 0.3;
     controls.zoomSpeed = 0.3;
+    controls.zoomToCursor = true;
     controls.addEventListener('change', () => {
+      controls.target.setScalar(0); // Keep orbit target on center
+
       // adjust controls speed based on altitude
       const pov = this.pointOfView();
       controls.rotateSpeed = pov.altitude * 0.3;
-      controls.zoomSpeed = Math.sqrt(pov.altitude) * 0.4;
+      controls.zoomSpeed = Math.sqrt(pov.altitude) * 0.5;
 
       // Update three-globe pov when camera moves, for proper hiding of elements
       state.globe.setPointOfView(state.renderObjs.camera());
