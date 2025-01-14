@@ -10,6 +10,8 @@ export interface ConfigOptions extends ThreeGlobeConfigOptions {
 type Accessor<In, Out> = Out | string | ((obj: In) => Out);
 type ObjAccessor<T> = Accessor<object, T>;
 
+type Label = string | HTMLElement;
+
 interface HexBin {
   points: object[],
   sumWeight: number,
@@ -44,24 +46,24 @@ interface GlobeGenericInstance<ChainableInstance>
   backgroundImageUrl(url: string | null): ChainableInstance;
 
   // Labels
-  pointLabel(): ObjAccessor<string>;
-  pointLabel(textAccessor: ObjAccessor<string>): ChainableInstance;
-  arcLabel(): ObjAccessor<string>;
-  arcLabel(textAccessor: ObjAccessor<string>): ChainableInstance;
-  polygonLabel(): ObjAccessor<string>;
-  polygonLabel(textAccessor: ObjAccessor<string>): ChainableInstance;
-  pathLabel(): ObjAccessor<string>;
-  pathLabel(textAccessor: ObjAccessor<string>): ChainableInstance;
-  hexLabel(): Accessor<HexBin, string>;
-  hexLabel(textAccessor: Accessor<HexBin, string>): ChainableInstance;
-  tileLabel(): ObjAccessor<string>;
-  tileLabel(textAccessor: ObjAccessor<string>): ChainableInstance;
-  labelLabel(): ObjAccessor<string>;
-  labelLabel(textAccessor: ObjAccessor<string>): ChainableInstance;
-  objectLabel(): ObjAccessor<string>;
-  objectLabel(textAccessor: ObjAccessor<string>): ChainableInstance;
-  customLayerLabel(): ObjAccessor<string>;
-  customLayerLabel(textAccessor: ObjAccessor<string>): ChainableInstance;
+  pointLabel(): ObjAccessor<Label>;
+  pointLabel(textAccessor: ObjAccessor<Label>): ChainableInstance;
+  arcLabel(): ObjAccessor<Label>;
+  arcLabel(textAccessor: ObjAccessor<Label>): ChainableInstance;
+  polygonLabel(): ObjAccessor<Label>;
+  polygonLabel(textAccessor: ObjAccessor<Label>): ChainableInstance;
+  pathLabel(): ObjAccessor<Label>;
+  pathLabel(textAccessor: ObjAccessor<Label>): ChainableInstance;
+  hexLabel(): Accessor<HexBin, Label>;
+  hexLabel(textAccessor: Accessor<HexBin, Label>): ChainableInstance;
+  tileLabel(): ObjAccessor<Label>;
+  tileLabel(textAccessor: ObjAccessor<Label>): ChainableInstance;
+  labelLabel(): ObjAccessor<Label>;
+  labelLabel(textAccessor: ObjAccessor<Label>): ChainableInstance;
+  objectLabel(): ObjAccessor<Label>;
+  objectLabel(textAccessor: ObjAccessor<Label>): ChainableInstance;
+  customLayerLabel(): ObjAccessor<Label>;
+  customLayerLabel(textAccessor: ObjAccessor<Label>): ChainableInstance;
 
   // Interaction events
   onGlobeClick(callback: (coords: { lat: number, lng: number }, event: MouseEvent) => void): ChainableInstance;

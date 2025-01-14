@@ -141,7 +141,7 @@ new Globe(<domElement>, { configOptions })
 | Method | Description | Default |
 | --- | --- | :--: |
 | <b>pointsData</b>([<i>array</i>]) | Getter/setter for the list of points to represent in the points map layer. Each point is displayed as a cylindrical 3D object rising perpendicularly from the surface of the globe. | `[]` |
-| <b>pointLabel</b>([<i>str</i> or <i>fn</i>]) | Point object accessor function or attribute for label (shown as tooltip). Supports plain text or HTML content. | `name` |
+| <b>pointLabel</b>([<i>str</i> or <i>fn</i>]) | Point object accessor function or attribute for label (shown as tooltip). Supports plain text, HTML string content or an [HTML element](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement). | `name` |
 | <b>pointLat</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Point object accessor function, attribute or a numeric constant for the cylinder's center latitude coordinate. | `lat` |
 | <b>pointLng</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Point object accessor function, attribute or a numeric constant for the cylinder's center longitude coordinate. | `lng` |
 | <b>pointColor</b>([<i>str</i> or <i>fn</i>]) | Point object accessor function or attribute for the cylinder color. | `() => '#ffffaa'` |
@@ -163,7 +163,7 @@ new Globe(<domElement>, { configOptions })
 | Method | Description | Default |
 | --- | --- | :--: |
 | <b>arcsData</b>([<i>array</i>]) | Getter/setter for the list of links to represent in the arcs map layer. Each link is displayed as an arc line that rises from the surface of the globe, connecting the start and end coordinates. | `[]` |
-| <b>arcLabel</b>([<i>str</i> or <i>fn</i>]) | Arc object accessor function or attribute for label (shown as tooltip). Supports plain text or HTML content. | `name` |
+| <b>arcLabel</b>([<i>str</i> or <i>fn</i>]) | Arc object accessor function or attribute for label (shown as tooltip). Supports plain text, HTML string content or an [HTML element](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement). | `name` |
 | <b>arcStartLat</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Arc object accessor function, attribute or a numeric constant for the line's start latitude coordinate. | `startLat` |
 | <b>arcStartLng</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Arc object accessor function, attribute or a numeric constant for the line's start longitude coordinate. | `startLng` |
 | <b>arcEndLat</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Arc object accessor function, attribute or a numeric constant for the line's end latitude coordinate. | `endLat` |
@@ -192,7 +192,7 @@ new Globe(<domElement>, { configOptions })
 | Method | Description | Default |
 | --- | --- | :--: |
 | <b>polygonsData</b>([<i>array</i>]) | Getter/setter for the list of polygon shapes to represent in the polygons map layer. Each polygon is displayed as a shaped cone that extrudes from the surface of the globe. | `[]` |
-| <b>polygonLabel</b>([<i>str</i> or <i>fn</i>]) | Polygon object accessor function or attribute for label (shown as tooltip). Supports plain text or HTML content. | `name` |
+| <b>polygonLabel</b>([<i>str</i> or <i>fn</i>]) | Polygon object accessor function or attribute for label (shown as tooltip). Supports plain text, HTML string content or an [HTML element](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement). | `name` |
 | <b>polygonGeoJsonGeometry</b>([<i>str</i> or <i>fn</i>]) | Polygon object accessor function or attribute for the GeoJson geometry specification of the polygon's shape. The returned value should have a minimum of two fields: `type` and `coordinates`. Only GeoJson geometries of type `Polygon` or `MultiPolygon` are supported, other types will be skipped. | `geometry` |
 | <b>polygonCapColor</b>([<i>str</i> or <i>fn</i>]) | Polygon object accessor function or attribute for the color of the top surface. | `() => '#ffffaa'` |
 | <b>polygonCapMaterial</b>([<i>material</i>, <i>str</i> or <i>fn</i>]) | Polygon object accessor function, attribute or material object for the [ThreeJS material](https://threejs.org/docs/#api/en/materials/Material) to use in the top surface. This property takes precedence over `polygonCapColor`, which will be ignored if both are defined. | - |
@@ -215,7 +215,7 @@ new Globe(<domElement>, { configOptions })
 | Method | Description | Default |
 | --- | --- | :--: |
 | <b>pathsData</b>([<i>array</i>]) | Getter/setter for the list of lines to represent in the paths map layer. Each path is displayed as a line that connects all the coordinate pairs in the path array. | `[]` |
-| <b>pathLabel</b>([<i>str</i> or <i>fn</i>]) | Path object accessor function or attribute for label (shown as tooltip). Supports plain text or HTML content. | `name` |
+| <b>pathLabel</b>([<i>str</i> or <i>fn</i>]) | Path object accessor function or attribute for label (shown as tooltip). Supports plain text, HTML string content or an [HTML element](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement). | `name` |
 | <b>pathPoints</b>([<i>array</i>, <i>str</i> or <i>fn</i>]) | Path object accessor function, attribute or an array for the set of points that define the path line. By default, each path point is assumed to be a 2-position array (`[<lat>, <lon>]`). This default behavior can be modified using the `pathPointLat` and `pathPointLng` methods. | `pnts => pnts` |
 | <b>pathPointLat</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Path point object accessor function, attribute or a numeric constant for the latitude coordinate. | `arr => arr[0]` |
 | <b>pathPointLng</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Path point object accessor function, attribute or a numeric constant for the longitude coordinate. | `arr => arr[1]` |
@@ -264,7 +264,7 @@ new Globe(<domElement>, { configOptions })
 | Method | Description | Default |
 | --- | --- | :--: |
 | <b>hexBinPointsData</b>([<i>array</i>]) | Getter/setter for the list of points to aggregate using the hex bin map layer. Each point is added to an hexagonal prism 3D object that represents all the points within a tesselated portion of the space. | `[]` |
-| <b>hexLabel</b>([<i>str</i> or <i>fn</i>]) | Hex object accessor function or attribute for label (shown as tooltip). An hex object includes all points binned, and has the syntax: `{ points, sumWeight, center: { lat, lng } }`. Supports plain text or HTML content. | - |
+| <b>hexLabel</b>([<i>str</i> or <i>fn</i>]) | Hex object accessor function or attribute for label (shown as tooltip). An hex object includes all points binned, and has the syntax: `{ points, sumWeight, center: { lat, lng } }`. Supports plain text, HTML string content or an [HTML element](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement). | - |
 | <b>hexBinPointLat</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Point object accessor function, attribute or a numeric constant for the latitude coordinate. | `lat` |
 | <b>hexBinPointLng</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Point object accessor function, attribute or a numeric constant for the longitude coordinate. | `lng` |
 | <b>hexBinPointWeight</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Point object accessor function, attribute or a numeric constant for the weight of the point. Weights for points in the same bin are summed and determine the hexagon default altitude. | 1 |
@@ -289,7 +289,7 @@ new Globe(<domElement>, { configOptions })
 | Method | Description | Default |
 | --- | --- | :--: |
 | <b>hexPolygonsData</b>([<i>array</i>]) | Getter/setter for the list of polygon shapes to represent in the hexed polygons map layer. Each polygon is displayed as a tesselated group of hexagons that approximate the polygons shape according to the resolution specified in `hexPolygonResolution`. | `[]` |
-| <b>hexPolygonLabel</b>([<i>str</i> or <i>fn</i>]) | Hexed polygon object accessor function or attribute for label (shown as tooltip). Supports plain text or HTML content. | `name` |
+| <b>hexPolygonLabel</b>([<i>str</i> or <i>fn</i>]) | Hexed polygon object accessor function or attribute for label (shown as tooltip). Supports plain text, HTML string content or an [HTML element](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement). | `name` |
 | <b>hexPolygonGeoJsonGeometry</b>([<i>str</i> or <i>fn</i>]) | Hexed polygon object accessor function or attribute for the GeoJson geometry specification of the polygon's shape. The returned value should have a minimum of two fields: `type` and `coordinates`. Only GeoJson geometries of type `Polygon` or `MultiPolygon` are supported, other types will be skipped. | `geometry` |
 | <b>hexPolygonColor</b>([<i>str</i> or <i>fn</i>]) | Hexed polygon object accessor function or attribute for the color of each hexagon in the polygon. | `() => '#ffffaa'` |
 | <b>hexPolygonAltitude</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Hexed polygon object accessor function, attribute or a numeric constant for the polygon's hexagons altitude in terms of globe radius units (`0` = 0 altitude, `1` = globe radius). | 0.001 |
@@ -312,7 +312,7 @@ new Globe(<domElement>, { configOptions })
 | Method | Description | Default |
 | --- | --- | :--: |
 | <b>tilesData</b>([<i>array</i>]) | Getter/setter for the list of tiles to represent in the tiles map layer. Each tile is displayed as a spherical surface segment. The segments can be placed side-by-side for a tiled surface and each can be styled separately. | `[]` |
-| <b>tileLabel</b>([<i>str</i> or <i>fn</i>]) | Tile object accessor function or attribute for label (shown as tooltip). Supports plain text or HTML content. | `name` |
+| <b>tileLabel</b>([<i>str</i> or <i>fn</i>]) | Tile object accessor function or attribute for label (shown as tooltip). Supports plain text, HTML string content or an [HTML element](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement). | `name` |
 | <b>tileLat</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Tile object accessor function, attribute or a numeric constant for the segment's centroid latitude coordinate. | `lat` |
 | <b>tileLng</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Tile object accessor function, attribute or a numeric constant for the segment's centroid longitude coordinate. | `lng` |
 | <b>tileAltitude</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Tile object accessor function, attribute or a numeric constant for the segment's altitude in terms of globe radius units. | 0.01 |
@@ -353,7 +353,7 @@ new Globe(<domElement>, { configOptions })
 | Method | Description | Default |
 | --- | --- | :--: |
 | <b>labelsData</b>([<i>array</i>]) | Getter/setter for the list of label objects to represent in the labels map layer. | `[]` |
-| <b>labelLabel</b>([<i>str</i> or <i>fn</i>]) | Label object accessor function or attribute for its own tooltip label. Supports plain text or HTML content. | - |
+| <b>labelLabel</b>([<i>str</i> or <i>fn</i>]) | Label object accessor function or attribute for its own tooltip label. Supports plain text, HTML string content or an [HTML element](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement). | - |
 | <b>labelLat</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Label object accessor function, attribute or a numeric constant for the latitude coordinate. | `lat` |
 | <b>labelLng</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Label object accessor function, attribute or a numeric constant for the longitude coordinate. | `lng` |
 | <b>labelText</b>([<i>str</i> or <i>fn</i>]) | Label object accessor function or attribute for the label text. | `text` |
@@ -395,7 +395,7 @@ new Globe(<domElement>, { configOptions })
 | Method | Description | Default |
 | --- | --- | :--: |
 | <b>objectsData</b>([<i>array</i>]) | Getter/setter for the list of custom 3D objects to represent in the objects layer. Each object is rendered according to the `objectThreeObject` method. | `[]` |
-| <b>objectLabel</b>([<i>str</i> or <i>fn</i>]) | Object accessor function or attribute for its own tooltip label. Supports plain text or HTML content. | `name` |
+| <b>objectLabel</b>([<i>str</i> or <i>fn</i>]) | Object accessor function or attribute for its own tooltip label. Supports plain text, HTML string content or an [HTML element](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement). | `name` |
 | <b>objectLat</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Object accessor function, attribute or a numeric constant for the latitude coordinate of the object's position. | `lat` |
 | <b>objectLng</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Object accessor function, attribute or a numeric constant for the longitude coordinate of the object's position. | `lng` |
 | <b>objectAltitude</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Object accessor function, attribute or a numeric constant for the altitude coordinate of the object's position, in terms of globe radius units. | 0.01 |
@@ -415,7 +415,7 @@ new Globe(<domElement>, { configOptions })
 | Method | Description | Default |
 | --- | --- | :--: |
 | <b>customLayerData</b>([<i>array</i>]) | Getter/setter for the list of items to represent in the custom map layer. Each item is rendered according to the `customThreeObject` method. | `[]` |
-| <b>customLayerLabel</b>([<i>str</i> or <i>fn</i>]) | Object accessor function or attribute for label (shown as tooltip). Supports plain text or HTML content. | `name` |
+| <b>customLayerLabel</b>([<i>str</i> or <i>fn</i>]) | Object accessor function or attribute for label (shown as tooltip). Supports plain text, HTML string content or an [HTML element](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement). | `name` |
 | <b>customThreeObject</b>([<i>Object3d</i>, <i>str</i> or <i>fn</i>]) | Object accessor function or attribute for generating a custom 3d object to render as part of the custom map layer. Should return an instance of [ThreeJS Object3d](https://threejs.org/docs/index.html#api/core/Object3D). | `null` |
 | <b>customThreeObjectUpdate</b>([<i>str</i> or <i>fn</i>]) | Object accessor function or attribute for updating an existing custom 3d object with new data. This can be used for performance improvement on data updates as the objects don't need to be removed and recreated at each update. The callback method's signature includes the object to be update and its new data: `customThreeObjectUpdate((obj, objData) => { ... })`. | `null` |
 | <b>onCustomLayerClick</b>(<i>fn</i>) | Callback function for custom object (left-button) clicks. The custom object, the event object and the clicked coordinates are included as arguments: `onCustomLayerClick(obj, event, { lat, lng, altitude })`. | - |
