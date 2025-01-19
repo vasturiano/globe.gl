@@ -522,7 +522,7 @@ export default Kapsule({
           state.hoverObj = hoverObj;
         }
       })
-      .onClick((obj, ev, point) => {
+      .onClick((obj, ev, intersection) => {
         if (!obj) return; // ignore background clicks
 
         // Handle click events on objects
@@ -547,6 +547,7 @@ export default Kapsule({
           const args = [ev];
 
           // include click coords
+          const point = intersection?.isVector3 ? intersection : intersection?.point;
           if (objType === 'globe') {
             const { lat, lng } = this.toGeoCoords(point);
             args.unshift({ lat, lng });
@@ -558,7 +559,7 @@ export default Kapsule({
           objFns[objType](...args);
         }
       })
-      .onRightClick((obj, ev, point) => {
+      .onRightClick((obj, ev, intersection) => {
         if (!obj) return; // ignore background clicks
 
         // Handle right-click events
@@ -583,6 +584,7 @@ export default Kapsule({
           const args = [ev];
 
           // include click coords
+          const point = intersection?.isVector3 ? intersection : intersection?.point;
           if (objType === 'globe') {
             const { lat, lng } = this.toGeoCoords(point);
             args.unshift({ lat, lng });
