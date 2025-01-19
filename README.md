@@ -86,6 +86,7 @@ const myGlobe = new Globe(myDOMElement)
 * [Hex Bin Layer](#hex-bin-layer)
 * [Hexed Polygons Layer](#hexed-polygons-layer)
 * [Tiles Layer](#tiles-layer)
+* [Particles Layer](#particles-layer)
 * [Rings Layer](#rings-layer)
 * [Labels Layer](#labels-layer)
 * [HTML Elements Layer](#html-elements-layer)
@@ -326,6 +327,28 @@ new Globe(<domElement>, { configOptions })
 | <b>onTileRightClick</b>(<i>fn</i>) | Callback function for tile right-clicks. The tile object, the event object and the clicked coordinates are included as arguments: `onTileRightClick(tile, event, { lat, lng, altitude })`. | - |
 | <b>onTileHover</b>(<i>fn</i>) | Callback function for tile mouse over events. The tile object (or `null` if there's no tile under the mouse line of sight) is included as the first argument, and the previous tile object (or `null`) as second argument: `onTileHover(tile, prevTile)`. | - |
 
+### Particles Layer
+
+<p align="center">
+   <a href="//vasturiano.github.io/globe.gl/example/satellites/"><img width="70%" src="https://vasturiano.github.io/globe.gl/example/satellites/preview.png"></a>
+</p>
+
+| Method | Description | Default |
+| --- | --- | :--: |
+| <b>particlesData</b>([<i>array</i>]) | Getter/setter for the list of particle sets to represent in the particles map layer. Each particle set is displayed as a group of [Points](https://threejs.org/docs/#api/en/objects/Points). Each point in the group is a geometry vertex and can be individually positioned anywhere relative to the globe. | `[]` |
+| <b>particlesList</b>([<i>str</i> or <i>fn</i>]) | Particle set accessor function or attribute for the list of particles in the set. By default, the data structure is expected to be an array of arrays of individual particle objects. | `d => d` |
+| <b>particleLabel</b>([<i>str</i> or <i>fn</i>]) | Particle object accessor function or attribute for label (shown as tooltip). Supports plain text, HTML string content or an [HTML element](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement). | `name` |
+| <b>particleLat</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Particle object accessor function, attribute or a numeric constant for the latitude coordinate. | `lat` |
+| <b>particleLng</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Particle object accessor function, attribute or a numeric constant for the longitude coordinate. | `lng` |
+| <b>particleAltitude</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Particle object accessor function, attribute or a numeric constant for the altitude in terms of globe radius units. | 0.01 |
+| <b>particlesSize</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | Particle set accessor function, attribute or a numeric constant for the size of all the particles in the group. | `0.5` |
+| <b>particlesSizeAttenuation</b>([<i>boolean</i>, <i>str</i> or <i>fn</i>]) | Particle set accessor function, attribute or a boolean constant for whether the size of each particle on the screen should be attenuated according to the distance to the camera. | `true` |
+| <b>particlesColor</b>([<i>str</i> or <i>fn</i>]) | Particle set accessor function or attribute for the color of all the particles in the group. This setting will be ignored if `particlesTexture` is defined. | `white` |
+| <b>particlesTexture</b>([<i>str</i> or <i>fn</i>]) | Particle set accessor function or attribute for the [Texture](https://threejs.org/docs/#api/en/textures/Texture) to be applied to all the particles in the group. | - |
+| <b>onParticleClick</b>(<i>fn</i>) | Callback function for particle (left-button) clicks. The particle object, the event object and the clicked coordinates are included as arguments: `onParticleClick(particle, event, { lat, lng, altitude })`. | - |
+| <b>onParticleRightClick</b>(<i>fn</i>) | Callback function for particle right-clicks. The particle object, the event object and the clicked coordinates are included as arguments: `onParticleRightClick(particle, event, { lat, lng, altitude })`. | - |
+| <b>onParticleHover</b>(<i>fn</i>) | Callback function for particle mouse over events. The particle object (or `null` if there's no particle under the mouse line of sight) is included as the first argument, and the previous particle object (or `null`) as second argument: `onParticleHover(particle, prevParticle)`. | - |
+
 ### Rings Layer
 
 <p align="center">
@@ -388,10 +411,6 @@ new Globe(<domElement>, { configOptions })
 
 ### 3D Objects Layer
 
-<p align="center">
-   <a href="//vasturiano.github.io/globe.gl/example/satellites/"><img width="70%" src="https://vasturiano.github.io/globe.gl/example/satellites/preview.png"></a>
-</p>
-
 | Method | Description | Default |
 | --- | --- | :--: |
 | <b>objectsData</b>([<i>array</i>]) | Getter/setter for the list of custom 3D objects to represent in the objects layer. Each object is rendered according to the `objectThreeObject` method. | `[]` |
@@ -431,7 +450,7 @@ new Globe(<domElement>, { configOptions })
 | <b>resumeAnimation</b>() | Resumes the rendering cycle of the component, and re-enables the user interaction. This method can be used together with `pauseAnimation` for performance optimization purposes. | |
 | <b>enablePointerInteraction</b>([<i>boolean</i>]) | Getter/setter for whether to enable the mouse tracking events. This activates an internal tracker of the canvas mouse position and enables the functionality of object hover/click and tooltip labels, at the cost of performance. If you're looking for maximum gain in your globe performance it's recommended to switch off this property. | `true` |
 | <b>pointerEventsFilter</b>([<i>fn</i>]) | Getter/setter for the filter function which defines whether a particular object can be the target of pointer interactions. In general, objects that are closer to the camera get precedence in capturing pointer events. This function allows having ignored object layers so that pointer events can be passed through to deeper objects in the various globe layers. The ThreeJS object and its associated data (if any) are passed as arguments: `pointerEventsFilter(obj, data)`. The function should return a boolean value. | `() => true` |
-| <b>lineHoverPrecision</b>([<i>num</i>]) | Getter/setter for the precision to use when detecting hover events over [Line](https://threejs.org/docs/#api/objects/Line) objects, such as arcs and paths. | 0.2 |
+| <b>lineHoverPrecision</b>([<i>num</i>]) | Getter/setter for the precision to use when detecting hover events over [Line](https://threejs.org/docs/#api/objects/Line) and [Points](https://threejs.org/docs/#api/objects/Points) objects, such as arcs, paths or particles. | 0.2 |
 | <b>onZoom</b>(<i>fn</i>) | Callback function for point-of-view changes by zooming or rotating the globe using the orbit controls. The current point of view (with the syntax `{ lat, lng, altitude }`) is included as sole argument. | |
 | <b>lights</b>([<i>array</i>]) | Getter/setter for the list of lights to use in the scene. Each item should be an instance of [Light](https://threejs.org/docs/#api/en/lights/Light). | [AmbientLight](https://threejs.org/docs/?q=ambient#api/en/lights/AmbientLight) + [DirectionalLight](https://threejs.org/docs/#api/en/lights/DirectionalLight) (from above) |
 | <b>scene</b>() | Access the internal ThreeJS [Scene](https://threejs.org/docs/#api/scenes/Scene). Can be used to extend the current scene with additional objects not related to globe.gl. | |

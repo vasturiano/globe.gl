@@ -124,6 +124,15 @@ const linkedGlobeProps = Object.assign(...[
   'tileMaterial',
   'tileCurvatureResolution',
   'tilesTransitionDuration',
+  'particlesData',
+  'particlesList',
+  'particleLat',
+  'particleLng',
+  'particleAltitude',
+  'particlesSize',
+  'particlesSizeAttenuation',
+  'particlesColor',
+  'particlesTexture',
   'ringsData',
   'ringLat',
   'ringLng',
@@ -224,6 +233,10 @@ export default Kapsule({
     onTileClick: { triggerUpdate: false },
     onTileRightClick: { triggerUpdate: false },
     onTileHover: { triggerUpdate: false },
+    particleLabel: { default: 'name', triggerUpdate: false },
+    onParticleClick: { triggerUpdate: false },
+    onParticleRightClick: { triggerUpdate: false },
+    onParticleHover: { triggerUpdate: false },
     labelLabel: { triggerUpdate: false },
     onLabelClick: { triggerUpdate: false },
     onLabelRightClick: { triggerUpdate: false },
@@ -244,7 +257,10 @@ export default Kapsule({
     lineHoverPrecision: {
       default: 0.2,
       triggerUpdate: false,
-      onChange: (val, state) => state.renderObjs.lineHoverPrecision(val)
+      onChange: (val, state) => {
+        state.renderObjs.lineHoverPrecision(val);
+        state.renderObjs.pointsHoverPrecision(val);
+      }
     },
     ...linkedGlobeProps,
     ...linkedRenderObjsProps
@@ -336,6 +352,7 @@ export default Kapsule({
       this.hexBinPointsData([]);
       this.hexPolygonsData([]);
       this.tilesData([]);
+      this.particlesData([]);
       this.labelsData([]);
       this.htmlElementsData([]);
       this.objectsData([]);
@@ -430,6 +447,7 @@ export default Kapsule({
       hexbin: d => d,
       hexPolygon: d => d,
       tile: d => d,
+      particles: (d, intersection) => !intersection || !intersection.hasOwnProperty('index') || d.length <= intersection.index ? d : d[intersection.index],
       label: d => d,
       object: d => d,
       custom: d => d
@@ -445,7 +463,7 @@ export default Kapsule({
         const isBackground = o => !o; // || o.__globeObjType === 'globe' || o.__globeObjType === 'atmosphere';
         return isBackground(aObj) - isBackground(bObj);
       })
-      .tooltipContent(obj => {
+      .tooltipContent((obj, intersection) => {
         const objAccessors = {
           point: state.pointLabel,
           arc: state.arcLabel,
@@ -454,6 +472,7 @@ export default Kapsule({
           hexbin: state.hexLabel,
           hexPolygon: state.hexPolygonLabel,
           tile: state.tileLabel,
+          particles: state.particleLabel,
           label: state.labelLabel,
           object: state.objectLabel,
           custom: state.customLayerLabel
@@ -463,10 +482,10 @@ export default Kapsule({
         const objType = globeObj && globeObj.__globeObjType;
 
         return globeObj && objType && objAccessors.hasOwnProperty(objType) && dataAccessors.hasOwnProperty(objType)
-          ? accessorFn(objAccessors[objType])(dataAccessors[objType](globeObj.__data)) || ''
+          ? accessorFn(objAccessors[objType])(dataAccessors[objType](globeObj.__data, intersection)) || ''
           : '';
       })
-      .onHover(obj => {
+      .onHover((obj, _, intersection) => {
         // Update tooltip and trigger onHover events
         const hoverObjFns = {
           point: state.onPointHover,
@@ -477,6 +496,7 @@ export default Kapsule({
           hexbin: state.onHexHover,
           hexPolygon: state.onHexPolygonHover,
           tile: state.onTileHover,
+          particles: state.onParticleHover,
           label: state.onLabelHover,
           object: state.onObjectHover,
           custom: state.onCustomLayerHover
@@ -492,6 +512,7 @@ export default Kapsule({
           hexbin: state.onHexClick,
           hexPolygon: state.onHexPolygonClick,
           tile: state.onTileClick,
+          particles: state.onParticleClick,
           label: state.onLabelClick,
           object: state.onObjectClick,
           custom: state.onCustomLayerClick
@@ -504,12 +525,12 @@ export default Kapsule({
 
         if (hoverObj !== state.hoverObj) {
           const prevObjType = state.hoverObj ? state.hoverObj.__globeObjType : null;
-          const prevObjData = state.hoverObj ? dataAccessors[prevObjType](state.hoverObj.__data) : null;
+          const prevObjData = state.hoverData;
           const objType = hoverObj ? hoverObj.__globeObjType : null;
-          const objData = hoverObj ? dataAccessors[objType](hoverObj.__data) : null;
+          const objData = hoverObj ? dataAccessors[objType](hoverObj.__data, intersection) : null;
           if (prevObjType && prevObjType !== objType) {
             // Hover out
-            hoverObjFns[prevObjType] && hoverObjFns[prevObjType](null, prevObjData);
+            hoverObjFns[prevObjType] && hoverObjFns[prevObjType](null, prevObjData || null);
           }
           if (objType) {
             // Hover in
@@ -520,6 +541,7 @@ export default Kapsule({
           state.renderObjs.renderer().domElement.classList[(objType && clickObjFns[objType]) ? 'add' : 'remove']('clickable');
 
           state.hoverObj = hoverObj;
+          state.hoverData = objData;
         }
       })
       .onClick((obj, ev, intersection) => {
@@ -536,6 +558,7 @@ export default Kapsule({
           hexbin: state.onHexClick,
           hexPolygon: state.onHexPolygonClick,
           tile: state.onTileClick,
+          particles: state.onParticleClick,
           label: state.onLabelClick,
           object: state.onObjectClick,
           custom: state.onCustomLayerClick
@@ -555,7 +578,7 @@ export default Kapsule({
             args.push(this.toGeoCoords(point));
           }
 
-          dataAccessors.hasOwnProperty(objType) && args.unshift(dataAccessors[objType](globeObj.__data));
+          dataAccessors.hasOwnProperty(objType) && args.unshift(dataAccessors[objType](globeObj.__data, intersection));
           objFns[objType](...args);
         }
       })
@@ -573,6 +596,7 @@ export default Kapsule({
           hexbin: state.onHexRightClick,
           hexPolygon: state.onHexPolygonRightClick,
           tile: state.onTileRightClick,
+          particles: state.onParticleRightClick,
           label: state.onLabelRightClick,
           object: state.onObjectRightClick,
           custom: state.onCustomLayerRightClick
@@ -592,7 +616,7 @@ export default Kapsule({
             args.push(this.toGeoCoords(point));
           }
 
-          dataAccessors.hasOwnProperty(objType) && args.unshift(dataAccessors[objType](globeObj.__data));
+          dataAccessors.hasOwnProperty(objType) && args.unshift(dataAccessors[objType](globeObj.__data, intersection));
           objFns[objType](...args);
         }
       });

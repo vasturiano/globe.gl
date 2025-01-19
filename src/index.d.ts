@@ -58,6 +58,8 @@ interface GlobeGenericInstance<ChainableInstance>
   hexLabel(textAccessor: Accessor<HexBin, Label>): ChainableInstance;
   tileLabel(): ObjAccessor<Label>;
   tileLabel(textAccessor: ObjAccessor<Label>): ChainableInstance;
+  particleLabel(): ObjAccessor<Label>;
+  particleLabel(textAccessor: ObjAccessor<Label>): ChainableInstance;
   labelLabel(): ObjAccessor<Label>;
   labelLabel(textAccessor: ObjAccessor<Label>): ChainableInstance;
   objectLabel(): ObjAccessor<Label>;
@@ -91,6 +93,9 @@ interface GlobeGenericInstance<ChainableInstance>
   onHexPolygonHover(callback: (polygon: object | null, prevPolygon: object | null) => void): ChainableInstance;
   onTileClick(callback: (tile: object, event: MouseEvent, coords: { lat: number, lng: number, altitude: number }) => void): ChainableInstance;
   onTileRightClick(callback: (tile: object, event: MouseEvent, coords: { lat: number, lng: number, altitude: number }) => void): ChainableInstance;
+  onParticleHover(callback: (particle: object | null, prevParticle: object | null) => void): ChainableInstance;
+  onParticleClick(callback: (particle: object, event: MouseEvent, coords: { lat: number, lng: number, altitude: number }) => void): ChainableInstance;
+  onParticleRightClick(callback: (particle: object, event: MouseEvent, coords: { lat: number, lng: number, altitude: number }) => void): ChainableInstance;
   onTileHover(callback: (tile: object | null, prevTile: object | null) => void): ChainableInstance;
   onLabelClick(callback: (label: object, event: MouseEvent, coords: { lat: number, lng: number, altitude: number }) => void): ChainableInstance;
   onLabelRightClick(callback: (label: object, event: MouseEvent, coords: { lat: number, lng: number, altitude: number }) => void): ChainableInstance;
