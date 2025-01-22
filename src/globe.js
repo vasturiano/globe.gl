@@ -461,7 +461,11 @@ export default Kapsule({
 
         // de-prioritize background / non-globe objects
         const isBackground = o => !o; // || o.__globeObjType === 'globe' || o.__globeObjType === 'atmosphere';
-        return isBackground(aObj) - isBackground(bObj);
+
+        // Ignore merged geometry objects that don't have interaction per point
+        const isMergedGeometries = o => o && ['points', 'hexBinPoints'].some(t => t === o.__globeObjType) && Array.isArray(o.__data);
+
+        return (isBackground(aObj) - isBackground(bObj)) || (isMergedGeometries(aObj) - isMergedGeometries(bObj));
       })
       .tooltipContent((obj, intersection) => {
         const objAccessors = {
