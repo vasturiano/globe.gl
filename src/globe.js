@@ -251,8 +251,7 @@ export default Kapsule({
     onCustomLayerHover: { triggerUpdate: false },
     pointerEventsFilter: {
       default: () => true,
-      triggerUpdate: false,
-      onChange: (filterFn, state) => state.renderObjs.hoverFilter(obj => filterFn(obj, obj.__data))
+      triggerUpdate: false
     },
     lineHoverPrecision: {
       default: 0.2,
@@ -455,17 +454,20 @@ export default Kapsule({
 
     THREE.REVISION < 155 && (state.renderObjs.renderer().useLegacyLights = false); // force behavior of three < 155
     state.renderObjs
-      .hoverOrderComparator((a, b) => {
-        const aObj = getGlobeObj(a);
-        const bObj = getGlobeObj(b);
+      .hoverFilter(obj => {
+        const o = getGlobeObj(obj);
 
-        // de-prioritize background / non-globe objects
-        const isBackground = o => !o; // || o.__globeObjType === 'globe' || o.__globeObjType === 'atmosphere';
+        // ignore non-globe objects
+        if (!o) return false;
+
+        const type = o.__globeObjType;
+        if (type !== 'globe' && !dataAccessors.hasOwnProperty(type)) return false; // Ignore obj types with no data
+        const d = dataAccessors.hasOwnProperty(type) && o.__data ? dataAccessors[type](o.__data) : null;
 
         // Ignore merged geometry objects that don't have interaction per point
-        const isMergedGeometries = o => o && ['points', 'hexBinPoints'].some(t => t === o.__globeObjType) && Array.isArray(o.__data);
+        if (['points', 'hexBinPoints'].some(t => t === type) && Array.isArray(d)) return false;
 
-        return (isBackground(aObj) - isBackground(bObj)) || (isMergedGeometries(aObj) - isMergedGeometries(bObj));
+        return state.pointerEventsFilter(o, d);
       })
       .tooltipContent((obj, intersection) => {
         const objAccessors = {

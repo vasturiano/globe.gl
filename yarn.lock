@@ -1460,9 +1460,9 @@ eastasianwidth@^0.2.0:
   integrity sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==
 
 electron-to-chromium@^1.5.73:
-  version "1.5.83"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.83.tgz#3f74078f0c83e24bf7e692eaa855a998d1bec34f"
-  integrity sha512-LcUDPqSt+V0QmI47XLzZrz5OqILSMGsPFkDYus22rIbgorSvBYEFqq854ltTmUdHkY92FSdAAvsh4jWEULMdfQ==
+  version "1.5.85"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.85.tgz#07e8d80f5a05268b891e5366bf4f3ba91dfd6d0c"
+  integrity sha512-UgTI7ZHxtSjOUwV0vZLpqT604U1Z8L3bq8mAtAKtuRPlMZ/6dLFMYgYnLdXSi/urbVTP2ykDb9EDDUrdIzw4Qg==
 
 emoji-regex@^8.0.0:
   version "8.0.0"
@@ -2451,9 +2451,9 @@ terser@^5.17.4:
     source-map-support "~0.5.20"
 
 three-conic-polygon-geometry@2:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/three-conic-polygon-geometry/-/three-conic-polygon-geometry-2.1.0.tgz#5e8601ad43e3e6b4c84593d4cc9049d9dc46f615"
-  integrity sha512-6QZ1lWXHB1o2BrKLEM1armyZ5flfPqF1GclJoF6wVHPsfR3ebjt4K1MdqNuaX5JmSZ8XnLiktO5/A/wdgHz60Q==
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/three-conic-polygon-geometry/-/three-conic-polygon-geometry-2.1.2.tgz#5f7f2affca5f3407b3ad85df75eba7759b752622"
+  integrity sha512-NaP3RWLJIyPGI+zyaZwd0Yj6rkoxm4FJHqAX1Enb4L64oNYLCn4bz1ESgOEYavgcUwCNYINu1AgEoUBJr1wZcA==
   dependencies:
     "@turf/boolean-point-in-polygon" "^7.2"
     d3-array "1 - 3"
@@ -2473,9 +2473,9 @@ three-geojson-geometry@2:
     earcut "3"
 
 three-globe@^2.41:
-  version "2.41.0"
-  resolved "https://registry.yarnpkg.com/three-globe/-/three-globe-2.41.0.tgz#e638c0a497b5022e04896c6ac60949b690b4e953"
-  integrity sha512-3KllgROw06qDlKSQpgzz7kLKVxpm+0EMpIoUV+BTnu3HSnVg3Qy1c7HN5WtesRS99rKlXCrapCJKUiRjBNwdnA==
+  version "2.41.4"
+  resolved "https://registry.yarnpkg.com/three-globe/-/three-globe-2.41.4.tgz#e58084df552474423127106bd91b85253f092b36"
+  integrity sha512-zyFHP8uFoLnxZwTYYZ7j0D2CFJDeQeHBM9GS+tSMmFHw063vVC3NQhOwl5hA+utEGjlZzAOU0SbEDWNgsHehaA==
   dependencies:
     "@tweenjs/tween.js" "18 - 25"
     accessor-fn "1"
@@ -2496,10 +2496,10 @@ three-globe@^2.41:
     tinycolor2 "1"
     yaot "^1.1"
 
-three-render-objects@^1.37:
-  version "1.37.0"
-  resolved "https://registry.yarnpkg.com/three-render-objects/-/three-render-objects-1.37.0.tgz#7e9b6cd802f283a50f0f02dce18e950ef18e1319"
-  integrity sha512-k/OBwmjVyUwAMJGjvqGI9ISXaR7uWopuwLPZW3thi/w/97Rd4ZgcnioAPn6OD3wfN6P6Mm12ioEGdJjBJzDg9Q==
+three-render-objects@^1.38:
+  version "1.38.0"
+  resolved "https://registry.yarnpkg.com/three-render-objects/-/three-render-objects-1.38.0.tgz#d27363fc45af22e39b373e6adecb6a3a9fbe1008"
+  integrity sha512-fyOSYzkQB2R2v4/La2DWi8tO6nqVYKdxqLh033EZr2sJxfrC7bAlslQuauedL3rD1JeqXydrM2y3nFO4OehQKQ==
   dependencies:
     "@tweenjs/tween.js" "18 - 25"
     accessor-fn "1"
@@ -2508,9 +2508,9 @@ three-render-objects@^1.37:
     polished "4"
 
 three-slippy-map-globe@1:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/three-slippy-map-globe/-/three-slippy-map-globe-1.0.2.tgz#226acd294f78f7ddf186d3620c09a48e20f5a72b"
-  integrity sha512-Bdw60+gDqDfEJScChSUd3y+gQqkQkRxFVUU/2wT0/pSQC/eCqqJkRda/WTbkCMVAkvp1aMtFEvHX28Fh1oL9Eg==
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/three-slippy-map-globe/-/three-slippy-map-globe-1.0.3.tgz#9775b8a5ba7e44b212b696cf3ca55de3a2d2b03b"
+  integrity sha512-Y9WCA/tTL8yH8FHVSXVQss/P0V36utTNhuixzFPj0Bs0SXxO+Vui133oAQmMpx4BLXYZpWZwcqHM2i3MfFlYWw==
   dependencies:
     d3-geo "1 - 3"
     d3-octree "^1.1"
