@@ -2582,7 +2582,14 @@ svgo@^2.7.0:
     picocolors "^1.0.0"
     stable "^0.1.8"
 
-taichi.js@^0.0.36:
+taichi-esm@1:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/taichi-esm/-/taichi-esm-1.0.0.tgz#a919b2333675adc1b8385edee9554b4ff5319b3f"
+  integrity sha512-P+va2LVay5Pk3EAUyJPT6esv/vF0OWEXCKytiTkBbawUBR0h83/NLBVIX7JVOLdvy8KMMIGgfBwWoIeyrvHJzA==
+  dependencies:
+    taichi.js "*"
+
+taichi.js@*:
   version "0.0.36"
   resolved "https://registry.yarnpkg.com/taichi.js/-/taichi.js-0.0.36.tgz#ab9935955efe5407956d6ee60e9083ca00283e91"
   integrity sha512-JPVI5SSXEOHSAw2YXcL2Y4jKdvBaOyzolCyB5iN/Mhj+vM8hDvi5xzR5YFogZQyuETb53v7/RErvI9BHiyUHRQ==
@@ -2634,9 +2641,9 @@ three-geojson-geometry@2:
     earcut "3"
 
 three-globe@^2.41:
-  version "2.41.6"
-  resolved "https://registry.yarnpkg.com/three-globe/-/three-globe-2.41.6.tgz#c5db51e6f7cdaa4db5c97e79a34eb18f69d56e89"
-  integrity sha512-Y6cDrXNW2AJceYNh3q8dynXFMQqEywJy7palvQJGNwrxgDJUgRxFrKx0O1yLrNXYRzKyZvIqqSX9ALzG2N+5Yw==
+  version "2.41.9"
+  resolved "https://registry.yarnpkg.com/three-globe/-/three-globe-2.41.9.tgz#0fe04dd630f475d13656a8a063b3f5081f978fbc"
+  integrity sha512-aNyud5guP89PWg90iDWOWKNEbM+OA7wdaT3rat9VSr3w3h7XiCZRL4pS5ulz6r98bs6tBJYpcMJLDOA8oAlpoA==
   dependencies:
     "@tweenjs/tween.js" "18 - 25"
     accessor-fn "1"
@@ -2651,7 +2658,7 @@ three-globe@^2.41:
     h3-js "4"
     index-array-by "1"
     kapsule "^1.16"
-    taichi.js "^0.0.36"
+    taichi-esm "1"
     three-conic-polygon-geometry "2"
     three-geojson-geometry "2"
     three-slippy-map-globe "1"
