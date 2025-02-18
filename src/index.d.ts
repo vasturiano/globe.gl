@@ -40,6 +40,8 @@ interface GlobeGenericInstance<ChainableInstance>
   width(width: number): ChainableInstance;
   height(): number;
   height(height: number): ChainableInstance;
+  globeOffset(): [number, number];
+  globeOffset(offset: [number, number]): ChainableInstance;
   backgroundColor(): string;
   backgroundColor(color: string): ChainableInstance;
   backgroundImageUrl(): string | null;

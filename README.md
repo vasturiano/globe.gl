@@ -113,6 +113,7 @@ new Globe(<domElement>, { configOptions })
 | --- | --- | :--: |
 | <b>width</b>([<i>px</i>]) | Getter/setter for the canvas width. | *&lt;window width&gt;* |
 | <b>height</b>([<i>px</i>]) | Getter/setter for the canvas height. | *&lt;window height&gt;* |
+| <b>globeOffset</b>([<i>[px, px]</i>]) | Getter/setter for the position offset of the globe relative to the canvas center. | `[0, 0]` |
 | <b>backgroundColor</b>([<i>str</i>]) | Getter/setter for the background color. | `#000011` |
 | <b>backgroundImageUrl</b>([<i>url</i>]) | Getter/setter for the URL of the equirectangular projection image to be used as background to the globe. If no image is provided, the background color is shown instead. | `null` |
 

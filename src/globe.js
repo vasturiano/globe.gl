@@ -261,6 +261,11 @@ export default Kapsule({
         state.renderObjs.pointsHoverPrecision(val);
       }
     },
+    globeOffset: {
+      default: [0, 0],
+      triggerUpdate: false,
+      onChange: (o, state) => Array.isArray(o) && (o.length === 2) && state.renderObjs.viewOffset(o.map(v => -v))
+    },
     ...linkedGlobeProps,
     ...linkedRenderObjsProps
   },
