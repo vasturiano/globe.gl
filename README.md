@@ -11,8 +11,10 @@ Globe.GL
    <a href="//vasturiano.github.io/globe.gl/example/countries-population/"><img width="48%" src="https://vasturiano.github.io/globe.gl/example/countries-population/preview.png"></a>
    <a href="//vasturiano.github.io/globe.gl/example/submarine-cables/"><img width="48%" src="https://vasturiano.github.io/globe.gl/example/submarine-cables/preview.png"></a>
    <a href="//vasturiano.github.io/globe.gl/example/hexed-polygons/"><img width="48%" src="https://vasturiano.github.io/globe.gl/example/hexed-polygons/preview.png"></a>
-   <a href="//vasturiano.github.io/globe.gl/example/world-cities/"><img width="48%" src="https://vasturiano.github.io/globe.gl/example/world-cities/preview.png"></a>
    <a href="//vasturiano.github.io/globe.gl/example/population-heatmap/"><img width="48%" src="https://vasturiano.github.io/globe.gl/example/population-heatmap/preview.png"></a>
+   <a href="//vasturiano.github.io/globe.gl/example/world-cities/"><img width="48%" src="https://vasturiano.github.io/globe.gl/example/world-cities/preview.png"></a> 
+   <a href="//vasturiano.github.io/globe.gl/example/day-night-cycle/"><img width="48%" src="https://vasturiano.github.io/globe.gl/example/day-night-cycle/preview.png"></a> 
+   <a href="//vasturiano.github.io/globe.gl/example/heatmap/"><img width="48%" src="https://vasturiano.github.io/globe.gl/example/heatmap/preview.png"></a>
    <a href="//vasturiano.github.io/globe.gl/example/clouds/"><img width="48%" src="https://vasturiano.github.io/globe.gl/example/clouds/preview.png"></a>
    <a href="//vasturiano.github.io/globe.gl/example/satellites/"><img width="48%" src="https://vasturiano.github.io/globe.gl/example/satellites/preview.png"></a>
    <a href="//vasturiano.github.io/globe.gl/example/moon-landing-sites/"><img width="48%" src="https://vasturiano.github.io/globe.gl/example/moon-landing-sites/preview.png"></a>
@@ -33,6 +35,7 @@ And check out the [React bindings](https://github.com/vasturiano/react-globe.gl)
 * [Choropleth](https://vasturiano.github.io/globe.gl/example/choropleth-countries/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/choropleth-countries/index.html))
 * [Elevated Polygons](https://vasturiano.github.io/globe.gl/example/countries-population/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/countries-population/index.html))
 * [Hollow Globe](https://vasturiano.github.io/globe.gl/example/hollow-globe/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/hollow-globe/index.html))
+* [Day/Night Cycle](https://vasturiano.github.io/globe.gl/example/day-night-cycle/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/day-night-cycle/index.html))
 * [Path Lines](https://vasturiano.github.io/globe.gl/example/random-paths/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/random-paths/index.html))
 * [Heatmap](https://vasturiano.github.io/globe.gl/example/heatmap/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/heatmap/index.html))
 * [Map Labels](https://vasturiano.github.io/globe.gl/example/world-cities/) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/world-cities/index.html))
