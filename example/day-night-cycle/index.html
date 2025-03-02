@@ -110,6 +110,7 @@
       });
 
       world.globeMaterial(material)
+        .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
         // Update globe rotation on shader
         .onZoom(({ lng, lat }) => material.uniforms.globeRotation.value.set(lng, lat));
 
