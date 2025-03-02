@@ -31,11 +31,13 @@
       el.innerHTML = markerSvg;
       el.style.color = d.color;
       el.style.width = `${d.size}px`;
+      el.style.transition = 'opacity 250ms';
 
       el.style['pointer-events'] = 'auto';
       el.style.cursor = 'pointer';
       el.onclick = () => console.info(d);
       return el;
-    });
+    })
+    .htmlElementVisibilityModifier((el, isVisible) => el.style.opacity = isVisible ? 1 : 0);;
 </script>
 </body>

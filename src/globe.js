@@ -161,6 +161,7 @@ const linkedGlobeProps = Object.assign(...[
   'htmlLng',
   'htmlAltitude',
   'htmlElement',
+  'htmlElementVisibilityModifier',
   'htmlTransitionDuration',
   'objectsData',
   'objectLat',

@@ -408,6 +408,7 @@ new Globe(<domElement>, { configOptions })
 | <b>htmlLng</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | HTML element accessor function, attribute or a numeric constant for the longitude coordinate of the element's central position. | `lng` |
 | <b>htmlAltitude</b>([<i>num</i>, <i>str</i> or <i>fn</i>]) | HTML element accessor function, attribute or a numeric constant for the altitude coordinate of the element's position, in terms of globe radius units. | 0 |
 | <b>htmlElement</b>([<i>str</i> or <i>fn</i>]) | Accessor function or attribute to retrieve the DOM element to use. Should return an instance of [HTMLElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement). | `null` |
+| <b>htmlElementVisibilityModifier</b>([<i>fn(elem, isVisible)</i>]) | Custom function that defines how elements are shown/hidden according to whether they are in front or behind the globe. The function receives two arguments `(elem, isVisible)`, the HTML element and a boolean indicating if the element should be visible. By default the Three object itself is automatically hidden when behind the globe. | - |
 | <b>htmlTransitionDuration</b>([<i>num</i>]) | Getter/setter for duration (ms) of the transition to animate HTML elements position changes. A value of `0` will move the elements immediately to their final position. | 1000 |
 
 ### 3D Objects Layer
