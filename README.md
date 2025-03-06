@@ -108,7 +108,7 @@ new Globe(<domElement>, { configOptions })
 | --- | --- | :--: |
 | <b>rendererConfig</b>: <i>object</i> | Configuration parameters to pass to the [ThreeJS WebGLRenderer](https://threejs.org/docs/#api/en/renderers/WebGLRenderer) constructor. | `{ antialias: true, alpha: true }` |
 | <b>waitForGlobeReady</b>: <i>boolean</i> | Whether to wait until the globe wrapping or background image has been fully loaded before rendering the globe or any of the data layers. | `true` |
-| <b>animateIn</b>: <i>boolean</i> | Whether to animate the globe initialization, by scaling and rotating the globe into its inital position. | `true` |
+| <b>animateIn</b>: <i>boolean</i> | Whether to animate the globe initialization, by scaling and rotating the globe into its initial position. | `true` |
 
 ### Container Layout
 
