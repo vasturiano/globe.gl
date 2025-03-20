@@ -1,7 +1,7 @@
 <head>
   <style> body { margin: 0; } </style>
 
-  <script src="//unpkg.com/globe.gl"></script>
+  <script src="//cdn.jsdelivr.net/npm/globe.gl"></script>
   <!--<script src="../../dist/globe.gl.js"></script>-->
 </head>
 
@@ -10,7 +10,7 @@
 
   <script>
     const world = new Globe(document.getElementById('globeViz'))
-      .globeImageUrl('//unpkg.com/three-globe/example/img/earth-dark.jpg')
+      .globeImageUrl('//cdn.jsdelivr.net/npm/three-globe/example/img/earth-dark.jpg')
       .pointOfView({ altitude: 4 }, 5000)
       .polygonCapColor(feat => 'rgba(200, 0, 0, 0.6)')
       .polygonSideColor(() => 'rgba(0, 100, 0, 0.05)')

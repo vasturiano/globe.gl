@@ -11,7 +11,7 @@
     }
   </style>
 
-  <script src="//unpkg.com/globe.gl"></script>
+  <script src="//cdn.jsdelivr.net/npm/globe.gl"></script>
 <!--  <script src="../../dist/globe.gl.js"></script>-->
 </head>
 
@@ -37,7 +37,7 @@
     const timeEl = document.getElementById('time');
 
     const world = new Globe(document.getElementById('globeViz'))
-      .globeImageUrl('//unpkg.com/three-globe/example/img/earth-dark.jpg')
+      .globeImageUrl('//cdn.jsdelivr.net/npm/three-globe/example/img/earth-dark.jpg')
       .tilesData([solarTile])
       .tileLng(d => d.pos[0])
       .tileLat(d => d.pos[1])

@@ -11,7 +11,7 @@
     }
   </style>
 
-  <script src="//unpkg.com/globe.gl"></script>
+  <script src="//cdn.jsdelivr.net/npm/globe.gl"></script>
 <!--  <script src="../../dist/globe.gl.js"></script>-->
 </head>
 
@@ -95,8 +95,8 @@
     const world = new Globe(document.getElementById('globeViz'));
 
     Promise.all([
-      new TextureLoader().loadAsync('//unpkg.com/three-globe/example/img/earth-day.jpg'),
-      new TextureLoader().loadAsync('//unpkg.com/three-globe/example/img/earth-night.jpg')
+      new TextureLoader().loadAsync('//cdn.jsdelivr.net/npm/three-globe/example/img/earth-day.jpg'),
+      new TextureLoader().loadAsync('//cdn.jsdelivr.net/npm/three-globe/example/img/earth-night.jpg')
     ]).then(([dayTexture, nightTexture]) => {
       const material = new ShaderMaterial({
         uniforms: {
@@ -110,7 +110,7 @@
       });
 
       world.globeMaterial(material)
-        .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
+        .backgroundImageUrl('//cdn.jsdelivr.net/npm/three-globe/example/img/night-sky.png')
         // Update globe rotation on shader
         .onZoom(({ lng, lat }) => material.uniforms.globeRotation.value.set(lng, lat));
 

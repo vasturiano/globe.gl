@@ -1,7 +1,7 @@
 <head>
   <style> body { margin: 0; } </style>
 
-  <script src="//unpkg.com/globe.gl"></script>
+  <script src="//cdn.jsdelivr.net/npm/globe.gl"></script>
 <!--  <script src="../../dist/globe.gl.js"></script>-->
 </head>
 
@@ -16,7 +16,7 @@
     const RING_PROPAGATION_SPEED = 5; // deg/sec
 
     const globe = new Globe(document.getElementById('globeViz'))
-      .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
+      .globeImageUrl('//cdn.jsdelivr.net/npm/three-globe/example/img/earth-night.jpg')
       .arcColor(() => 'darkOrange')
       .onGlobeClick(emitArc)
       .arcDashLength(ARC_REL_LEN)

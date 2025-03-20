@@ -1,7 +1,7 @@
 <head>
   <style> body { margin: 0; } </style>
 
-  <script src="//unpkg.com/globe.gl"></script>
+  <script src="//cdn.jsdelivr.net/npm/globe.gl"></script>
   <!--<script src="../../dist/globe.gl.js"></script>-->
 </head>
 
@@ -18,7 +18,7 @@
   const moon = new Globe(document.getElementById('globeViz'))
     .globeImageUrl('./lunar_surface.jpg')
     .bumpImageUrl('./lunar_bumpmap.jpg')
-    .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
+    .backgroundImageUrl('//cdn.jsdelivr.net/npm/three-globe/example/img/night-sky.png')
     .showGraticules(true)
     .showAtmosphere(false) // moon has no atmosphere
     .labelText('label')

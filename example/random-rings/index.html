@@ -1,7 +1,7 @@
 <head>
   <style> body { margin: 0; } </style>
 
-  <script src="//unpkg.com/globe.gl"></script>
+  <script src="//cdn.jsdelivr.net/npm/globe.gl"></script>
 <!--  <script src="../../dist/globe.gl.js"></script>-->
 </head>
 
@@ -22,7 +22,7 @@
     const colorInterpolator = t => `rgba(255,100,50,${Math.sqrt(1-t)})`;
 
     const globe = new Globe(document.getElementById('globeViz'))
-      .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
+      .globeImageUrl('//cdn.jsdelivr.net/npm/three-globe/example/img/earth-night.jpg')
       .ringsData(gData)
       .ringColor(() => colorInterpolator)
       .ringMaxRadius('maxR')
