@@ -67,7 +67,7 @@ import Globe from 'globe.gl';
 ```
 or using a *script* tag
 ```html
-<script src="//unpkg.com/globe.gl"></script>
+<script src="//cdn.jsdelivr.net/npm/globe.gl"></script>
 ```
 then
 ```js
