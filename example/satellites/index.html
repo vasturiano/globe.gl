@@ -64,11 +64,16 @@
         const gmst = satellite.gstime(time);
         satData.forEach(d => {
           const eci = satellite.propagate(d.satrec, time);
-          if (eci.position) {
+          if (eci?.position) {
             const gdPos = satellite.eciToGeodetic(eci.position, gmst);
             d.lat = satellite.radiansToDegrees(gdPos.latitude);
             d.lng = satellite.radiansToDegrees(gdPos.longitude);
-            d.alt = gdPos.height / EARTH_RADIUS_KM
+            d.alt = gdPos.height / EARTH_RADIUS_KM;
+          } else {
+            // explicitly handle invalid position
+            d.lat = NaN;
+            d.lng = NaN;
+            d.alt = NaN;
           }
         });
 
