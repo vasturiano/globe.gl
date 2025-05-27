@@ -60,6 +60,10 @@ And check out the [React bindings](https://github.com/vasturiano/react-globe.gl)
 * [Submarine Cables](https://vasturiano.github.io/globe.gl/example/submarine-cables/index.html) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/submarine-cables/index.html))
 * [Moon Landing Sites](https://vasturiano.github.io/globe.gl/example/moon-landing-sites/index.html) ([source](https://github.com/vasturiano/globe.gl/blob/master/example/moon-landing-sites/index.html))
 
+## Giving Back
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=L398E7PKP47E8&currency_code=USD&source=url) If this project has helped you and you'd like to contribute back, you can always [buy me a ☕](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=L398E7PKP47E8&currency_code=USD&source=url)!
+
 ## Quick start
 
 ```js
@@ -474,9 +478,6 @@ new Globe(<domElement>, { configOptions })
 | <b>toGeoCoords</b>({ <i>x</i>, <i>y</i>, <i>z</i> }) | Utility method to translate cartesian coordinates to the geographic domain. Given a set of 3D cartesian coordinates `{x, y, z}`, returns the equivalent `{lat, lng, altitude}` spherical coordinates. Altitude is defined in terms of globe radius units. |
 | <b>toGlobeCoords</b>(<i>x</i>, <i>y</i>) | Utility method to translate viewport coordinates to the globe surface coordinates directly under the specified viewport pixel. Returns the globe coordinates in the format `{ lat, lng }`, or `null` if the globe does not currently intersect with that viewport location. |
 
-## Giving Back
-
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=L398E7PKP47E8&currency_code=USD&source=url) If this project has helped you and you'd like to contribute back, you can always [buy me a ☕](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=L398E7PKP47E8&currency_code=USD&source=url)!
 
 [npm-img]: https://img.shields.io/npm/v/globe.gl
 [npm-url]: https://npmjs.org/package/globe.gl
