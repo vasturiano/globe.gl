@@ -137,6 +137,7 @@ new Globe(<domElement>, { configOptions })
 | <b>showAtmosphere</b>([<i>boolean</i>]) | Getter/setter for whether to show a bright halo surrounding the globe, representing the atmosphere. | `true` |
 | <b>atmosphereColor</b>([<i>str</i>]) | Getter/setter for the color of the atmosphere. | `lightskyblue` |
 | <b>atmosphereAltitude</b>([<i>str</i>]) | Getter/setter for the max altitude of the atmosphere, in terms of globe radius units. | 0.15 |
+| <b>globeCurvatureResolution</b>([<i>number</i>]) | Getter/setter of the resolution in angular degrees of the sphere curvature. The finer the resolution, the more the globe is fragmented into smaller faces to approximate the spheric surface, at the cost of performance. | `4` |
 | <b>globeMaterial</b>([<i>material</i>]) | Getter/setter of the ThreeJS material used to wrap the globe. Can be used for more advanced styling of the globe, like in [this example](https://github.com/vasturiano/globe.gl/blob/master/example/custom-globe-styling/index.html). | [MeshPhongMaterial](https://threejs.org/docs/#api/en/materials/MeshPhongMaterial) |
 | <b>onGlobeReady</b>(<i>fn</i>) | Callback function to invoke immediately after the globe has been initialized and visible on the scene. | - |
 | <b>onGlobeClick</b>(<i>fn</i>) | Callback function for (left-button) clicks on the globe. The clicked globe coordinates and the event object are included as arguments: `onGlobeClick({ lat, lng }, event)`. | - |

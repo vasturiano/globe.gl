@@ -27,6 +27,7 @@ const linkedGlobeProps = Object.assign(...[
   'bumpImageUrl',
   'globeTileEngineUrl',
   'globeTileEngineMaxLevel',
+  'globeCurvatureResolution',
   'showGlobe',
   'showGraticules',
   'showAtmosphere',
