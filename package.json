@@ -52,19 +52,19 @@
     "accessor-fn": "1",
     "kapsule": "^1.16",
     "three": ">=0.154 <1",
-    "three-globe": "^2.43",
+    "three-globe": "^2.44",
     "three-render-objects": "^1.40"
   },
   "devDependencies": {
-    "@babel/core": "^7.27.7",
-    "@babel/preset-env": "^7.27.2",
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^28.0.6",
     "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-terser": "^0.4.4",
     "postcss": "^8.5.6",
     "rimraf": "^6.0.1",
-    "rollup": "^4.44.1",
+    "rollup": "^4.46.2",
     "rollup-plugin-dts": "^6.2.1",
     "rollup-plugin-postcss": "^4.0.2",
     "typescript": "^5.8.3"
