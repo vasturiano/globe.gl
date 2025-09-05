@@ -265,6 +265,7 @@ export default Kapsule({
         state.renderObjs.pointsHoverPrecision(val);
       }
     },
+    showPointerCursor: { default: true, triggerUpdate: false },
     globeOffset: {
       default: [0, 0],
       triggerUpdate: false,
@@ -542,7 +543,7 @@ export default Kapsule({
           const prevObjType = state.hoverObj ? state.hoverObj.__globeObjType : null;
           const prevObjData = state.hoverData;
           const objType = hoverObj ? hoverObj.__globeObjType : null;
-          const objData = hoverObj ? dataAccessors[objType](hoverObj.__data, intersection) : null;
+          const objData = hoverObj?.__data ? dataAccessors[objType](hoverObj.__data, intersection) : null;
           if (prevObjType && prevObjType !== objType) {
             // Hover out
             hoverObjFns[prevObjType] && hoverObjFns[prevObjType](null, prevObjData || null);
@@ -553,7 +554,9 @@ export default Kapsule({
           }
 
           // set pointer if hovered object is clickable
-          state.renderObjs.renderer().domElement.classList[(objType && clickObjFns[objType]) ? 'add' : 'remove']('clickable');
+          state.renderObjs.renderer().domElement.classList[
+            (objType && clickObjFns[objType]) && accessorFn(state.showPointerCursor)(objType, objData) ? 'add' : 'remove'
+          ]('clickable');
 
           state.hoverObj = hoverObj;
           state.hoverData = objData;

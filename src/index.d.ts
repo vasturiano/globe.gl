@@ -120,6 +120,8 @@ interface GlobeGenericInstance<ChainableInstance>
   pointerEventsFilter(filterFn: PointerEventsFilterFn): ChainableInstance;
   lineHoverPrecision(): number;
   lineHoverPrecision(precision: number): ChainableInstance;
+  showPointerCursor(): boolean | ((objType: string, objData: object) => boolean);
+  showPointerCursor(objAccessor: boolean | ((objType: string, objData: object) => boolean)): ChainableInstance;
   onZoom(callback: (pov: GeoCoords) => void): ChainableInstance;
   lights(): Light[];
   lights(lights: Light[]): ChainableInstance;
