@@ -179,6 +179,7 @@ const linkedGlobeProps = Object.assign(...[
 ].map(p => ({ [p]: bindGlobe.linkProp(p)})));
 const linkedGlobeMethods = Object.assign(...[
   'globeMaterial',
+  'globeTileEngineClearCache',
   'getGlobeRadius',
   'getCoords',
   'toGeoCoords'
