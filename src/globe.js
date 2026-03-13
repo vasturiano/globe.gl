@@ -319,6 +319,7 @@ export default Kapsule({
             .to(finalGeoCoords, transitionDuration)
             .easing(Easing.Cubic.InOut)
             .onUpdate(setCameraPos)
+            .onComplete(function() { state.tweenGroup.remove(this) })
             .start()
           );
         }
