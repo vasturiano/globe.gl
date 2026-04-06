@@ -51,9 +51,9 @@
     "@tweenjs/tween.js": "18 - 25",
     "accessor-fn": "1",
     "kapsule": "^1.16",
-    "three": ">=0.154 <1",
+    "three": ">=0.179 <1",
     "three-globe": "^2.45",
-    "three-render-objects": "^1.40"
+    "three-render-objects": "^1.41"
   },
   "devDependencies": {
     "@babel/core": "^7.29.0",

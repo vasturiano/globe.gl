@@ -2374,10 +2374,10 @@ three-globe@^2.45:
     three-slippy-map-globe "1"
     tinycolor2 "1"
 
-three-render-objects@^1.40:
-  version "1.40.5"
-  resolved "https://registry.yarnpkg.com/three-render-objects/-/three-render-objects-1.40.5.tgz#6f7cfeb7f9bf744eccb72f556e4ed81c59e30067"
-  integrity sha512-iA+rYdal0tkond37YeXIvEMAxUFGxw1wU6+ce/GsuiOUKL+8zaxFXY7PTVft0F+Km50mbmtKQ24b2FdwSG3p3A==
+three-render-objects@^1.41:
+  version "1.41.0"
+  resolved "https://registry.yarnpkg.com/three-render-objects/-/three-render-objects-1.41.0.tgz#bc84929032f525b703abaf8420520c4447c4a347"
+  integrity sha512-KMLsLiPfiR4+lUDHGMEpM7Eo00ng+ljsHpxCyJW4dleKYcjuU6w/gQ64N6VRCKjvqMQukOeXs32Q6FTwaEbOHA==
   dependencies:
     "@tweenjs/tween.js" "18 - 25"
     accessor-fn "1"
@@ -2394,7 +2394,7 @@ three-slippy-map-globe@1:
     d3-octree "^1.1"
     d3-scale "1 - 4"
 
-"three@>=0.154 <1":
+"three@>=0.179 <1":
   version "0.183.2"
   resolved "https://registry.yarnpkg.com/three/-/three-0.183.2.tgz#606e3195bf210ef8d1eaaca2ab8c59d92d2bbc18"
   integrity sha512-di3BsL2FEQ1PA7Hcvn4fyJOlxRRgFYBpMTcyOgkwJIaDOdJMebEFPA+t98EvjuljDx4hNulAGwF6KIjtwI5jgQ==

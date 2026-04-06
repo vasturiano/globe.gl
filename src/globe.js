@@ -353,7 +353,6 @@ export default Kapsule({
     renderer: state => state.renderObjs.renderer(), // Expose renderer
     controls: state => state.renderObjs.controls(), // Expose controls
     _destructor: function(state) {
-      state.globe._destructor();
       this.pauseAnimation();
       this.pointsData([]);
       this.arcsData([]);
@@ -368,6 +367,9 @@ export default Kapsule({
       this.htmlElementsData([]);
       this.objectsData([]);
       this.customLayerData([]);
+
+      state.globe._destructor();
+      state.renderObjs._destructor();
     },
     ...linkedGlobeMethods,
     ...linkedRenderObjsMethods
