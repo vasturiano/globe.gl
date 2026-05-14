@@ -307,7 +307,12 @@ export default Kapsule({
       } else { // Setter
         const finalGeoCoords = Object.assign({}, curGeoCoords, geoCoords);
         ['lat', 'lng', 'altitude'].forEach(p => finalGeoCoords[p] = +finalGeoCoords[p]); // coerce coords to number
-        
+
+        if (state.povTween) { // cancel any ongoing pov animation
+          state.povTween.end();
+          state.povTween = undefined;
+        }
+
         if (!transitionDuration) { // no animation
           setCameraPos(finalGeoCoords);
         } else {
@@ -315,11 +320,14 @@ export default Kapsule({
           while ((curGeoCoords.lng - finalGeoCoords.lng) > 180) curGeoCoords.lng -= 360;
           while ((curGeoCoords.lng - finalGeoCoords.lng) < -180) curGeoCoords.lng += 360;
 
-          state.tweenGroup.add(new Tween(curGeoCoords)
+          state.tweenGroup.add(state.povTween = new Tween(curGeoCoords)
             .to(finalGeoCoords, transitionDuration)
             .easing(Easing.Cubic.InOut)
             .onUpdate(setCameraPos)
-            .onComplete(function() { state.tweenGroup.remove(this) })
+            .onComplete(function() {
+              state.povTween = undefined;
+              state.tweenGroup.remove(this);
+            })
             .start()
           );
         }
