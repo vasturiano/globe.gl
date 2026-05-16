@@ -308,10 +308,7 @@ export default Kapsule({
         const finalGeoCoords = Object.assign({}, curGeoCoords, geoCoords);
         ['lat', 'lng', 'altitude'].forEach(p => finalGeoCoords[p] = +finalGeoCoords[p]); // coerce coords to number
 
-        if (state.povTween) { // cancel any ongoing pov animation
-          state.povTween.end();
-          state.povTween = undefined;
-        }
+        state.povTween?.end(); // cancel any ongoing pov animation
 
         if (!transitionDuration) { // no animation
           setCameraPos(finalGeoCoords);
