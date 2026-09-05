@@ -17,6 +17,7 @@ import Kapsule from 'kapsule';
 import { Tween, Group as TweenGroup, Easing } from '@tweenjs/tween.js';
 
 import linkKapsule from './kapsule-link.js';
+import fixTouchZoom from './fix-touch-zoom.js';
 
 //
 
@@ -432,6 +433,7 @@ export default Kapsule({
     controls.rotateSpeed = 0.3;
     controls.zoomSpeed = 0.3;
     controls.zoomToCursor = true;
+    fixTouchZoom(controls);
     controls.addEventListener('change', () => {
       controls.target.setScalar(0); // Keep orbit target on center
 
